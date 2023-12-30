@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ad08d394a81045e6bb4ba29be561ca76" Name="Diagram1">
+        <EntityTypeShape EntityType="ClinicSysModel.Appointment_Room_Schedule" Width="1.5" PointX="3" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.Appt_ClinicList" Width="1.5" PointX="8.25" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.Appt_PatientState_Ref" Width="1.5" PointX="6" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.Attendance_tAttendance" Width="1.5" PointX="3" PointY="23.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.Attendance_tExpenseRequests" Width="1.5" PointX="6" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.Attendance_tExpenseTypes" Width="1.5" PointX="3.75" PointY="27" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.Attendance_tLeave" Width="1.5" PointX="3" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.Attendance_tLeaveTypes" Width="1.5" PointX="0.75" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.Cases_MainCase" Width="1.5" PointX="9" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.Cases_Medical_Records" Width="1.5" PointX="11.25" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.Cases_NewBornList" Width="1.5" PointX="8.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.Cases_Prescription" Width="1.5" PointX="11.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.Cases_Prescriptionlist" Width="1.5" PointX="13.5" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.Cases_TestReport" Width="1.5" PointX="11.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.Member_Care" Width="1.5" PointX="10.5" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.Member_EmployeeList" Width="1.5" PointX="0.75" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.Member_MemberList" Width="1.5" PointX="6" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.Pharmacy_tClinicalUseDetails" Width="1.5" PointX="13.5" PointY="37.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.Pharmacy_tClinicalUseList" Width="1.5" PointX="11.25" PointY="45.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.Pharmacy_tMedicinesList" Width="1.5" PointX="11.25" PointY="35.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.Pharmacy_tSideEffectDetails" Width="1.5" PointX="13.5" PointY="34.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.Pharmacy_tSideEffectList" Width="1.5" PointX="11.25" PointY="42.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.Pharmacy_tTypeDetails" Width="1.5" PointX="13.5" PointY="40.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.Pharmacy_tTypeList" Width="1.5" PointX="11.25" PointY="48.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.RoomList" Width="1.5" PointX="3.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.RoomTypeList" Width="1.5" PointX="1.5" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.Schedule_ClinicInfo" Width="1.5" PointX="6" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.Schedule_ClinicSchedule" Width="1.5" PointX="6" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.Schedule_ClinicTime" Width="1.5" PointX="3.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.Schedule_NurseSchedule" Width="1.5" PointX="11.25" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.Schedule_PharmacistSchedule" Width="1.5" PointX="9" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.Schedule_Staff_PharmacistShiftsTime" Width="1.5" PointX="6.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.Schedule_StaffSchedule" Width="1.5" PointX="9" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.Schedule_WardNurseSchedule" Width="1.5" PointX="9" PointY="23.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.Schedule_WardShiftsTime" Width="1.5" PointX="6.75" PointY="29.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.tCart" Width="1.5" PointX="13.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.tCoupon" Width="1.5" PointX="11" PointY="27" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.tCouponWallet" Width="1.5" PointX="13.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.tOrder" Width="1.5" PointX="14.25" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.tOrderDetail" Width="1.5" PointX="16.5" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicSysModel.tProduct" Width="1.5" PointX="11" PointY="31.5" IsExpanded="true" />
+        <AssociationConnector Association="ClinicSysModel.FK_Appointment_Room_Schedule_Member_EmployeeList" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Appointment_Room_Schedule_Member_MemberList" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Appointment_Room_Schedule_RoomList" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Appt_ClinicList_Member_MemberList" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Appt_ClinicList_Schedule_ClinicSchedule" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_掛號叫號_當日門診名單_掛號叫號_看診狀態總表" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Attendance_tAttendance_Member_EmployeeList" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Attendance_tExpenseRequests_Member_EmployeeList" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_tExpenseRequests_tExpenseTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Attendance_tLeave_Member_EmployeeList" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_tLeave_tLeaveTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Cases_MainCase_Member_MemberList" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Cases_Medical_Records_Cases_MainCase" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Cases_Prescription_Cases_MainCase" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Cases_TestReport_Cases_MainCase" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Cases_Medical_Records_Schedule_ClinicInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Member_Care_Cases_NewBornList" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_病例系統_新生兒資料_會員_會員資料" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Cases_Prescriptionlist_Cases_Prescription" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Cases_Prescriptionlist_Pharmacy_tMedicinesList" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Schedule_ClinicInfo_Member_EmployeeList" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Schedule_DoctorSchedule_Member_EmployeeList" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Schedule_StaffSchedule_Member_EmployeeList" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Schedule_WardNurseSchedule_Member_EmployeeList" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_排班系統_t藥師排班表_會員_員工資料表" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_排班系統_t護理師排班表_會員_員工資料表" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Shop_Cart_Member_MemberList" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Shop_Order_Member_MemberList" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_ShopCouponWallet_Member_MemberList" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_藥師系統_t適應證明細表_藥師系統_t適應症總表" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_藥師系統_t適應證明細表_藥師系統_t藥品基本資料" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Pharmacy_tTypeDetails_Pharmacy_tMedicinesList" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_藥師系統_t副作用明細表_藥師系統_t藥品基本資料" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_藥師系統_t副作用明細表_藥師系統_t副作用總表" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Pharmacy_tTypeDetails_Pharmacy_tTpyeList" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_RoomList_RoomTypeList" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Schedule_ClinicSchedule_RoomList" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Schedule_DoctorSchedule_RoomList" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Schedule_WardNurseSchedule_RoomList" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Schedule_ClinicSchedule_Schedule_ClinicTime" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Schedule_NurseSchedule_Schedule_ClinicSchedule" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Schedule_DoctorSchedule_Schedule_ClinicTime" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Schedule_PharmacistSchedule_Schedule_Staff_PharmacistShiftsTime" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Schedule_StaffSchedule_Schedule_Staff_PharmacistShiftsTime" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Schedule_WardNurseSchedule_Schedule_WardShiftsTime" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Shop_Cart_Shop_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Shop_Order_Shop_Coupon" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Shop_Order_Shop_Coupon1" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Shop_Order_Shop_Coupon2" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_ShopCouponWallet_ShopCoupon" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Shop_OrderDetail_Shop_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicSysModel.FK_Shop_OrderDetail_Shop_Product" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

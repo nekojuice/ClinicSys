@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MemberSysModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Member_Care">
+          <Key>
+            <PropertyRef Name="Care_Record_ID" />
+          </Key>
+          <Property Name="Member_ID" Type="int" Nullable="false" />
+          <Property Name="Care_Record_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baby_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Care_Date" Type="date" Nullable="false" />
+          <Property Name="Feed_Record" Type="nvarchar" MaxLength="50" />
+          <Property Name="Poo_Record" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sleep_Record" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Member_EmployeeList">
+          <Key>
+            <PropertyRef Name="Emp_ID" />
+          </Key>
+          <Property Name="Emp_ID" Type="int" Nullable="false" />
+          <Property Name="Staff_Number" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gender" Type="bit" Nullable="false" />
+          <Property Name="Blood_Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="National_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Contact_Address" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="int" Nullable="false" />
+          <Property Name="Birth_Date" Type="date" Nullable="false" />
+          <Property Name="Department" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Rank" Type="nvarchar" MaxLength="50" />
+          <Property Name="Medical_Department" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Member_MemberList">
+          <Key>
+            <PropertyRef Name="Member_ID" />
+          </Key>
+          <Property Name="Member_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Member_Number" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gender" Type="bit" Nullable="false" />
+          <Property Name="Blood_Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="National_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Contact_Address" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="int" Nullable="false" />
+          <Property Name="Birth_Date" Type="date" Nullable="false" />
+          <Property Name="ICE_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="ICE Number" Type="int" />
+        </EntityType>
+        <Association Name="FK_照顧紀錄_會員資料">
+          <End Role="Member_MemberList" Type="Self.Member_MemberList" Multiplicity="1" />
+          <End Role="Member_Care" Type="Self.Member_Care" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member_MemberList">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="Member_Care">
+              <PropertyRef Name="Member_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MemberSysModelStoreContainer">
+          <EntitySet Name="Member_Care" EntityType="Self.Member_Care" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Member_EmployeeList" EntityType="Self.Member_EmployeeList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Member_MemberList" EntityType="Self.Member_MemberList" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_照顧紀錄_會員資料" Association="Self.FK_照顧紀錄_會員資料">
+            <End Role="Member_MemberList" EntitySet="Member_MemberList" />
+            <End Role="Member_Care" EntitySet="Member_Care" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MemberSysModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Member_Care">
+          <Key>
+            <PropertyRef Name="Care_Record_ID" />
+          </Key>
+          <Property Name="Member_ID" Type="Int32" Nullable="false" />
+          <Property Name="Care_Record_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baby_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Care_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Feed_Record" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Poo_Record" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sleep_Record" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Member_MemberList" Relationship="Self.FK_照顧紀錄_會員資料" FromRole="Member_Care" ToRole="Member_MemberList" />
+        </EntityType>
+        <EntityType Name="Member_EmployeeList">
+          <Key>
+            <PropertyRef Name="Emp_ID" />
+          </Key>
+          <Property Name="Emp_ID" Type="Int32" Nullable="false" />
+          <Property Name="Staff_Number" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Gender" Type="Boolean" Nullable="false" />
+          <Property Name="Blood_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="National_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Contact_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="Int32" Nullable="false" />
+          <Property Name="Birth_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Rank" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Medical_Department" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Member_MemberList">
+          <Key>
+            <PropertyRef Name="Member_ID" />
+          </Key>
+          <Property Name="Member_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Member_Number" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Gender" Type="Boolean" Nullable="false" />
+          <Property Name="Blood_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="National_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Contact_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="Int32" Nullable="false" />
+          <Property Name="Birth_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ICE_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ICE_Number" Type="Int32" />
+          <NavigationProperty Name="Member_Care" Relationship="Self.FK_照顧紀錄_會員資料" FromRole="Member_MemberList" ToRole="Member_Care" />
+        </EntityType>
+        <Association Name="FK_照顧紀錄_會員資料">
+          <End Role="Member_MemberList" Type="Self.Member_MemberList" Multiplicity="1" />
+          <End Role="Member_Care" Type="Self.Member_Care" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member_MemberList">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="Member_Care">
+              <PropertyRef Name="Member_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MemberSysEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Member_Care" EntityType="Self.Member_Care" />
+          <EntitySet Name="Member_EmployeeList" EntityType="Self.Member_EmployeeList" />
+          <EntitySet Name="Member_MemberList" EntityType="Self.Member_MemberList" />
+          <AssociationSet Name="FK_照顧紀錄_會員資料" Association="Self.FK_照顧紀錄_會員資料">
+            <End Role="Member_MemberList" EntitySet="Member_MemberList" />
+            <End Role="Member_Care" EntitySet="Member_Care" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MemberSysModelStoreContainer" CdmEntityContainer="MemberSysEntities">
+          <EntitySetMapping Name="Member_Care">
+            <EntityTypeMapping TypeName="MemberSysModel.Member_Care">
+              <MappingFragment StoreEntitySet="Member_Care">
+                <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
+                <ScalarProperty Name="Care_Record_ID" ColumnName="Care_Record_ID" />
+                <ScalarProperty Name="Baby_Name" ColumnName="Baby_Name" />
+                <ScalarProperty Name="Care_Date" ColumnName="Care_Date" />
+                <ScalarProperty Name="Feed_Record" ColumnName="Feed_Record" />
+                <ScalarProperty Name="Poo_Record" ColumnName="Poo_Record" />
+                <ScalarProperty Name="Sleep_Record" ColumnName="Sleep_Record" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Member_EmployeeList">
+            <EntityTypeMapping TypeName="MemberSysModel.Member_EmployeeList">
+              <MappingFragment StoreEntitySet="Member_EmployeeList">
+                <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+                <ScalarProperty Name="Staff_Number" ColumnName="Staff_Number" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Blood_Type" ColumnName="Blood_Type" />
+                <ScalarProperty Name="National_ID" ColumnName="National_ID" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Contact_Address" ColumnName="Contact_Address" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Birth_Date" ColumnName="Birth_Date" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="Medical_Department" ColumnName="Medical_Department" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Member_MemberList">
+            <EntityTypeMapping TypeName="MemberSysModel.Member_MemberList">
+              <MappingFragment StoreEntitySet="Member_MemberList">
+                <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
+                <ScalarProperty Name="Member_Number" ColumnName="Member_Number" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Blood_Type" ColumnName="Blood_Type" />
+                <ScalarProperty Name="National_ID" ColumnName="National_ID" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Contact_Address" ColumnName="Contact_Address" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Birth_Date" ColumnName="Birth_Date" />
+                <ScalarProperty Name="ICE_Name" ColumnName="ICE_Name" />
+                <ScalarProperty Name="ICE_Number" ColumnName="ICE Number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

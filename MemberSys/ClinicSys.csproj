@@ -1,0 +1,1043 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0CEE3F65-A32B-4FD8-9B52-85CFA9D32955}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MemberSys</RootNamespace>
+    <AssemblyName>MemberSys</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="PCSC, Version=6.1.3.0, Culture=neutral, PublicKeyToken=13b76e54a2ee80a7, processorArchitecture=MSIL">
+      <HintPath>..\packages\PCSC.6.1.3\lib\netstandard2.0\PCSC.dll</HintPath>
+    </Reference>
+    <Reference Include="PCSC.Iso7816, Version=6.1.3.0, Culture=neutral, PublicKeyToken=13b76e54a2ee80a7, processorArchitecture=MSIL">
+      <HintPath>..\packages\PCSC.Iso7816.6.1.3\lib\netstandard2.0\PCSC.Iso7816.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PowerLib.Winform.1.0.11\lib\net45\PowerLib.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerLib.Winform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PowerLib.Winform.1.0.11\lib\net45\PowerLib.Winform.dll</HintPath>
+    </Reference>
+    <Reference Include="SunnyUI, Version=3.6.2.0, Culture=neutral, PublicKeyToken=27d7d2e821d97aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\SunnyUI.3.6.2\lib\net472\SunnyUI.dll</HintPath>
+    </Reference>
+    <Reference Include="SunnyUI.Common, Version=3.5.1.0, Culture=neutral, PublicKeyToken=5a271fb7ba597231, processorArchitecture=MSIL">
+      <HintPath>..\packages\SunnyUI.Common.3.5.1\lib\net472\SunnyUI.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Appointment_Room_Schedule.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ApptSys\Entity\EntityApptLINQDataType.cs" />
+    <Compile Include="ApptSys\Entity\EntityCallingUnitDataType.cs" />
+    <Compile Include="ApptSys\Entity\EntitySmartCardInfoType.cs" />
+    <Compile Include="ApptSys\Extension\Extension_ComboboxItem_AddTag.cs" />
+    <Compile Include="ApptSys\Extension\Extension_DataGridView_sytle.cs" />
+    <Compile Include="ApptSys\Extension\Extension_DataTable_AddTag.cs" />
+    <Compile Include="ApptSys\Extension\Extension_DateTime.cs" />
+    <Compile Include="ApptSys\Extension\Extension_ListboxItem_AddTag.cs" />
+    <Compile Include="ApptSys\Model\CApptCallingUnit_Model.cs" />
+    <Compile Include="ApptSys\Model\CApptCard_Model.cs" />
+    <Compile Include="ApptSys\Model\CApptManager_Model.cs" />
+    <Compile Include="ApptSys\PatientInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ApptSys\PatientInfo.designer.cs">
+      <DependentUpon>PatientInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApptSys\View\DialogAddNewAppt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApptSys\View\DialogAddNewAppt.designer.cs">
+      <DependentUpon>DialogAddNewAppt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApptSys\View\DialogCallingUnit_PatientInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApptSys\View\DialogCallingUnit_PatientInfo.designer.cs">
+      <DependentUpon>DialogCallingUnit_PatientInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApptSys\View\DialogModifyAppt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApptSys\View\DialogModifyAppt.designer.cs">
+      <DependentUpon>DialogModifyAppt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApptSys\View\DialogModifyLimit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApptSys\View\DialogModifyLimit.designer.cs">
+      <DependentUpon>DialogModifyLimit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApptSys\View\FrmCallingUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApptSys\View\FrmCallingUnit.designer.cs">
+      <DependentUpon>FrmCallingUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApptSys\View\FrmManageAppt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApptSys\View\FrmManageAppt.designer.cs">
+      <DependentUpon>FrmManageAppt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApptSys\View\FrmNumberScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApptSys\View\FrmNumberScreen.designer.cs">
+      <DependentUpon>FrmNumberScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Appt_ClinicList.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Appt_PatientState_Ref.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AttendanceSys\CstyleAtt.cs" />
+    <Compile Include="AttendanceSys\FrmAtt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AttendanceSys\FrmAtt.designer.cs">
+      <DependentUpon>FrmAtt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AttendanceSys\FrmCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AttendanceSys\FrmCheck.designer.cs">
+      <DependentUpon>FrmCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AttendanceSys\Frmexpen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AttendanceSys\Frmexpen.designer.cs">
+      <DependentUpon>Frmexpen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AttendanceSys\FrmLeave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AttendanceSys\FrmLeave.designer.cs">
+      <DependentUpon>FrmLeave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AttendanceSys\FrmLeaveSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AttendanceSys\FrmLeaveSearch.designer.cs">
+      <DependentUpon>FrmLeaveSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AttendanceSys\FrmRequestSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AttendanceSys\FrmRequestSearch.designer.cs">
+      <DependentUpon>FrmRequestSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Attendance_tAttendance.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Attendance_tExpenseRequests.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Attendance_tExpenseTypes.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Attendance_tLeave.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Attendance_tLeaveTypes.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CasesSys\FrmCases_All.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CasesSys\FrmCases_All.designer.cs">
+      <DependentUpon>FrmCases_All.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CasesSys\FrmNewBornData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CasesSys\FrmNewBornData.designer.cs">
+      <DependentUpon>FrmNewBornData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CasesSys\FrmPrescription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CasesSys\FrmPrescription.designer.cs">
+      <DependentUpon>FrmPrescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CasesSys\FrmRecords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CasesSys\FrmRecords.designer.cs">
+      <DependentUpon>FrmRecords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CasesSys\FrmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CasesSys\FrmReport.designer.cs">
+      <DependentUpon>FrmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CasesSys\Method\CCasesSystem.cs" />
+    <Compile Include="CasesSys\Method\CCstyle.cs" />
+    <Compile Include="CasesSys\Method\IDDataStructure.cs" />
+    <Compile Include="CasesSys\NameLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CasesSys\NameLabel.designer.cs">
+      <DependentUpon>NameLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cases_MainCase.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cases_Medical_Records.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cases_NewBornList.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cases_Prescription.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cases_Prescriptionlist.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cases_TestReport.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClinicSys.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClinicSys.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClinicSys.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClinicSys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClinicSys.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmParent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmParent.designer.cs">
+      <DependentUpon>FrmParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemberSys\CareRecModel\CCareRecordViewModel.cs" />
+    <Compile Include="CMemberModel.cs" />
+    <Compile Include="MemberSys\EmployeeModels\CEmpModel.cs" />
+    <Compile Include="MemberSys\EmployeeModels\CEmpStyle.cs" />
+    <Compile Include="MemberSys\EmployeeModels\CEmpViewModel.cs" />
+    <Compile Include="MemberSys\FrmCareRec\FrmFeed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberSys\FrmCareRec\FrmFeed.designer.cs">
+      <DependentUpon>FrmFeed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemberSys\FrmCareRec\FrmPoo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberSys\FrmCareRec\FrmPoo.designer.cs">
+      <DependentUpon>FrmPoo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemberSys\FrmCareRec\FrmSleep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberSys\FrmCareRec\FrmSleep.designer.cs">
+      <DependentUpon>FrmSleep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemberSys\FrmEmployeeEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberSys\FrmEmployeeEditor.designer.cs">
+      <DependentUpon>FrmEmployeeEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemberSys\FrmEmpUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberSys\FrmEmpUpdate.Designer.cs">
+      <DependentUpon>FrmEmpUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemberSys\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberSys\FrmLogin.designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemberSys\FrmLoginMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberSys\FrmLoginMain.designer.cs">
+      <DependentUpon>FrmLoginMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemberSys\FrmMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberSys\FrmMember.designer.cs">
+      <DependentUpon>FrmMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemberSys\FrmMemberEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberSys\FrmMemberEditor.designer.cs">
+      <DependentUpon>FrmMemberEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemberSys\FrmMemberLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberSys\FrmMemberLogin.designer.cs">
+      <DependentUpon>FrmMemberLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemberSys\UserControl\FieldBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MemberSys\UserControl\FieldBox.designer.cs">
+      <DependentUpon>FieldBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemberSys\UserControl\FieldBoxss.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MemberSys\UserControl\FieldBoxss.designer.cs">
+      <DependentUpon>FieldBoxss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemberSys\FrmCareRec\FrmCare.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberSys\FrmCareRec\FrmCare.Designer.cs">
+      <DependentUpon>FrmCare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemberSys\FrmCareRec\FrmCareDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberSys\FrmCareRec\FrmCareDisplay.designer.cs">
+      <DependentUpon>FrmCareDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemberSys\Frm\FrmReal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberSys\Frm\FrmReal.Designer.cs">
+      <DependentUpon>FrmReal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemberSys\ViewModel\CMemberViewModel.cs" />
+    <Compile Include="MemberSys\ViewModel\CStyle.cs" />
+    <Compile Include="Member_Care.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Member_EmployeeList.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Member_MemberList.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PharmacySys\FrmClinicalUse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PharmacySys\FrmClinicalUse.designer.cs">
+      <DependentUpon>FrmClinicalUse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PharmacySys\FrmCUList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PharmacySys\FrmCUList.designer.cs">
+      <DependentUpon>FrmCUList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PharmacySys\FrmDrugEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PharmacySys\FrmDrugEditor.designer.cs">
+      <DependentUpon>FrmDrugEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PharmacySys\FrmPharmacy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PharmacySys\FrmPharmacy.designer.cs">
+      <DependentUpon>FrmPharmacy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PharmacySys\FrmPharmacyDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PharmacySys\FrmPharmacyDetail.designer.cs">
+      <DependentUpon>FrmPharmacyDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PharmacySys\FrmSEList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PharmacySys\FrmSEList.designer.cs">
+      <DependentUpon>FrmSEList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PharmacySys\FrmSideEffect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PharmacySys\FrmSideEffect.designer.cs">
+      <DependentUpon>FrmSideEffect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PharmacySys\FrmType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PharmacySys\FrmType.designer.cs">
+      <DependentUpon>FrmType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PharmacySys\Method\CClinicalUse.cs" />
+    <Compile Include="PharmacySys\Method\CSideEffect.cs" />
+    <Compile Include="PharmacySys\Method\CType.cs" />
+    <Compile Include="PharmacySys\Method\IOperation.cs" />
+    <Compile Include="PharmacySys\View\CClinicalUseViewModel.cs" />
+    <Compile Include="PharmacySys\View\CDrugViewModel.cs" />
+    <Compile Include="PharmacySys\View\CMedicine.cs" />
+    <Compile Include="PharmacySys\View\CSideEffectViewModel.cs" />
+    <Compile Include="PharmacySys\View\CStyle.cs" />
+    <Compile Include="PharmacySys\View\CTypeViewModel.cs" />
+    <Compile Include="PharmacySys\View\FieldBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PharmacySys\View\FieldBox.Designer.cs" />
+    <Compile Include="Pharmacy_tClinicalUseDetails.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pharmacy_tClinicalUseList.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pharmacy_tMedicinesList.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pharmacy_tSideEffectDetails.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pharmacy_tSideEffectList.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pharmacy_tTypeDetails.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pharmacy_tTypeList.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MemberSys\UserControl\UserCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MemberSys\UserControl\UserCombo.Designer.cs">
+      <DependentUpon>UserCombo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemberSys\CareRecModel\CCareListViewModel.cs" />
+    <Compile Include="RoomList.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoomSys\CNumberUtility.cs" />
+    <Compile Include="RoomSys\CStyle_room.cs" />
+    <Compile Include="RoomSys\FieldBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RoomSys\FieldBox.designer.cs">
+      <DependentUpon>FieldBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoomSys\frmBabyCenter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoomSys\frmBabyCenter.designer.cs">
+      <DependentUpon>frmBabyCenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoomSys\frmRoomEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoomSys\frmRoomEditor.designer.cs">
+      <DependentUpon>frmRoomEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoomSys\frmRoomList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoomSys\frmRoomList.designer.cs">
+      <DependentUpon>frmRoomList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoomSys\frmRoomMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoomSys\frmRoomMain.designer.cs">
+      <DependentUpon>frmRoomMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoomSys\frmScheduleEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoomSys\frmScheduleEditor.designer.cs">
+      <DependentUpon>frmScheduleEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoomSys\frmSurgery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoomSys\frmSurgery.designer.cs">
+      <DependentUpon>frmSurgery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoomSys\IOperation.cs" />
+    <Compile Include="RoomTypeList.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleSys\Model\CClinicInfo.cs" />
+    <Compile Include="ScheduleSys\Model\CClinicTime.cs" />
+    <Compile Include="ScheduleSys\Model\CComboFactory.cs" />
+    <Compile Include="ScheduleSys\Model\CDoctorname.cs" />
+    <Compile Include="ScheduleSys\Model\CGetChineseWeek.cs" />
+    <Compile Include="ScheduleSys\Model\CNurseName.cs" />
+    <Compile Include="ScheduleSys\Model\CRoomName.cs" />
+    <Compile Include="ScheduleSys\View\CStyle3.cs" />
+    <Compile Include="ScheduleSys\View\FrmClinic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScheduleSys\View\FrmClinic.designer.cs">
+      <DependentUpon>FrmClinic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleSys\View\FrmClinicInfoEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScheduleSys\View\FrmClinicInfoEditor.designer.cs">
+      <DependentUpon>FrmClinicInfoEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleSys\View\FrmClinicNurseSechedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScheduleSys\View\FrmClinicNurseSechedule.designer.cs">
+      <DependentUpon>FrmClinicNurseSechedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleSys\View\FrmClinicScheduleEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScheduleSys\View\FrmClinicScheduleEditor.designer.cs">
+      <DependentUpon>FrmClinicScheduleEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleSys\View\FrmDrSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScheduleSys\View\FrmDrSchedule.designer.cs">
+      <DependentUpon>FrmDrSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Schedule_ClinicInfo.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Schedule_ClinicSchedule.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Schedule_ClinicTime.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Schedule_NurseSchedule.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Schedule_PharmacistSchedule.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Schedule_StaffSchedule.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Schedule_Staff_PharmacistShiftsTime.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Schedule_WardNurseSchedule.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Schedule_WardShiftsTime.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShopSys\Model\CBillModel.cs" />
+    <Compile Include="ShopSys\Model\CCartModel.cs" />
+    <Compile Include="ShopSys\Model\CCouponModel.cs" />
+    <Compile Include="ShopSys\Model\CCouponWalletModel.cs" />
+    <Compile Include="ShopSys\Model\COrderDetailModel.cs" />
+    <Compile Include="ShopSys\Model\COrderModel.cs" />
+    <Compile Include="ShopSys\Model\CProductModel.cs" />
+    <Compile Include="ShopSys\Model\CUtility.cs" />
+    <Compile Include="ShopSys\Model\ICRUD.cs" />
+    <Compile Include="ShopSys\UserControl\userControlAddDecrease.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShopSys\UserControl\userControlAddDecrease.designer.cs">
+      <DependentUpon>userControlAddDecrease.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShopSys\UserControl\userControlComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShopSys\UserControl\userControlComboBox.designer.cs">
+      <DependentUpon>userControlComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShopSys\UserControl\userControlCoupon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShopSys\UserControl\userControlCoupon.designer.cs">
+      <DependentUpon>userControlCoupon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShopSys\UserControl\userControlDateTimePicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShopSys\UserControl\userControlDateTimePicker.designer.cs">
+      <DependentUpon>userControlDateTimePicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShopSys\UserControl\userControlProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShopSys\UserControl\userControlProduct.designer.cs">
+      <DependentUpon>userControlProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShopSys\UserControl\userControlSelectCouponCategoryHeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShopSys\UserControl\userControlSelectCouponCategoryHeader.designer.cs">
+      <DependentUpon>userControlSelectCouponCategoryHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShopSys\UserControl\userControlText.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShopSys\UserControl\userControlText.designer.cs">
+      <DependentUpon>userControlText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShopSys\ViewModel\CEmpCouponViewModel.cs" />
+    <Compile Include="ShopSys\ViewModel\CEmpOrderViewModel.cs" />
+    <Compile Include="ShopSys\ViewModel\CEmpProductViewModel.cs" />
+    <Compile Include="ShopSys\ViewModel\CMbrBillViewModel.cs" />
+    <Compile Include="ShopSys\ViewModel\CMbrCartViewModel.cs" />
+    <Compile Include="ShopSys\ViewModel\CMbrCouponGetViewModel.cs" />
+    <Compile Include="ShopSys\ViewModel\CMbrCouponHistoryViewModel.cs" />
+    <Compile Include="ShopSys\ViewModel\CMbrOrderViewModel.cs" />
+    <Compile Include="ShopSys\ViewModel\CStyle.cs" />
+    <Compile Include="ShopSys\View\frmEmpCoupEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShopSys\View\frmEmpCoupEditor.designer.cs">
+      <DependentUpon>frmEmpCoupEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShopSys\View\frmEmpProdCoupOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShopSys\View\frmEmpProdCoupOrder.designer.cs">
+      <DependentUpon>frmEmpProdCoupOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShopSys\View\frmEmpProdEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShopSys\View\frmEmpProdEditor.designer.cs">
+      <DependentUpon>frmEmpProdEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShopSys\View\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShopSys\View\FrmMain.designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShopSys\View\frmMbrCartEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShopSys\View\frmMbrCartEditor.designer.cs">
+      <DependentUpon>frmMbrCartEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShopSys\View\frmMbrCheckBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShopSys\View\frmMbrCheckBill.designer.cs">
+      <DependentUpon>frmMbrCheckBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShopSys\View\frmMbrCoupon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShopSys\View\frmMbrCoupon.designer.cs">
+      <DependentUpon>frmMbrCoupon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShopSys\View\frmMbrCouponSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShopSys\View\frmMbrCouponSelector.designer.cs">
+      <DependentUpon>frmMbrCouponSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShopSys\View\frmMbrOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShopSys\View\frmMbrOrder.designer.cs">
+      <DependentUpon>frmMbrOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShopSys\View\frmMbrShop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShopSys\View\frmMbrShop.designer.cs">
+      <DependentUpon>frmMbrShop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShopSys\View\frmMsg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShopSys\View\frmMsg.designer.cs">
+      <DependentUpon>frmMsg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tCart.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tCoupon.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tCouponWallet.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tOrder.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tOrderDetail.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tProduct.cs">
+      <DependentUpon>ClinicSys.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ApptSys\PatientInfo.resx">
+      <DependentUpon>PatientInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApptSys\View\DialogAddNewAppt.resx">
+      <DependentUpon>DialogAddNewAppt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApptSys\View\DialogCallingUnit_PatientInfo.resx">
+      <DependentUpon>DialogCallingUnit_PatientInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApptSys\View\DialogModifyAppt.resx">
+      <DependentUpon>DialogModifyAppt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApptSys\View\DialogModifyLimit.resx">
+      <DependentUpon>DialogModifyLimit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApptSys\View\FrmCallingUnit.resx">
+      <DependentUpon>FrmCallingUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApptSys\View\FrmManageAppt.resx">
+      <DependentUpon>FrmManageAppt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApptSys\View\FrmNumberScreen.resx">
+      <DependentUpon>FrmNumberScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AttendanceSys\FrmAtt.resx">
+      <DependentUpon>FrmAtt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AttendanceSys\FrmCheck.resx">
+      <DependentUpon>FrmCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AttendanceSys\Frmexpen.resx">
+      <DependentUpon>Frmexpen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AttendanceSys\FrmLeave.resx">
+      <DependentUpon>FrmLeave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AttendanceSys\FrmLeaveSearch.resx">
+      <DependentUpon>FrmLeaveSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AttendanceSys\FrmRequestSearch.resx">
+      <DependentUpon>FrmRequestSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CasesSys\FrmCases_All.resx">
+      <DependentUpon>FrmCases_All.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CasesSys\FrmNewBornData.resx">
+      <DependentUpon>FrmNewBornData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CasesSys\FrmPrescription.resx">
+      <DependentUpon>FrmPrescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CasesSys\FrmRecords.resx">
+      <DependentUpon>FrmRecords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CasesSys\FrmReport.resx">
+      <DependentUpon>FrmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CasesSys\NameLabel.resx">
+      <DependentUpon>NameLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmParent.resx">
+      <DependentUpon>FrmParent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberSys\FrmCareRec\FrmFeed.resx">
+      <DependentUpon>FrmFeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberSys\FrmCareRec\FrmPoo.resx">
+      <DependentUpon>FrmPoo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberSys\FrmCareRec\FrmSleep.resx">
+      <DependentUpon>FrmSleep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberSys\FrmEmployeeEditor.resx">
+      <DependentUpon>FrmEmployeeEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberSys\FrmEmpUpdate.resx">
+      <DependentUpon>FrmEmpUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberSys\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberSys\FrmLoginMain.resx">
+      <DependentUpon>FrmLoginMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberSys\FrmMember.resx">
+      <DependentUpon>FrmMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberSys\FrmMemberEditor.resx">
+      <DependentUpon>FrmMemberEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberSys\FrmMemberLogin.resx">
+      <DependentUpon>FrmMemberLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberSys\UserControl\FieldBox.resx">
+      <DependentUpon>FieldBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberSys\UserControl\FieldBoxss.resx">
+      <DependentUpon>FieldBoxss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberSys\FrmCareRec\FrmCare.resx">
+      <DependentUpon>FrmCare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberSys\FrmCareRec\FrmCareDisplay.resx">
+      <DependentUpon>FrmCareDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberSys\Frm\FrmReal.resx">
+      <DependentUpon>FrmReal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PharmacySys\FrmClinicalUse.resx">
+      <DependentUpon>FrmClinicalUse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PharmacySys\FrmCUList.resx">
+      <DependentUpon>FrmCUList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PharmacySys\FrmDrugEditor.resx">
+      <DependentUpon>FrmDrugEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PharmacySys\FrmPharmacy.resx">
+      <DependentUpon>FrmPharmacy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PharmacySys\FrmPharmacyDetail.resx">
+      <DependentUpon>FrmPharmacyDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PharmacySys\FrmSEList.resx">
+      <DependentUpon>FrmSEList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PharmacySys\FrmSideEffect.resx">
+      <DependentUpon>FrmSideEffect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PharmacySys\FrmType.resx">
+      <DependentUpon>FrmType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PharmacySys\View\FieldBox.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="MemberSys\UserControl\UserCombo.resx">
+      <DependentUpon>UserCombo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoomSys\FieldBox.resx">
+      <DependentUpon>FieldBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoomSys\frmBabyCenter.resx">
+      <DependentUpon>frmBabyCenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoomSys\frmRoomEditor.resx">
+      <DependentUpon>frmRoomEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoomSys\frmRoomList.resx">
+      <DependentUpon>frmRoomList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoomSys\frmRoomMain.resx">
+      <DependentUpon>frmRoomMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoomSys\frmScheduleEditor.resx">
+      <DependentUpon>frmScheduleEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoomSys\frmSurgery.resx">
+      <DependentUpon>frmSurgery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScheduleSys\View\FrmClinic.resx">
+      <DependentUpon>FrmClinic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScheduleSys\View\FrmClinicInfoEditor.resx">
+      <DependentUpon>FrmClinicInfoEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScheduleSys\View\FrmClinicNurseSechedule.resx">
+      <DependentUpon>FrmClinicNurseSechedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScheduleSys\View\FrmClinicScheduleEditor.resx">
+      <DependentUpon>FrmClinicScheduleEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScheduleSys\View\FrmDrSchedule.resx">
+      <DependentUpon>FrmDrSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShopSys\UserControl\userControlAddDecrease.resx">
+      <DependentUpon>userControlAddDecrease.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShopSys\UserControl\userControlComboBox.resx">
+      <DependentUpon>userControlComboBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShopSys\UserControl\userControlCoupon.resx">
+      <DependentUpon>userControlCoupon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShopSys\UserControl\userControlDateTimePicker.resx">
+      <DependentUpon>userControlDateTimePicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShopSys\UserControl\userControlProduct.resx">
+      <DependentUpon>userControlProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShopSys\UserControl\userControlSelectCouponCategoryHeader.resx">
+      <DependentUpon>userControlSelectCouponCategoryHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShopSys\UserControl\userControlText.resx">
+      <DependentUpon>userControlText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShopSys\View\frmEmpCoupEditor.resx">
+      <DependentUpon>frmEmpCoupEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShopSys\View\frmEmpProdCoupOrder.resx">
+      <DependentUpon>frmEmpProdCoupOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShopSys\View\frmEmpProdEditor.resx">
+      <DependentUpon>frmEmpProdEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShopSys\View\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShopSys\View\frmMbrCartEditor.resx">
+      <DependentUpon>frmMbrCartEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShopSys\View\frmMbrCheckBill.resx">
+      <DependentUpon>frmMbrCheckBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShopSys\View\frmMbrCoupon.resx">
+      <DependentUpon>frmMbrCoupon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShopSys\View\frmMbrCouponSelector.resx">
+      <DependentUpon>frmMbrCouponSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShopSys\View\frmMbrOrder.resx">
+      <DependentUpon>frmMbrOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShopSys\View\frmMbrShop.resx">
+      <DependentUpon>frmMbrShop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShopSys\View\frmMsg.resx">
+      <DependentUpon>frmMsg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="ClinicSys.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ClinicSys.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ClinicSys.edmx.diagram">
+      <DependentUpon>ClinicSys.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\帳戶管理.png" />
+    <None Include="Resources\會員中心.png" />
+    <None Include="Resources\TXTpatient_180_64.png" />
+    <None Include="Resources\TXTclinic_180_64.png" />
+    <None Include="Resources\screen_64x.png" />
+    <None Include="Resources\refresh_16px.png" />
+    <None Include="Resources\patient_64px.png" />
+    <None Include="Resources\logoBig.png" />
+    <None Include="Resources\edit_48px.png" />
+    <None Include="Resources\edit_24px.png" />
+    <None Include="Resources\deletex_16px.png" />
+    <None Include="Resources\delete_32px.png" />
+    <None Include="Resources\clinic_64px.png" />
+    <None Include="Resources\check_32px.png" />
+    <None Include="Resources\check_16px.png" />
+    <None Include="Resources\card_64px.png" />
+    <None Include="Resources\call_64px.png" />
+    <None Include="Resources\calendar_48px.png" />
+    <None Include="Resources\append_128px.png" />
+    <None Include="Resources\append_48px.png" />
+    <None Include="Resources\addPanel_48px.png" />
+    <None Include="Resources\addPanel_24px.png" />
+    <None Include="Resources\add_48px.png" />
+    <None Include="Resources\8設施管理.png" />
+    <None Include="Resources\7婦幼商城.png" />
+    <None Include="Resources\6藥師系統.png" />
+    <None Include="Resources\5病例系統.png" />
+    <None Include="Resources\4排班系統.png" />
+    <None Include="Resources\3掛號系統.png" />
+    <None Include="Resources\2差勤管理.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClinicSys.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ClinicSys.edmx</DependentUpon>
+      <LastGenOutput>ClinicSys.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ClinicSys.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ClinicSys.edmx</DependentUpon>
+      <LastGenOutput>ClinicSys.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
