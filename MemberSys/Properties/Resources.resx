@@ -202,10 +202,52 @@
   <data name="_8設施管理" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\8設施管理.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="一" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\一.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="七" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\七.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="三" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\三.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="九" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\九.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="二" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\二.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="五" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\五.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="八" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\八.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="六" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\六.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="十" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\十.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="四" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\四.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="報到失敗" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\報到失敗.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="報到成功" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\報到成功.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="帳戶管理" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\帳戶管理.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="會員中心" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\會員中心.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="號" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\號.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="零" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\零.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

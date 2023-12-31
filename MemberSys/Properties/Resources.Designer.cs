@@ -341,6 +341,114 @@ namespace MemberSys.Properties {
         }
         
         /// <summary>
+        ///   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream 一 {
+            get {
+                return ResourceManager.GetStream("一", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream 七 {
+            get {
+                return ResourceManager.GetStream("七", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream 三 {
+            get {
+                return ResourceManager.GetStream("三", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream 九 {
+            get {
+                return ResourceManager.GetStream("九", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream 二 {
+            get {
+                return ResourceManager.GetStream("二", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream 五 {
+            get {
+                return ResourceManager.GetStream("五", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream 八 {
+            get {
+                return ResourceManager.GetStream("八", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream 六 {
+            get {
+                return ResourceManager.GetStream("六", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream 十 {
+            get {
+                return ResourceManager.GetStream("十", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream 四 {
+            get {
+                return ResourceManager.GetStream("四", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream 報到失敗 {
+            get {
+                return ResourceManager.GetStream("報到失敗", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream 報到成功 {
+            get {
+                return ResourceManager.GetStream("報到成功", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
         internal static System.Drawing.Bitmap 帳戶管理 {
@@ -357,6 +465,24 @@ namespace MemberSys.Properties {
             get {
                 object obj = ResourceManager.GetObject("會員中心", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream 號 {
+            get {
+                return ResourceManager.GetStream("號", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream 零 {
+            get {
+                return ResourceManager.GetStream("零", resourceCulture);
             }
         }
     }

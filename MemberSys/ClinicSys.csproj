@@ -1037,6 +1037,20 @@
       <DependentUpon>ClinicSys.edmx</DependentUpon>
       <LastGenOutput>ClinicSys.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\零.wav" />
+    <None Include="Resources\號.wav" />
+    <None Include="Resources\報到成功.wav" />
+    <None Include="Resources\報到失敗.wav" />
+    <None Include="Resources\四.wav" />
+    <None Include="Resources\六.wav" />
+    <None Include="Resources\五.wav" />
+    <None Include="Resources\三.wav" />
+    <None Include="Resources\十.wav" />
+    <None Include="Resources\八.wav" />
+    <None Include="Resources\二.wav" />
+    <None Include="Resources\九.wav" />
+    <None Include="Resources\七.wav" />
+    <None Include="Resources\一.wav" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

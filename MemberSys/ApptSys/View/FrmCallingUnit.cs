@@ -15,6 +15,7 @@ using System.Xml.Linq;
 using PCSC.Monitoring;
 using PCSC;
 using static System.Windows.Forms.AxHost;
+using System.Media;
 
 namespace MSIT155_E_MID.ApptSystem.View
 {
@@ -302,6 +303,7 @@ namespace MSIT155_E_MID.ApptSystem.View
         {
             if (!table.AsEnumerable().Any(row => row.Field<string>("身分證字號") == info.cID))
             {
+                new SoundPlayer(MemberSys.Properties.Resources.報到失敗).Play();
                 MessageBox.Show("報到失敗，沒有掛號紀錄");
                 return;
             }
@@ -311,32 +313,31 @@ namespace MSIT155_E_MID.ApptSystem.View
             switch (beforeState)
             {
                 case 8:
-                    if ((int)((DataTable)dataGridView1.DataSource).Rows[0]["診號"] > clinicNum
-                        && (int)((DataTable)dataGridView1.DataSource).Rows[0]["stateID"] != 8)
+                    if ((int)((DataTable)dataGridView1.DataSource).Rows[0]["診號"] > clinicNum)
                     {
-                        changePatientStatus(4, info.cID); //過號
+                        changePatientStatus(4, info.cID, clinicNum); //過號
                     }
-                    else if ((int)((DataTable)dataGridView1.DataSource).Rows[0]["診號"] < clinicNum
-                        && (int)((DataTable)dataGridView1.DataSource).Rows[0]["stateID"] != 8)
+                    else if ((int)((DataTable)dataGridView1.DataSource).Rows[0]["診號"] < clinicNum)
                     {
-                        changePatientStatus(3, info.cID); //已報到
+                        changePatientStatus(3, info.cID, clinicNum); //已報到
                     }
                     break;
                 case 5:
-                    changePatientStatus(2, info.cID);
+                    changePatientStatus(2, info.cID, clinicNum);
                     break;
                 case 6:
-                    changePatientStatus(4, info.cID);
+                    changePatientStatus(4, info.cID, clinicNum);
                     break;
 
                 default:
+                    new SoundPlayer(MemberSys.Properties.Resources.報到失敗).Play();
                     MessageBox.Show("報到失敗");
                     break;
             }
 
         }
 
-        private void changePatientStatus(int state, string nationalID)
+        private void changePatientStatus(int state, string nationalID, int clinicnum)
         {
             int docID = this.docID;
             string today = "2023/12/01";
@@ -344,8 +345,42 @@ namespace MSIT155_E_MID.ApptSystem.View
             string patientNationalID = nationalID;
 
             new CApptCallingUnit_Model().UpdatePatientState(docID, today, timeshift, patientNationalID, state);
+            checkInPlaySound(clinicnum);
             MessageBox.Show("報到成功，可以抽離健保卡");
             cbxSelectTimeShift_SelectedIndexChanged(new object(), new EventArgs());
+        }
+        private void checkInPlaySound(int clinicNum)
+        {
+            string xx = clinicNum.ToString().Substring(0, 1);
+            string x = clinicNum.ToString().Substring(1, 1);
+            switch (xx)
+            {
+                case "9": new SoundPlayer(MemberSys.Properties.Resources.九).PlaySync(); new SoundPlayer(MemberSys.Properties.Resources.十).PlaySync(); break;
+                case "8": new SoundPlayer(MemberSys.Properties.Resources.八).PlaySync(); new SoundPlayer(MemberSys.Properties.Resources.十).PlaySync(); break;
+                case "7": new SoundPlayer(MemberSys.Properties.Resources.七).PlaySync(); new SoundPlayer(MemberSys.Properties.Resources.十).PlaySync(); break;
+                case "6": new SoundPlayer(MemberSys.Properties.Resources.六).PlaySync(); new SoundPlayer(MemberSys.Properties.Resources.十).PlaySync(); break;
+                case "5": new SoundPlayer(MemberSys.Properties.Resources.五).PlaySync(); new SoundPlayer(MemberSys.Properties.Resources.十).PlaySync(); break;
+                case "4": new SoundPlayer(MemberSys.Properties.Resources.四).PlaySync(); new SoundPlayer(MemberSys.Properties.Resources.十).PlaySync(); break;
+                case "3": new SoundPlayer(MemberSys.Properties.Resources.三).PlaySync(); new SoundPlayer(MemberSys.Properties.Resources.十).PlaySync(); break;
+                case "2": new SoundPlayer(MemberSys.Properties.Resources.二).PlaySync(); new SoundPlayer(MemberSys.Properties.Resources.十).PlaySync(); break;
+                case "1": new SoundPlayer(MemberSys.Properties.Resources.十).PlaySync(); break;
+                case "0": break;
+            }
+            switch (x)
+            {
+                case "9": new SoundPlayer(MemberSys.Properties.Resources.九).PlaySync(); break;
+                case "8": new SoundPlayer(MemberSys.Properties.Resources.八).PlaySync(); break;
+                case "7": new SoundPlayer(MemberSys.Properties.Resources.七).PlaySync(); break;
+                case "6": new SoundPlayer(MemberSys.Properties.Resources.六).PlaySync(); break;
+                case "5": new SoundPlayer(MemberSys.Properties.Resources.五).PlaySync(); break;
+                case "4": new SoundPlayer(MemberSys.Properties.Resources.四).PlaySync(); break;
+                case "3": new SoundPlayer(MemberSys.Properties.Resources.三).PlaySync(); break;
+                case "2": new SoundPlayer(MemberSys.Properties.Resources.二).PlaySync(); break;
+                case "1": new SoundPlayer(MemberSys.Properties.Resources.一).PlaySync(); break;
+                case "0": break;
+            }
+            new SoundPlayer(MemberSys.Properties.Resources.號).PlaySync();
+            new SoundPlayer(MemberSys.Properties.Resources.報到成功).Play();
         }
         private EntitySmartCardInfoType GetCardInfo(string cReader)
         {

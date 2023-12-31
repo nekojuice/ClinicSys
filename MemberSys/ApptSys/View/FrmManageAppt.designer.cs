@@ -996,7 +996,7 @@
             // 
             this.toolStripModify2.Enabled = false;
             this.toolStripModify2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.toolStripModify2.Image = global::  MemberSys.Properties.Resources.edit_24px;
+            this.toolStripModify2.Image = global::MemberSys.Properties.Resources.edit_24px;
             this.toolStripModify2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripModify2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripModify2.Name = "toolStripModify2";
