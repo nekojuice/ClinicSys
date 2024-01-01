@@ -39,6 +39,9 @@
             this.審核批准ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripDropDownButtonAppt = new System.Windows.Forms.ToolStripDropDownButton();
+            this.掛號管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.叫號系統ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.號碼廣播窗ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripDropDownButtonSchedule = new System.Windows.Forms.ToolStripDropDownButton();
             this.門診時段維護ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,9 +74,6 @@
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabelforshowwhologin = new System.Windows.Forms.ToolStripLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.掛號管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.叫號系統ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.號碼廣播窗ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -153,6 +153,27 @@
             this.toolStripDropDownButtonAppt.Name = "toolStripDropDownButtonAppt";
             this.toolStripDropDownButtonAppt.Size = new System.Drawing.Size(93, 84);
             this.toolStripDropDownButtonAppt.Text = "會員中心";
+            // 
+            // 掛號管理ToolStripMenuItem
+            // 
+            this.掛號管理ToolStripMenuItem.Name = "掛號管理ToolStripMenuItem";
+            this.掛號管理ToolStripMenuItem.Size = new System.Drawing.Size(189, 30);
+            this.掛號管理ToolStripMenuItem.Text = "掛號管理";
+            this.掛號管理ToolStripMenuItem.Click += new System.EventHandler(this.掛號管理ToolStripMenuItem_Click);
+            // 
+            // 叫號系統ToolStripMenuItem
+            // 
+            this.叫號系統ToolStripMenuItem.Name = "叫號系統ToolStripMenuItem";
+            this.叫號系統ToolStripMenuItem.Size = new System.Drawing.Size(189, 30);
+            this.叫號系統ToolStripMenuItem.Text = "叫號系統";
+            this.叫號系統ToolStripMenuItem.Click += new System.EventHandler(this.叫號系統ToolStripMenuItem_Click);
+            // 
+            // 號碼廣播窗ToolStripMenuItem
+            // 
+            this.號碼廣播窗ToolStripMenuItem.Name = "號碼廣播窗ToolStripMenuItem";
+            this.號碼廣播窗ToolStripMenuItem.Size = new System.Drawing.Size(189, 30);
+            this.號碼廣播窗ToolStripMenuItem.Text = "號碼廣播窗";
+            this.號碼廣播窗ToolStripMenuItem.Click += new System.EventHandler(this.號碼廣播窗ToolStripMenuItem_Click);
             // 
             // toolStripLabel3
             // 
@@ -354,7 +375,7 @@
             this.toolStripLabel9});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1427, 87);
+            this.toolStrip1.Size = new System.Drawing.Size(1456, 87);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -429,7 +450,7 @@
             this.toolStripLabelforshowwhologin});
             this.toolStrip2.Location = new System.Drawing.Point(0, 780);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(1427, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(1456, 25);
             this.toolStrip2.TabIndex = 2;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -441,33 +462,12 @@
             this.toolStripLabelforshowwhologin.Size = new System.Drawing.Size(317, 22);
             this.toolStripLabelforshowwhologin.Text = "登入者: Admin  |  登入時間:00時30分50秒  |";
             // 
-            // 掛號管理ToolStripMenuItem
-            // 
-            this.掛號管理ToolStripMenuItem.Name = "掛號管理ToolStripMenuItem";
-            this.掛號管理ToolStripMenuItem.Size = new System.Drawing.Size(189, 30);
-            this.掛號管理ToolStripMenuItem.Text = "掛號管理";
-            this.掛號管理ToolStripMenuItem.Click += new System.EventHandler(this.掛號管理ToolStripMenuItem_Click);
-            // 
-            // 叫號系統ToolStripMenuItem
-            // 
-            this.叫號系統ToolStripMenuItem.Name = "叫號系統ToolStripMenuItem";
-            this.叫號系統ToolStripMenuItem.Size = new System.Drawing.Size(189, 30);
-            this.叫號系統ToolStripMenuItem.Text = "叫號系統";
-            this.叫號系統ToolStripMenuItem.Click += new System.EventHandler(this.叫號系統ToolStripMenuItem_Click);
-            // 
-            // 號碼廣播窗ToolStripMenuItem
-            // 
-            this.號碼廣播窗ToolStripMenuItem.Name = "號碼廣播窗ToolStripMenuItem";
-            this.號碼廣播窗ToolStripMenuItem.Size = new System.Drawing.Size(189, 30);
-            this.號碼廣播窗ToolStripMenuItem.Text = "號碼廣播窗";
-            this.號碼廣播窗ToolStripMenuItem.Click += new System.EventHandler(this.號碼廣播窗ToolStripMenuItem_Click);
-            // 
             // FrmParent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BurlyWood;
-            this.ClientSize = new System.Drawing.Size(1427, 805);
+            this.ClientSize = new System.Drawing.Size(1456, 805);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.toolStrip1);
             this.IsMdiContainer = true;

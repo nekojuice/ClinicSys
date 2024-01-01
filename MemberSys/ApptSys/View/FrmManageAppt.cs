@@ -355,6 +355,7 @@ namespace MSIT155_E_MID.ApptSystem.View
             checkCardInsert();
             checkApptDataSelected();
             checkSearchDataSelected();
+            btnGoCheckIn.PerformClick();
         }
         public void SmartCardRemove()
         {

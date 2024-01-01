@@ -50,6 +50,7 @@ namespace MemberSys
 
                 e.Cancel = true;
             else
+                _isClosed = true;
                 return;
 
         }
@@ -107,6 +108,14 @@ namespace MemberSys
             }
             //不寫
             return msg;
+        }
+
+        private void fbStaffNum_keydown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1.PerformClick();
+            }
         }
 
         //private void FrmLogin_FormClosed(object sender, FormClosedEventArgs e)

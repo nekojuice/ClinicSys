@@ -36,6 +36,13 @@ namespace MemberSys
             set { textBox1.Text = value; }
         }
 
-
+        public event KeyEventHandler keydown;
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (this.keydown != null)
+            {
+                this.keydown(this,e);
+            }
+        }
     }
 }
