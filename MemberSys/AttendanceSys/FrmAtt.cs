@@ -53,9 +53,10 @@ namespace ClinicSys
 
         private void FrmAtt_Load(object sender, EventArgs e)
         {
-
+            uiDatePicker1.Value = DateTime.Today;
+            DisplayEmployeeAttendance(uiDatePicker1.Value);
             DisplayEmployeeNAME();
-            uiDatePicker1.Value = DateTime.Now;
+            
 
         }
         private bool chceckalready(string P)
@@ -167,6 +168,7 @@ namespace ClinicSys
             else
 
                 MessageBox.Show("已經打過卡");
+            DisplayEmployeeAttendance(uiDatePicker1.Value);
             CstyleAtt.resetGridRowColor(dataGridView1);
         }
 
@@ -177,6 +179,7 @@ namespace ClinicSys
             else
 
                 MessageBox.Show("已經簽退完");
+            DisplayEmployeeAttendance(uiDatePicker1.Value);
             CstyleAtt.resetGridRowColor(dataGridView1);
 
         }

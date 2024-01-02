@@ -484,5 +484,13 @@ namespace ClinicSys
             }
             else { screen.Focus(); }
         }
+
+        private void toolStripDropDownButtonAttendence_Click(object sender, EventArgs e)
+        {
+            if(_EMPLOYEE.Staff_Number!=1010)
+                審核批准ToolStripMenuItem.Visible = false;
+            else
+                審核批准ToolStripMenuItem.Visible = true;
+        }
     }
 }

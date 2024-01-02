@@ -105,6 +105,7 @@
             this.toolStripDropDownButtonAttendence.Name = "toolStripDropDownButtonAttendence";
             this.toolStripDropDownButtonAttendence.Size = new System.Drawing.Size(93, 84);
             this.toolStripDropDownButtonAttendence.Text = "會員中心";
+            this.toolStripDropDownButtonAttendence.Click += new System.EventHandler(this.toolStripDropDownButtonAttendence_Click);
             // 
             // 上下班打卡ToolStripMenuItem
             // 

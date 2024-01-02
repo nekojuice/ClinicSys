@@ -157,12 +157,14 @@ namespace ClinicSys
         private void xButton3_Click(object sender, EventArgs e)
         {
             approve("已審核");
+            DisplayCheck();      
             CstyleAtt.resetGridRowColor(dataGridView1);
         }
 
         private void xButton4_Click(object sender, EventArgs e)
         {
             approve("已撤回");
+            DisplayCheck();
             CstyleAtt.resetGridRowColor(dataGridView1);
         }
 
