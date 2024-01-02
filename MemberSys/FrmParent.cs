@@ -23,7 +23,7 @@ namespace ClinicSys
     public partial class FrmParent : Form
     {
         public static Member_EmployeeList _EMPLOYEE;
-        public static Member_MemberList _MEMBER;
+        public static Member_MemberList _MEMBER= new Member_MemberList { Member_ID =1};
 
         FrmLogin frmLoginEmp;
         FrmMemberLogin frmLoginMem;
@@ -262,64 +262,47 @@ namespace ClinicSys
         }
 
         //7.購物商城
-        private frmEmpProdCoupOrder _frmempProdCoupOrder;
-        private void toolStripMenuItem12_Click(object sender, EventArgs e)
-        {
-            if (_frmempProdCoupOrder == null || _frmempProdCoupOrder.IsDisposed)
-            {
-                _frmempProdCoupOrder = new frmEmpProdCoupOrder();
-                _frmempProdCoupOrder.MdiParent = this;
-                _frmempProdCoupOrder.WindowState = FormWindowState.Maximized;
-                _frmempProdCoupOrder.Show();
-                _frmempProdCoupOrder.Activate();
-            }
-            else _frmempProdCoupOrder.Focus();
-        }
 
         private void 購物商城ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Activate_fProducts();
-        }
-        private frmMbrShop _frmMbrShop;
-        public void Activate_fProducts()
-        {
-            if (_frmMbrShop == null || _frmMbrShop.IsDisposed)
-            {
-                _frmMbrShop = new frmMbrShop();
-                _frmMbrShop.MdiParent = this;
-                _frmMbrShop.WindowState = FormWindowState.Maximized;
-                _frmMbrShop.Show();
-                _frmMbrShop.Activate();
-            }
-            else _frmMbrShop.Focus();
-        }
-        private frmMbrCoupon _frmMbrCoupon;
-        private void 優惠券ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (_frmMbrCoupon == null || _frmMbrCoupon.IsDisposed)
-            {
-                _frmMbrCoupon = new frmMbrCoupon();
-                _frmMbrCoupon.MdiParent = this;
-                _frmMbrCoupon.WindowState = FormWindowState.Maximized;
-                _frmMbrCoupon.Show();
-                _frmMbrCoupon.Activate();
-            }
-            else _frmMbrCoupon.Focus();
-        }
-        private frmMbrOrder _frmMbrOrder;
-        private void 我的訂單ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (_frmMbrOrder == null || _frmMbrOrder.IsDisposed)
-            {
-                _frmMbrOrder = new frmMbrOrder();
-                _frmMbrOrder.MdiParent = this;
-                _frmMbrOrder.WindowState = FormWindowState.Maximized;
-                _frmMbrOrder.Show();
-                _frmMbrOrder.Activate();
-            }
-            else _frmMbrOrder.Focus();
+            closeAllChildFrms();
+            frmMbrShop frm = new frmMbrShop();
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
         }
 
+        private void 優惠券ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            closeAllChildFrms();
+            frmMbrCoupon frm = new frmMbrCoupon();
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void 我的訂單ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            closeAllChildFrms();
+            frmMbrOrder fOrders = new frmMbrOrder();
+            fOrders.MdiParent = this;
+            fOrders.WindowState = FormWindowState.Maximized;
+            fOrders.Show();
+        }
+
+        private void toolStripMenuItem12_Click(object sender, EventArgs e)
+        {
+            closeAllChildFrms();
+            frmEmpProdCoupOrder frm = new frmEmpProdCoupOrder();
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+        private void closeAllChildFrms()
+        {
+            foreach (Form f in this.MdiChildren.ToList())
+                f.Close();
+        }
         //8.設施管理
         private frmRoomMain _frmroomnain;
         private void toolStripDropDownButtonRoom_Click(object sender, EventArgs e)

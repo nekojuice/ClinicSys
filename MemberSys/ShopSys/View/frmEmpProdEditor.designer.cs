@@ -50,11 +50,11 @@ namespace ClinicSys
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.LightCoral;
-            this.label1.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(654, 176);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 24);
+            this.label1.Size = new System.Drawing.Size(109, 30);
             this.label1.TabIndex = 6;
             this.label1.Text = "商品照片";
             // 
@@ -186,7 +186,7 @@ namespace ClinicSys
             this.userControlComboBoxCategory.title = "商品種類";
             this.userControlComboBoxCategory.value = "";
             // 
-            // frmProductEditor
+            // frmEmpProdEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -203,7 +203,7 @@ namespace ClinicSys
             this.Controls.Add(this.userControlDateTimePickerEndDate);
             this.Controls.Add(this.userControlDateTimePickerStartDate);
             this.Controls.Add(this.userControlComboBoxCategory);
-            this.Name = "frmProductEditor";
+            this.Name = "frmEmpProdEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmProdcutEditor";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

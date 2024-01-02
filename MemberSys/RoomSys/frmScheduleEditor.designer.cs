@@ -33,6 +33,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.fbNurseId = new prjComponentDemo.FieldBox();
             this.fbDoctorId = new prjComponentDemo.FieldBox();
             this.fbEndDate = new prjComponentDemo.FieldBox();
@@ -40,11 +45,6 @@
             this.fbMemberId = new prjComponentDemo.FieldBox();
             this.fbRoomId = new prjComponentDemo.FieldBox();
             this.fbId = new prjComponentDemo.FieldBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button2
@@ -88,9 +88,9 @@
             this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(180, 372);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 24);
+            this.label1.Size = new System.Drawing.Size(152, 24);
             this.label1.TabIndex = 21;
-            this.label1.Text = "(EX:20240101)";
+            this.label1.Text = "(EX:2024/01/01)";
             // 
             // label3
             // 
@@ -99,9 +99,64 @@
             this.label3.ForeColor = System.Drawing.Color.Red;
             this.label3.Location = new System.Drawing.Point(180, 478);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(136, 24);
+            this.label3.Size = new System.Drawing.Size(152, 24);
             this.label3.TabIndex = 21;
-            this.label3.Text = "(EX:20240101)";
+            this.label3.Text = "(EX:2024/01/01)";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(114, 15);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(57, 24);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "*勿填";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(90, 143);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(19, 24);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "*";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(90, 244);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(19, 24);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "*";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(443, 15);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(19, 24);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "*";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(443, 143);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(19, 24);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "*";
             // 
             // fbNurseId
             // 
@@ -109,7 +164,7 @@
             this.fbNurseId.fieldRequired = false;
             this.fbNurseId.fieldValue = "";
             this.fbNurseId.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.fbNurseId.Location = new System.Drawing.Point(352, 15);
+            this.fbNurseId.Location = new System.Drawing.Point(345, 143);
             this.fbNurseId.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.fbNurseId.Name = "fbNurseId";
             this.fbNurseId.passwordMask = '\0';
@@ -122,7 +177,7 @@
             this.fbDoctorId.fieldRequired = false;
             this.fbDoctorId.fieldValue = "";
             this.fbDoctorId.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.fbDoctorId.Location = new System.Drawing.Point(352, 143);
+            this.fbDoctorId.Location = new System.Drawing.Point(345, 15);
             this.fbDoctorId.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.fbDoctorId.Name = "fbDoctorId";
             this.fbDoctorId.passwordMask = '\0';
@@ -193,61 +248,6 @@
             this.fbId.passwordMask = '\0';
             this.fbId.Size = new System.Drawing.Size(318, 116);
             this.fbId.TabIndex = 0;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(114, 15);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 24);
-            this.label4.TabIndex = 22;
-            this.label4.Text = "*勿填";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(90, 143);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(19, 24);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "*";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(90, 244);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(19, 24);
-            this.label6.TabIndex = 22;
-            this.label6.Text = "*";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(443, 15);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(19, 24);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "*";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(443, 143);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(19, 24);
-            this.label8.TabIndex = 22;
-            this.label8.Text = "*";
             // 
             // frmScheduleEditor
             // 

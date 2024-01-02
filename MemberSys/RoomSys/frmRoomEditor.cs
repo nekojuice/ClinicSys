@@ -82,7 +82,7 @@ namespace prjRoom
             if (string.IsNullOrEmpty(fbName.fieldValue))
                 msg += "\r\n房間名稱是必填欄位不可空白";
             if (string.IsNullOrEmpty(fbRoomtype.fieldValue))
-                msg += "\r\n房間編號是必填欄位，不可空白";
+               msg += "\r\n房間編號是必填欄位，不可空白";
             if (!string.IsNullOrEmpty(fbRoomtype.fieldValue) &&
              !CNumberUtility.isNumber(fbRoomtype.fieldValue))
                 msg += "\r\n房間編號必須輸入數字";

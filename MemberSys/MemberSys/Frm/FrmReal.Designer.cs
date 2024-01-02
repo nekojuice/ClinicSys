@@ -34,6 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReal));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -41,7 +42,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReal));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -74,9 +74,14 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.panelfill = new System.Windows.Forms.Panel();
+            this.pictureBoxEmp = new System.Windows.Forms.PictureBox();
+            this.button7 = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button20 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
+            this.button18 = new System.Windows.Forms.Button();
+            this.button19 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -101,11 +106,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.button7 = new System.Windows.Forms.Button();
-            this.pictureBoxEmp = new System.Windows.Forms.PictureBox();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
             this.clinicSysDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -126,6 +126,7 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.panelfill.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmp)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCareMem)).BeginInit();
@@ -139,7 +140,6 @@
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFeed)).BeginInit();
             this.panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicSysDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -202,14 +202,17 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.ItemSize = new System.Drawing.Size(0, 1);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1201, 818);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -217,10 +220,10 @@
             this.tabPage1.Controls.Add(this.dataGridView_Member);
             this.tabPage1.Controls.Add(this.panelMembertotal);
             this.tabPage1.Controls.Add(this.panelMemberTop);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 5);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1193, 792);
+            this.tabPage1.Size = new System.Drawing.Size(1193, 809);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -252,7 +255,7 @@
             this.dataGridView_Member.Name = "dataGridView_Member";
             this.dataGridView_Member.RowHeadersWidth = 51;
             this.dataGridView_Member.RowTemplate.Height = 24;
-            this.dataGridView_Member.Size = new System.Drawing.Size(1187, 629);
+            this.dataGridView_Member.Size = new System.Drawing.Size(1187, 646);
             this.dataGridView_Member.TabIndex = 32;
             this.dataGridView_Member.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView_Member.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView_Member_DataBindingComplete);
@@ -261,7 +264,7 @@
             // 
             this.panelMembertotal.Controls.Add(this.lblMemTotal);
             this.panelMembertotal.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelMembertotal.Location = new System.Drawing.Point(3, 743);
+            this.panelMembertotal.Location = new System.Drawing.Point(3, 760);
             this.panelMembertotal.Margin = new System.Windows.Forms.Padding(2);
             this.panelMembertotal.Name = "panelMembertotal";
             this.panelMembertotal.Size = new System.Drawing.Size(1187, 46);
@@ -373,10 +376,10 @@
             this.tabPage2.Controls.Add(this.dataGridViewEmp);
             this.tabPage2.Controls.Add(this.panelEmpTop);
             this.tabPage2.Controls.Add(this.panelEmpTotal);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1193, 792);
+            this.tabPage2.Size = new System.Drawing.Size(1193, 789);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -400,7 +403,7 @@
             this.dataGridViewEmp.Name = "dataGridViewEmp";
             this.dataGridViewEmp.RowHeadersWidth = 51;
             this.dataGridViewEmp.RowTemplate.Height = 24;
-            this.dataGridViewEmp.Size = new System.Drawing.Size(1187, 599);
+            this.dataGridViewEmp.Size = new System.Drawing.Size(1187, 596);
             this.dataGridViewEmp.TabIndex = 34;
             this.dataGridViewEmp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEmp_CellClick);
             this.dataGridViewEmp.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewEmp_DataBindingComplete);
@@ -502,7 +505,7 @@
             // 
             this.panelEmpTotal.Controls.Add(this.lblEmpTotalDisplay);
             this.panelEmpTotal.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelEmpTotal.Location = new System.Drawing.Point(3, 743);
+            this.panelEmpTotal.Location = new System.Drawing.Point(3, 740);
             this.panelEmpTotal.Margin = new System.Windows.Forms.Padding(2);
             this.panelEmpTotal.Name = "panelEmpTotal";
             this.panelEmpTotal.Size = new System.Drawing.Size(1187, 46);
@@ -523,10 +526,10 @@
             // 
             this.tabPage3.Controls.Add(this.splitContainer2);
             this.tabPage3.Controls.Add(this.label5);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 5);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1193, 792);
+            this.tabPage3.Size = new System.Drawing.Size(1193, 809);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -547,7 +550,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.panel4);
-            this.splitContainer2.Size = new System.Drawing.Size(1187, 712);
+            this.splitContainer2.Size = new System.Drawing.Size(1187, 729);
             this.splitContainer2.SplitterDistance = 354;
             this.splitContainer2.SplitterWidth = 3;
             this.splitContainer2.TabIndex = 8;
@@ -566,9 +569,34 @@
             this.panelfill.Location = new System.Drawing.Point(0, 191);
             this.panelfill.Margin = new System.Windows.Forms.Padding(2);
             this.panelfill.Name = "panelfill";
-            this.panelfill.Size = new System.Drawing.Size(352, 519);
+            this.panelfill.Size = new System.Drawing.Size(352, 536);
             this.panelfill.TabIndex = 11;
             this.panelfill.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
+            // 
+            // pictureBoxEmp
+            // 
+            this.pictureBoxEmp.BackColor = System.Drawing.Color.White;
+            this.pictureBoxEmp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxEmp.BackgroundImage")));
+            this.pictureBoxEmp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBoxEmp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxEmp.Location = new System.Drawing.Point(42, 259);
+            this.pictureBoxEmp.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxEmp.Name = "pictureBoxEmp";
+            this.pictureBoxEmp.Size = new System.Drawing.Size(161, 189);
+            this.pictureBoxEmp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxEmp.TabIndex = 71;
+            this.pictureBoxEmp.TabStop = false;
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.Firebrick;
+            this.button7.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button7.Location = new System.Drawing.Point(42, 472);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(115, 42);
+            this.button7.TabIndex = 70;
+            this.button7.Text = "Browse";
+            this.button7.UseVisualStyleBackColor = false;
             // 
             // panel7
             // 
@@ -600,6 +628,39 @@
             this.button20.Text = "搜尋";
             this.button20.UseVisualStyleBackColor = false;
             this.button20.Click += new System.EventHandler(this.btnCareSearch_Click);
+            // 
+            // button17
+            // 
+            this.button17.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button17.Image = ((System.Drawing.Image)(resources.GetObject("button17.Image")));
+            this.button17.Location = new System.Drawing.Point(241, 411);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(83, 65);
+            this.button17.TabIndex = 41;
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.btnSleep_Click);
+            // 
+            // button18
+            // 
+            this.button18.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button18.Image = ((System.Drawing.Image)(resources.GetObject("button18.Image")));
+            this.button18.Location = new System.Drawing.Point(241, 330);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(83, 65);
+            this.button18.TabIndex = 40;
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.btnPoo_Click);
+            // 
+            // button19
+            // 
+            this.button19.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button19.Image = ((System.Drawing.Image)(resources.GetObject("button19.Image")));
+            this.button19.Location = new System.Drawing.Point(241, 259);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(83, 65);
+            this.button19.TabIndex = 39;
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.btnFeedNew_Click);
             // 
             // label9
             // 
@@ -680,7 +741,7 @@
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(828, 710);
+            this.panel4.Size = new System.Drawing.Size(828, 727);
             this.panel4.TabIndex = 0;
             // 
             // panel6
@@ -690,7 +751,7 @@
             this.panel6.Location = new System.Drawing.Point(0, 59);
             this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(828, 651);
+            this.panel6.Size = new System.Drawing.Size(828, 668);
             this.panel6.TabIndex = 11;
             // 
             // panel8
@@ -705,20 +766,21 @@
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(828, 651);
+            this.panel8.Size = new System.Drawing.Size(828, 668);
             this.panel8.TabIndex = 1;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.dataGridViewPoo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(358, 121);
+            this.panel1.Location = new System.Drawing.Point(375, 121);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(160, 530);
+            this.panel1.Size = new System.Drawing.Size(133, 547);
             this.panel1.TabIndex = 24;
             // 
             // dataGridViewPoo
             // 
+            this.dataGridViewPoo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCellsExceptHeader;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -740,28 +802,30 @@
             this.dataGridViewPoo.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewPoo.Name = "dataGridViewPoo";
             this.dataGridViewPoo.RowTemplate.Height = 24;
-            this.dataGridViewPoo.Size = new System.Drawing.Size(160, 530);
+            this.dataGridViewPoo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridViewPoo.Size = new System.Drawing.Size(133, 547);
             this.dataGridViewPoo.TabIndex = 25;
             // 
             // panelleftbar
             // 
             this.panelleftbar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelleftbar.Location = new System.Drawing.Point(518, 121);
+            this.panelleftbar.Location = new System.Drawing.Point(508, 121);
             this.panelleftbar.Name = "panelleftbar";
-            this.panelleftbar.Size = new System.Drawing.Size(10, 530);
+            this.panelleftbar.Size = new System.Drawing.Size(10, 547);
             this.panelleftbar.TabIndex = 23;
             // 
             // panelright
             // 
             this.panelright.Controls.Add(this.dataGridViewSleep);
             this.panelright.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelright.Location = new System.Drawing.Point(528, 121);
+            this.panelright.Location = new System.Drawing.Point(518, 121);
             this.panelright.Name = "panelright";
-            this.panelright.Size = new System.Drawing.Size(300, 530);
+            this.panelright.Size = new System.Drawing.Size(310, 547);
             this.panelright.TabIndex = 22;
             // 
             // dataGridViewSleep
             // 
+            this.dataGridViewSleep.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle10.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -783,15 +847,15 @@
             this.dataGridViewSleep.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewSleep.Name = "dataGridViewSleep";
             this.dataGridViewSleep.RowTemplate.Height = 24;
-            this.dataGridViewSleep.Size = new System.Drawing.Size(300, 530);
-            this.dataGridViewSleep.TabIndex = 10;
+            this.dataGridViewSleep.Size = new System.Drawing.Size(310, 547);
+            this.dataGridViewSleep.TabIndex = 11;
             // 
             // panelleft
             // 
             this.panelleft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelleft.Location = new System.Drawing.Point(348, 121);
+            this.panelleft.Location = new System.Drawing.Point(365, 121);
             this.panelleft.Name = "panelleft";
-            this.panelleft.Size = new System.Drawing.Size(10, 530);
+            this.panelleft.Size = new System.Drawing.Size(10, 547);
             this.panelleft.TabIndex = 21;
             // 
             // panel
@@ -801,11 +865,12 @@
             this.panel.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel.Location = new System.Drawing.Point(0, 121);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(348, 530);
+            this.panel.Size = new System.Drawing.Size(365, 547);
             this.panel.TabIndex = 20;
             // 
             // dataGridViewFeed
             // 
+            this.dataGridViewFeed.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridViewFeed.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
@@ -819,8 +884,8 @@
             this.dataGridViewFeed.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewFeed.Name = "dataGridViewFeed";
             this.dataGridViewFeed.RowTemplate.Height = 24;
-            this.dataGridViewFeed.Size = new System.Drawing.Size(346, 528);
-            this.dataGridViewFeed.TabIndex = 5;
+            this.dataGridViewFeed.Size = new System.Drawing.Size(363, 545);
+            this.dataGridViewFeed.TabIndex = 6;
             // 
             // panel10
             // 
@@ -909,64 +974,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.Firebrick;
-            this.button7.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button7.Location = new System.Drawing.Point(42, 472);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(115, 42);
-            this.button7.TabIndex = 70;
-            this.button7.Text = "Browse";
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // pictureBoxEmp
-            // 
-            this.pictureBoxEmp.BackColor = System.Drawing.Color.White;
-            this.pictureBoxEmp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxEmp.BackgroundImage")));
-            this.pictureBoxEmp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBoxEmp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxEmp.Location = new System.Drawing.Point(42, 259);
-            this.pictureBoxEmp.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBoxEmp.Name = "pictureBoxEmp";
-            this.pictureBoxEmp.Size = new System.Drawing.Size(161, 189);
-            this.pictureBoxEmp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxEmp.TabIndex = 71;
-            this.pictureBoxEmp.TabStop = false;
-            // 
-            // button17
-            // 
-            this.button17.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button17.Image = ((System.Drawing.Image)(resources.GetObject("button17.Image")));
-            this.button17.Location = new System.Drawing.Point(241, 411);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(83, 65);
-            this.button17.TabIndex = 41;
-            this.button17.UseVisualStyleBackColor = true;
-            this.button17.Click += new System.EventHandler(this.btnSleep_Click);
-            // 
-            // button18
-            // 
-            this.button18.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button18.Image = ((System.Drawing.Image)(resources.GetObject("button18.Image")));
-            this.button18.Location = new System.Drawing.Point(241, 330);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(83, 65);
-            this.button18.TabIndex = 40;
-            this.button18.UseVisualStyleBackColor = true;
-            this.button18.Click += new System.EventHandler(this.btnPoo_Click);
-            // 
-            // button19
-            // 
-            this.button19.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button19.Image = ((System.Drawing.Image)(resources.GetObject("button19.Image")));
-            this.button19.Location = new System.Drawing.Point(241, 259);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(83, 65);
-            this.button19.TabIndex = 39;
-            this.button19.UseVisualStyleBackColor = true;
-            this.button19.Click += new System.EventHandler(this.btnFeedNew_Click);
-            // 
             // FrmReal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1000,6 +1007,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             this.panelfill.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmp)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -1015,7 +1023,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFeed)).EndInit();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicSysDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -1081,12 +1088,12 @@
         private System.Windows.Forms.TextBox txtBoxMemSearch;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.DataGridView dataGridViewSleep;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridViewPoo;
-        private System.Windows.Forms.DataGridView dataGridViewFeed;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.PictureBox pictureBoxEmp;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.DataGridView dataGridViewPoo;
+        private System.Windows.Forms.DataGridView dataGridViewFeed;
+        private System.Windows.Forms.DataGridView dataGridViewSleep;
     }
 }

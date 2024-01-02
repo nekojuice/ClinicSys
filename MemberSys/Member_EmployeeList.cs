@@ -18,6 +18,7 @@ namespace MemberSys
         public Member_EmployeeList()
         {
             this.Appointment_Room_Schedule = new HashSet<Appointment_Room_Schedule>();
+            this.Appointment_Room_Schedule1 = new HashSet<Appointment_Room_Schedule>();
             this.Attendance_tAttendance = new HashSet<Attendance_tAttendance>();
             this.Attendance_tExpenseRequests = new HashSet<Attendance_tExpenseRequests>();
             this.Attendance_tLeave = new HashSet<Attendance_tLeave>();
@@ -46,6 +47,8 @@ namespace MemberSys
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Appointment_Room_Schedule> Appointment_Room_Schedule { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Appointment_Room_Schedule> Appointment_Room_Schedule1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Attendance_tAttendance> Attendance_tAttendance { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

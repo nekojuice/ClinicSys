@@ -41,7 +41,7 @@
             this.dataGridViewMemberOrder.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewMemberOrder.Name = "dataGridViewMemberOrder";
             this.dataGridViewMemberOrder.RowTemplate.Height = 24;
-            this.dataGridViewMemberOrder.Size = new System.Drawing.Size(1370, 797);
+            this.dataGridViewMemberOrder.Size = new System.Drawing.Size(1370, 749);
             this.dataGridViewMemberOrder.TabIndex = 0;
             this.dataGridViewMemberOrder.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMemberOrder_CellContentClick);
             this.dataGridViewMemberOrder.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewMemberOrder_DataBindingComplete);
@@ -50,7 +50,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 797);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.dataGridViewMemberOrder);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMbrOrder";

@@ -7,14 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using System.Windows.Media.TextFormatting;
 
 namespace ClinicSys.ViewModel
 {
     public class CEmpOrderViewModel : ICRUD
     {
         private tOrder _order;
-        private DataGridView dataGridView;
+        private DataGridView _dataGridView;
         private COrderModel _orderModel = new COrderModel();
         private List<int> _orderIds = new List<int>();
         private List<CEmpOrderViewModel> _employeeOrderViewModels = new List<CEmpOrderViewModel>();
@@ -47,9 +46,9 @@ namespace ClinicSys.ViewModel
         {
             get
             {
-                if (string .IsNullOrEmpty(_order.fCheckPayDate.ToString()))
+                if (_order.fCheckPayDate == null)
                     return "";
-                else if (string.IsNullOrEmpty(_order.fShipDate.ToString()))
+                else if (_order.fShipDate == null)
                     return "未出貨";
                 else return _order.fShipDate.ToString();
             }
@@ -58,45 +57,46 @@ namespace ClinicSys.ViewModel
         {
             get
             {
-                if (_order.fGetDate> DateTime.Now)
-                    return "配送中";
+                if (_order.fShipDate == null)
+                    return "";
+                else if (_order.fGetDate == null)
+                    return "配送中             ";
                 else return _order.fGetDate.ToString();
             }
         }
 
-
-        public void Create()
+        public void create()
         {
             MessageBox.Show("使用Admin帳號，由會員介面下訂。");
         }
 
-        public void Delete()
+        public void delete()
         {
-            int orderId = _orderIds[dataGridView.CurrentRow.Index];
-            _orderModel.deletebyOrderId(orderId);
-            ShowAll();
+            int orderId = _orderIds[_dataGridView.CurrentRow.Index];
+            _orderModel.deletebyId(orderId);
+            showAll();
         }
 
-        public void Search(string keyword)
+        public void search(string keyword)
         {
             reloadEmployeeOrderViewModelsbyKeyword(keyword);
             resetDateGridView();
         }
 
-        public void ShowAll()
+        public void showAll()
         {
             reloadEmployeeOrderViewModels();
             resetDateGridView();
         }
 
-        public void Update()
+        public void update()
         {
             MessageBox.Show("無法編輯已成立訂單，請刪除後重新下訂。");
         }
         public void mountDateGridView(DataGridView grd)
         {
-            dataGridView = grd;
-            ShowAll();
+            _dataGridView = grd;
+            showAll();
         }
 
         private void reloadEmployeeOrderViewModelsbyKeyword(string keyword)
@@ -118,21 +118,21 @@ namespace ClinicSys.ViewModel
 
         private void resetDateGridView()
         {
-            dataGridView.Columns.Clear();
-            dataGridView.DataSource = null;
-            dataGridView.DataSource = _employeeOrderViewModels;
+            _dataGridView.Columns.Clear();
+            _dataGridView.DataSource = null;
+            _dataGridView.DataSource = _employeeOrderViewModels;
             DataGridViewButtonColumn bc = new DataGridViewButtonColumn();
             bc.Text = "收件資訊";
             bc.UseColumnTextForButtonValue = true;
-            dataGridView.Columns.Add(bc);
-            bc=new DataGridViewButtonColumn();
+            _dataGridView.Columns.Add(bc);
+            bc = new DataGridViewButtonColumn();
             bc.Text = "收帳";
             bc.UseColumnTextForButtonValue = true;
-            dataGridView.Columns.Add(bc);
+            _dataGridView.Columns.Add(bc);
             bc = new DataGridViewButtonColumn();
             bc.Text = "出貨";
             bc.UseColumnTextForButtonValue = true;
-            dataGridView.Columns.Add(bc);
+            _dataGridView.Columns.Add(bc);
         }
 
         public string getFrmMagforReceiverInfoView(tOrder order)

@@ -25,28 +25,34 @@ namespace ClinicSys
             _managerforActiveTabpage.mountDateGridView(dataGridViewProduct);
         }
 
+        private void resetDataGridViewProduct(List<CEmpProductViewModel> productViewModels)
+        {
+            dataGridViewProduct.DataSource= productViewModels;
+        }
+
         private void TSBAll_Click(object sender, EventArgs e)
         {
-            _managerforActiveTabpage.ShowAll();
+            _managerforActiveTabpage.showAll();
         }
         private void TSBCreate_Click(object sender, EventArgs e)
         {
-            _managerforActiveTabpage.Create();
+            _managerforActiveTabpage.create();
         }
 
         private void TSBDelete_Click(object sender, EventArgs e)
         {
-            _managerforActiveTabpage.Delete();
+             if( MessageBox.Show("確認刪除嗎","",MessageBoxButtons.OKCancel,MessageBoxIcon.Question)==DialogResult.OK)
+            _managerforActiveTabpage.delete();
         }
 
         private void TSBUpdate_Click(object sender, EventArgs e)
         {
-            _managerforActiveTabpage.Update();
+            _managerforActiveTabpage.update();
         }
 
         private void TSBSearch_Click(object sender, EventArgs e)
         {
-            _managerforActiveTabpage.Search(this.txtKeyword.Text);
+            _managerforActiveTabpage.search(this.txtKeyword.Text);
         }
 
         private void btnProductEditor_Click(object sender, EventArgs e)

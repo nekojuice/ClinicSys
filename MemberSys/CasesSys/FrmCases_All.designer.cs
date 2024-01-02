@@ -93,6 +93,7 @@
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.textBox1.Location = new System.Drawing.Point(63, 3);
             this.textBox1.Multiline = true;
@@ -186,7 +187,7 @@
             this.panel5.Controls.Add(this.textBoxSearch);
             this.panel5.Location = new System.Drawing.Point(0, 62);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(795, 494);
+            this.panel5.Size = new System.Drawing.Size(798, 494);
             this.panel5.TabIndex = 18;
             // 
             // button4
@@ -242,7 +243,7 @@
             this.dataGridViewMR.Name = "dataGridViewMR";
             this.dataGridViewMR.RowHeadersWidth = 51;
             this.dataGridViewMR.RowTemplate.Height = 24;
-            this.dataGridViewMR.Size = new System.Drawing.Size(784, 204);
+            this.dataGridViewMR.Size = new System.Drawing.Size(787, 204);
             this.dataGridViewMR.TabIndex = 5;
             this.dataGridViewMR.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewMR_RowHeaderMouseDoubleClick);
             // 
@@ -260,10 +261,13 @@
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(615, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(618, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(170, 171);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 44;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -287,7 +291,7 @@
             this.HistoryBox.Location = new System.Drawing.Point(113, 6);
             this.HistoryBox.Multiline = true;
             this.HistoryBox.Name = "HistoryBox";
-            this.HistoryBox.Size = new System.Drawing.Size(499, 71);
+            this.HistoryBox.Size = new System.Drawing.Size(502, 71);
             this.HistoryBox.TabIndex = 38;
             // 
             // label5
@@ -310,7 +314,7 @@
             this.AllegeryBox.Location = new System.Drawing.Point(3, 109);
             this.AllegeryBox.Multiline = true;
             this.AllegeryBox.Name = "AllegeryBox";
-            this.AllegeryBox.Size = new System.Drawing.Size(609, 65);
+            this.AllegeryBox.Size = new System.Drawing.Size(612, 65);
             this.AllegeryBox.TabIndex = 36;
             // 
             // label4
@@ -347,7 +351,7 @@
             this.textBoxSearch.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.textBoxSearch.Location = new System.Drawing.Point(539, 215);
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(246, 33);
+            this.textBoxSearch.Size = new System.Drawing.Size(249, 33);
             this.textBoxSearch.TabIndex = 33;
             // 
             // panel10
@@ -476,10 +480,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(995, 559);
             this.Controls.Add(this.splitContainer1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Name = "FrmCases_All";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmCases_All";
             this.Activated += new System.EventHandler(this.FrmCases_All_Activated);
             this.Load += new System.EventHandler(this.FrmCases_All_Load);

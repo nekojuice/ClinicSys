@@ -74,11 +74,11 @@
             this.txtValue.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtValue.CausesValidation = false;
             this.txtValue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtValue.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtValue.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtValue.Location = new System.Drawing.Point(0, 0);
             this.txtValue.Name = "txtValue";
             this.txtValue.ReadOnly = true;
-            this.txtValue.Size = new System.Drawing.Size(100, 26);
+            this.txtValue.Size = new System.Drawing.Size(100, 28);
             this.txtValue.TabIndex = 5;
             this.txtValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -156,22 +156,22 @@
             // lblTitle
             // 
             this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblTitle.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblTitle.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblTitle.Location = new System.Drawing.Point(3, 15);
+            this.lblTitle.Location = new System.Drawing.Point(3, 16);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblTitle.Size = new System.Drawing.Size(100, 23);
+            this.lblTitle.Size = new System.Drawing.Size(100, 28);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // adtext
+            // userControlAddDecrease
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
-            this.Name = "adtext";
+            this.Name = "userControlAddDecrease";
             this.Size = new System.Drawing.Size(300, 50);
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);

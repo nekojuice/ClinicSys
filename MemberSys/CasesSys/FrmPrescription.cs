@@ -44,7 +44,10 @@ namespace ClinicSysMdiParent
                 tPreCaseIDBox.Ntext =_X.CaseID.ToString();
                 Cases_Prescription CP =  PS.PrescriptionDataSet();
                 dateTime.Text = CP.Prescription_Date.ToString();
-                textBoxDispensing.Text =CP.Dispensing.ToString();
+                if (!string.IsNullOrEmpty(CP.Dispensing))
+                {
+                    textBoxDispensing.Text = CP.Dispensing.ToString();
+                }
                 _CP=PS.ListPrescriptionListDataSet();
                 dataGridView1.DataSource = _CP;
                 CCstyle.DataGridViewDesign(dataGridView1);
@@ -85,10 +88,11 @@ namespace ClinicSysMdiParent
         {
             if (mode == true)
             {
-                
+                PrescriptionSet PS = new PrescriptionSet();
+                PS._PR = _PR;
+                PS.PrescriptionDelete();
             }
             this.Close();
-            _CP.Clear();
         }
 
         private void add_Click(object sender, EventArgs e)
@@ -119,7 +123,7 @@ namespace ClinicSysMdiParent
                     }
                     finally 
                     {
-                        MessageBox.Show("儲存成功");
+                        //MessageBox.Show("儲存成功");
                         PrescriptionSet PS = new PrescriptionSet();
                         PS._PR = _PR;
                         dataGridView1.DataSource = PS.ListPrescriptionListDataSet();
@@ -130,8 +134,7 @@ namespace ClinicSysMdiParent
 
         private void Remove_Click(object sender, EventArgs e)
         {
-            if (mode == false)
-            {
+
                 ClinicSysEntities CSTE = new ClinicSysEntities();
                 if (dataGridView1.SelectedRows[0].Index >= 0)
                 {
@@ -141,18 +144,16 @@ namespace ClinicSysMdiParent
                     CSTE.Cases_Prescriptionlist.Remove(x);
                     CSTE.SaveChanges();
                 }
-                MessageBox.Show("刪除成功");
+                //MessageBox.Show("刪除成功");
                 PrescriptionSet PS = new PrescriptionSet();
                 PS._PR = _PR;
                 dataGridView1.DataSource= PS.ListPrescriptionListDataSet();
                 CCstyle.DataGridViewDesign(dataGridView1);
-            }
+            
         }
 
         private void SAVE_Click(object sender, EventArgs e)
         {
-            //if (mode == false)
-            //{
                 ClinicSysEntities CSTE = new ClinicSysEntities();
                 Cases_Prescription p = CSTE.Cases_Prescription.FirstOrDefault(X => X.Prescription_ID == _PR);
                 if (p != null) 
@@ -163,12 +164,8 @@ namespace ClinicSysMdiParent
                     MessageBox.Show("儲存成功");
                     this.Close();
                 }
-            //}
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }

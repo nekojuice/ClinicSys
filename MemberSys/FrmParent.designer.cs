@@ -105,6 +105,7 @@
             this.toolStripDropDownButtonAttendence.Name = "toolStripDropDownButtonAttendence";
             this.toolStripDropDownButtonAttendence.Size = new System.Drawing.Size(93, 84);
             this.toolStripDropDownButtonAttendence.Text = "會員中心";
+            this.toolStripDropDownButtonAttendence.ToolTipText = "差勤管理";
             this.toolStripDropDownButtonAttendence.Click += new System.EventHandler(this.toolStripDropDownButtonAttendence_Click);
             // 
             // 上下班打卡ToolStripMenuItem
@@ -154,6 +155,7 @@
             this.toolStripDropDownButtonAppt.Name = "toolStripDropDownButtonAppt";
             this.toolStripDropDownButtonAppt.Size = new System.Drawing.Size(93, 84);
             this.toolStripDropDownButtonAppt.Text = "會員中心";
+            this.toolStripDropDownButtonAppt.ToolTipText = "掛號系統";
             // 
             // 掛號管理ToolStripMenuItem
             // 
@@ -195,6 +197,7 @@
             this.toolStripDropDownButtonSchedule.Name = "toolStripDropDownButtonSchedule";
             this.toolStripDropDownButtonSchedule.Size = new System.Drawing.Size(93, 84);
             this.toolStripDropDownButtonSchedule.Text = "會員中心";
+            this.toolStripDropDownButtonSchedule.ToolTipText = "排班系統";
             // 
             // 門診時段維護ToolStripMenuItem
             // 
@@ -232,6 +235,7 @@
             this.toolStripDropDownButtonCase.Name = "toolStripDropDownButtonCase";
             this.toolStripDropDownButtonCase.Size = new System.Drawing.Size(93, 84);
             this.toolStripDropDownButtonCase.Text = "會員中心";
+            this.toolStripDropDownButtonCase.ToolTipText = "病例系統";
             this.toolStripDropDownButtonCase.Click += new System.EventHandler(this.toolStripDropDownButtonCase_Click);
             // 
             // toolStripLabel5
@@ -252,6 +256,7 @@
             this.toolStripDropDownButtonDrug.Name = "toolStripDropDownButtonDrug";
             this.toolStripDropDownButtonDrug.Size = new System.Drawing.Size(93, 84);
             this.toolStripDropDownButtonDrug.Text = "會員中心";
+            this.toolStripDropDownButtonDrug.ToolTipText = "藥師系統";
             // 
             // 藥品管理ToolStripMenuItem
             // 
@@ -285,6 +290,7 @@
             this.toolStripDropDownButtonShop.Name = "toolStripDropDownButtonShop";
             this.toolStripDropDownButtonShop.Size = new System.Drawing.Size(93, 84);
             this.toolStripDropDownButtonShop.Text = "會員中心";
+            this.toolStripDropDownButtonShop.ToolTipText = "婦幼商城";
             // 
             // toolStripMenuItem11
             // 
@@ -293,7 +299,7 @@
             this.優惠券ToolStripMenuItem,
             this.我的訂單ToolStripMenuItem});
             this.toolStripMenuItem11.Name = "toolStripMenuItem11";
-            this.toolStripMenuItem11.Size = new System.Drawing.Size(168, 30);
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(180, 30);
             this.toolStripMenuItem11.Text = "前台";
             // 
             // 購物商城ToolStripMenuItem
@@ -320,7 +326,7 @@
             // toolStripMenuItem12
             // 
             this.toolStripMenuItem12.Name = "toolStripMenuItem12";
-            this.toolStripMenuItem12.Size = new System.Drawing.Size(168, 30);
+            this.toolStripMenuItem12.Size = new System.Drawing.Size(180, 30);
             this.toolStripMenuItem12.Text = "後台管理";
             this.toolStripMenuItem12.Click += new System.EventHandler(this.toolStripMenuItem12_Click);
             // 
@@ -339,6 +345,7 @@
             this.toolStripDropDownButtonRoom.Name = "toolStripDropDownButtonRoom";
             this.toolStripDropDownButtonRoom.Size = new System.Drawing.Size(93, 84);
             this.toolStripDropDownButtonRoom.Text = "會員中心";
+            this.toolStripDropDownButtonRoom.ToolTipText = "設施管理";
             this.toolStripDropDownButtonRoom.Click += new System.EventHandler(this.toolStripDropDownButtonRoom_Click);
             // 
             // toolStripLabel9

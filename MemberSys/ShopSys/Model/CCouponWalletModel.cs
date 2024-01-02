@@ -5,7 +5,6 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//using System.Windows.Media.Animation;
 
 namespace ClinicSys
 {
@@ -16,14 +15,6 @@ namespace ClinicSys
         public List<tCouponWallet> getActivatedCouponWalletsbyUserId(int userId)
         {
             return db.tCouponWallet.Where(c => c.fMemberId == userId
-                                            && c.tCoupon.fStartDate <= DateTime.Now
-                                            && c.tCoupon.fEndDate > DateTime.Now).ToList(); ;
-        }
-
-        public List<tCouponWallet> getActivatedandNonUsedCouponWalletsbyUserId(int userId)
-        {
-            return db.tCouponWallet.Where(c => c.fMemberId == userId
-                                            && c.fUsed == false
                                             && c.tCoupon.fStartDate <= DateTime.Now
                                             && c.tCoupon.fEndDate > DateTime.Now).ToList(); ;
         }
@@ -39,6 +30,7 @@ namespace ClinicSys
                                             && w.tCoupon.fEndDate > DateTime.Now
                                             && w.tCoupon.fStartDate <= DateTime.Now).ToList();
         }
+
         public List<tCouponWallet> getActivatedandNonUsedDiscountCouponWalletsbyMemberId(int memberId)
         {
             string today = DateTime.Now.ToString("yyyy/MM/dd");
@@ -62,9 +54,11 @@ namespace ClinicSys
             couponWallet.fUsed = true;
             db.SaveChanges();
         }
-        public void create(tCouponWallet couponWallet)
+
+        public void reliveCoupon(int couponWalletId)
         {
-            db.tCouponWallet.Add(couponWallet);
+            tCouponWallet couponWallet = db.tCouponWallet.Where(w => w.Id == couponWalletId).FirstOrDefault();
+            couponWallet.fUsed = false;
             db.SaveChanges();
         }
 
@@ -75,7 +69,7 @@ namespace ClinicSys
 
         public void createCouponWalletbyCouponId(int selectedCouponId)
         {
-            db.tCouponWallet.Add(new tCouponWallet { fCouponId = selectedCouponId , fUsed = false, fMemberId = FrmMain._MEMBER.Member_ID});
+            db.tCouponWallet.Add(new tCouponWallet { fCouponId = selectedCouponId , fUsed = false, fMemberId = FrmParent._MEMBER.Member_ID});
             db.SaveChanges();
         }
 

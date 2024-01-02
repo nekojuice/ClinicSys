@@ -54,7 +54,7 @@
             this.tabPage3.Controls.Add(this.panelHistory);
             this.tabPage3.Location = new System.Drawing.Point(4, 39);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(1173, 648);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "歷史紀錄";
@@ -125,7 +125,7 @@
             this.tabPage1.Controls.Add(this.panelGet);
             this.tabPage1.Location = new System.Drawing.Point(4, 39);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1173, 648);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "領取優惠券";

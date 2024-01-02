@@ -58,11 +58,5 @@ namespace ClinicSys
             db.tCart.Remove(cart);
             db.SaveChanges();
         }
-
-        public void deleteCartsbyMemberId(int memberId)
-        {
-            db.tCart.RemoveRange(db.tCart.Where(c => c.fMemberId == memberId));
-            db.SaveChanges();
-        }
     }
 }

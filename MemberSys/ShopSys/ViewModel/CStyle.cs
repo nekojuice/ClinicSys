@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace ClinicSys
@@ -18,7 +17,6 @@ namespace ClinicSys
             foreach (DataGridViewRow r in gv.Rows)
             {
                 isColoChanged = !isColoChanged;
-                //r.DefaultCellStyle.BackColor = Color.Coral;
                 if (isColoChanged)
                     r.DefaultCellStyle.BackColor = Color.MistyRose;
                 r.DefaultCellStyle.Font = new Font("微軟正黑體", fontSize);
@@ -50,11 +48,11 @@ namespace ClinicSys
                 }
                 else if (c.Contains("分類") == true)
                 {
-                    gv.Columns[c].Width = 200;
+                    gv.Columns[c].Width = 180;
                 }
                 else if (c.Contains("照片") == true)
                 {
-                    gv.Columns[c].Width = 150;
+                    gv.Columns[c].Width = 205;
                 }
                 else if (c.Contains("訂單金額") == true)
                 {

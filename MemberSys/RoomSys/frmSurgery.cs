@@ -45,10 +45,10 @@ namespace prjRoom
                 return;
             int fId = Convert.ToInt32(id);
             ClinicSysEntities db = new ClinicSysEntities();
-            RoomList prod = db.RoomList.FirstOrDefault(p => p.Room_ID == fId);
+            Appointment_Room_Schedule prod = db.Appointment_Room_Schedule.FirstOrDefault(p => p.Appointment_ID == fId);
             if (prod == null)
                 return;
-            db.RoomList.Remove(prod);
+            db.Appointment_Room_Schedule.Remove(prod);
             db.SaveChanges();
             refresh();
         }
@@ -101,12 +101,19 @@ namespace prjRoom
             ClinicSysEntities db = new ClinicSysEntities();
             var Room_Schedule = from p in db.Appointment_Room_Schedule
                                 where (p.RoomList.RoomTypeList.Name == "產房")
-                                select p;
+                                select new
+                                {
+                                    預約編號 = p.Appointment_ID,
+                                    房間ID = p.Room_ID,
+                                    患者ID = p.Member_ID,
+                                    起 = p.StartDate,
+                                    迄 = p.EndDate,
+                                    醫師ID = p.Doctor_ID,
+                                    護理師ID = p.Nurse_ID
+                                };
             RoomListdataGridView1.DataSource = Room_Schedule.ToList();
-            this.RoomListdataGridView1.Columns["Member_EmployeeList"].Visible = false;
-            this.RoomListdataGridView1.Columns["Member_MemberList"].Visible = false;
-            this.RoomListdataGridView1.Columns["RoomList"].Visible = false;
-            this.RoomListdataGridView1.Columns["Emp_ID"].Visible = false;
+          
+          
 
             CStyle_room.DataGridViewDesign(RoomListdataGridView1);
         }

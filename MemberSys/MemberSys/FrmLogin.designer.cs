@@ -52,7 +52,6 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 36);
             this.button1.TabIndex = 9;
-            this.button1.TabStop = false;
             this.button1.Text = "登入";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.btnLogin_Click);
@@ -76,7 +75,6 @@
             this.splitContainer1.Size = new System.Drawing.Size(1225, 588);
             this.splitContainer1.SplitterDistance = 139;
             this.splitContainer1.TabIndex = 1;
-            this.splitContainer1.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -109,8 +107,7 @@
             this.fbEmpPassword.Name = "fbEmpPassword";
             this.fbEmpPassword.passwordMask = '*';
             this.fbEmpPassword.Size = new System.Drawing.Size(374, 70);
-            this.fbEmpPassword.TabIndex = 2;
-            this.fbEmpPassword.keydown += new System.Windows.Forms.KeyEventHandler(this.fbStaffNum_keydown);
+            this.fbEmpPassword.TabIndex = 11;
             // 
             // fbStaffNum
             // 
@@ -121,8 +118,7 @@
             this.fbStaffNum.Name = "fbStaffNum";
             this.fbStaffNum.passwordMask = '\0';
             this.fbStaffNum.Size = new System.Drawing.Size(374, 70);
-            this.fbStaffNum.TabIndex = 1;
-            this.fbStaffNum.keydown += new System.Windows.Forms.KeyEventHandler(this.fbStaffNum_keydown);
+            this.fbStaffNum.TabIndex = 10;
             // 
             // label1
             // 

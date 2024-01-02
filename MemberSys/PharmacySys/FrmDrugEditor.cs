@@ -14,7 +14,7 @@ namespace ClinicSysMdiParent
 {
     public partial class FrmDrugEditor : Form
     {
-        
+
         private DialogResult _isOK;
 
         public DialogResult confirm
@@ -34,10 +34,12 @@ namespace ClinicSysMdiParent
                 _medicinesList.fDrugCode = fbDrugCode.fieldValue;
                 _medicinesList.fGenericName = fbGenericName.fieldValue;
                 _medicinesList.fTradeName = fbTradeName.fieldValue;
-                _medicinesList.fDrugName = fbDrugName.fieldValue;                
-                _medicinesList.fDrugDose = fbDrugDose.fieldValue;                
+                _medicinesList.fDrugName = fbDrugName.fieldValue;
+                _medicinesList.fDrugDose = fbDrugDose.fieldValue;
                 _medicinesList.fMaxDose = fbMaxDose.fieldValue;
-                _medicinesList.fPregnancyCategory = comboBoxPC.SelectedItem.ToString();
+                if (comboBoxPC.SelectedItem != null && !string.IsNullOrEmpty(comboBoxPC.SelectedItem.ToString()))
+                    _medicinesList.fPregnancyCategory = comboBoxPC.SelectedItem.ToString();
+
                 _medicinesList.fPrecautions = fbPrecautions.fieldValue;
                 _medicinesList.fWarnings = fbWarnings.fieldValue;
                 _medicinesList.fStorage = fbStorage.fieldValue;
@@ -52,8 +54,8 @@ namespace ClinicSysMdiParent
                 fbDrugCode.fieldValue = _medicinesList.fDrugCode;
                 fbGenericName.fieldValue = _medicinesList.fGenericName;
                 fbTradeName.fieldValue = _medicinesList.fTradeName;
-                fbDrugName.fieldValue = _medicinesList.fDrugName;                
-                fbDrugDose.fieldValue = _medicinesList.fDrugDose;               
+                fbDrugName.fieldValue = _medicinesList.fDrugName;
+                fbDrugDose.fieldValue = _medicinesList.fDrugDose;
                 fbMaxDose.fieldValue = _medicinesList.fMaxDose;
                 comboBoxPC.SelectedText = _medicinesList.fPregnancyCategory;
                 fbPrecautions.fieldValue = _medicinesList.fPrecautions;
@@ -67,15 +69,18 @@ namespace ClinicSysMdiParent
                     picfImages.Image = new Bitmap(Application.StartupPath + @"\image\" + _medicinesList.fImages);
             }
         }
-        
+
         private Pharmacy_tTypeDetails _Tdatails;
-        public Pharmacy_tTypeDetails Tdatails 
+        public Pharmacy_tTypeDetails Tdatails
         {
             get //var & join
-            { _Tdatails.fId_Tpye = Convert.ToInt32(comboBoxType.SelectedItem.ToString().Split('.')[0]); 
+            {
+                _Tdatails.fId_Tpye = Convert.ToInt32(comboBoxType.SelectedItem.ToString().Split('.')[0]);
                 return _Tdatails;
             }
-            set { _Tdatails = value;
+            set
+            {
+                _Tdatails = value;
                 comboBoxType.Text = _Tdatails.fId_Tpye.ToString();
             }
         }
@@ -87,23 +92,25 @@ namespace ClinicSysMdiParent
                 //_CUdetails.fId_ClicicalUse=Convert.ToInt32(lbCUdetails.Items);
                 return _CUdetails;
             }
-            set { _CUdetails = value;
+            set
+            {
+                _CUdetails = value;
                 //lbCUdetails.Items.Add( _CUdetails.fId_ClicicalUse.ToString());
                 lbCUdetails.DataSource = _CUdetails;
                 lbCUdetails.ValueMember = "fId_ClicicalUse";
             }
         }
         private List<Pharmacy_tSideEffectDetails> _SEdetails;
-       
+
         public List<Pharmacy_tSideEffectDetails> SEdetails
         {
-            get 
+            get
             {
                 //_SEdetails.fId_SideEffect=Convert.ToInt32(lbSEdetails.Items);
-                return _SEdetails; 
+                return _SEdetails;
             }
-            set 
-            { 
+            set
+            {
                 _SEdetails = value;
 
 
@@ -119,7 +126,7 @@ namespace ClinicSysMdiParent
 
         public FrmDrugEditor()
         {
-            InitializeComponent();             
+            InitializeComponent();
         }
 
 
@@ -127,8 +134,6 @@ namespace ClinicSysMdiParent
         private bool isUivalidated()  //不允許null：副作用、適應症寫在FrmSEList & FrmCUList的確認Btn中
         {
             string msg = "";
-            if (picfApperance.Image == null)
-                msg += "\r\n藥品外觀是必填欄位，不可空白";
             if (string.IsNullOrEmpty(fbDrugCode.fieldValue))
                 msg += "\r\n代碼是必填欄位，不可空白";
             if (string.IsNullOrEmpty(fbGenericName.fieldValue))
@@ -137,7 +142,7 @@ namespace ClinicSysMdiParent
                 msg += "\r\n商品名是必填欄位，不可空白";
             if (string.IsNullOrEmpty(fbDrugName.fieldValue))
                 msg += "\r\n中文名是必填欄位，不可空白";
-            if (comboBoxType.SelectedItem == null) 
+            if (comboBoxType.SelectedItem == null)
                 msg += "\r\n劑型是必填欄位，不可空白";
             if (string.IsNullOrEmpty(fbStorage.fieldValue))
                 msg += "\r\n儲存方法是必填欄位，不可空白";
@@ -145,15 +150,19 @@ namespace ClinicSysMdiParent
                 msg += "\r\n藥商是必填欄位，不可空白";
             if (string.IsNullOrEmpty(fbBrand.fieldValue))
                 msg += "\r\n廠牌是必填欄位，不可空白";
-            //if(picfApperance.Image== null)
-            //    msg+= "\r\n藥品外觀是必填欄位，不可空白";
+            if(lbCUdetails.Items.Count<=0)
+                msg+= "\r\n適應症是必填欄位，不可空白";
+            if (lbSEdetails.Items.Count <= 0)
+                msg += "\r\n副作用是必填欄位，不可空白";
+            if (picfApperance.Image == null)
+                msg += "\r\n藥品外觀是必填欄位，不可空白";
             //if (string.IsNullOrEmpty())
             //    msg += "\r\n藥品外觀是必填欄位，不可空白";
             if (!string.IsNullOrEmpty(msg))
                 MessageBox.Show(msg);
             return msg == "";
-        }                             
-        
+        }
+
         string TypeClick = null;
         public string 劑型 { get { return TypeClick; } }
         private void button1_Click(object sender, EventArgs e)
@@ -162,11 +171,11 @@ namespace ClinicSysMdiParent
                 return;
             //_isOK = DialogResult.OK;
             this.DialogResult = DialogResult.OK;
-            TypeClick = comboBoxType.SelectedItem.ToString().Split('.')[0];           
+            TypeClick = comboBoxType.SelectedItem.ToString().Split('.')[0];
             this.Close();
         }
 
-        
+
 
 
         private void button2_Click(object sender, EventArgs e)
@@ -174,12 +183,12 @@ namespace ClinicSysMdiParent
             _isOK = DialogResult.Cancel;
             this.Close();
         }
-       
-        List<string>fId_CU= new List<string>();
-        public List<string> 適應症 { get { return fId_CU; } } 
+
+        List<string> fId_CU = new List<string>();
+        public List<string> 適應症 { get { return fId_CU; } }
         private void button3_Click(object sender, EventArgs e) //跳進適應症選取表，確認後可回傳適應症
         {
-           
+
             FrmCUList f = new FrmCUList();
             f.Id = fbId_Drug.fieldValue;
             f.學名 = fbGenericName.fieldValue;
@@ -187,54 +196,54 @@ namespace ClinicSysMdiParent
             f.ShowDialog();
             lbCUdetails.DataSource = null;   //update 都不選按取消不會跳例外
             lbCUdetails.Items.Clear();       //create 都不選按取消不會跳例外
-            if(f._culist!=null && f._culist.Count >= 1)
-            {                
+            if (f._culist != null && f._culist.Count >= 1)
+            {
                 for (int i = 0; i < f._culist.Count; i++)
                 {
                     lbCUdetails.Items.Add(f._culist[i]);
                 }
                 fId_CU.Clear();
-                for(int i = 0; i < f._culist.Count; i++)
+                for (int i = 0; i < f._culist.Count; i++)
                 {
                     fId_CU.Add(f._culist[i].Split('.')[0]);
                 }
-            }           
+            }
         }
 
-        
+
         List<string> fId_SE = new List<string>();  //創建一個存fId_SE使主表新增時一次寫入明細表
         public List<string> 副作用 { get { return fId_SE; } }
         private void button4_Click(object sender, EventArgs e)
         {
-            FrmSEList f=new FrmSEList();          
-            f.Id=fbId_Drug.fieldValue;
-            f.學名= fbGenericName.fieldValue;
+            FrmSEList f = new FrmSEList();
+            f.Id = fbId_Drug.fieldValue;
+            f.學名 = fbGenericName.fieldValue;
             f.SEdetailsSelected = _SEdetails;
             f.ShowDialog();
             lbSEdetails.DataSource = null;
-            lbSEdetails.Items.Clear(); 
+            lbSEdetails.Items.Clear();
 
-            if (f._selist!=null&& f._selist.Count>=1)   //不選取任何副作用直接關閉會出問題，前面先判斷非null
+            if (f._selist != null && f._selist.Count >= 1)   //不選取任何副作用直接關閉會出問題，前面先判斷非null
             {
                 lbSEdetails.DataSource = null;
                 for (int i = 0; i < f._selist.Count; i++)
                 {
                     lbSEdetails.Items.Add(f._selist[i]);
                 }
-                
+
                 fId_SE.Clear();
-                for (int i = 0; i < f._selist.Count; i++) 
-                {               
-                    fId_SE.Add(f._selist[i].Split('.')[0]);                    
+                for (int i = 0; i < f._selist.Count; i++)
+                {
+                    fId_SE.Add(f._selist[i].Split('.')[0]);
                 }
-            }            
+            }
         }
 
         private void FrmDrugEditor_Load(object sender, EventArgs e)
         {
-            ClinicSysEntities db=new ClinicSysEntities();   
-            var type =from t in db.Pharmacy_tTypeList
-                      select t.fId_Type+"  .  "+t.fType;
+            ClinicSysEntities db = new ClinicSysEntities();
+            var type = from t in db.Pharmacy_tTypeList
+                       select t.fId_Type + "  .  " + t.fType;
             foreach (var i in type)
             {
                 comboBoxType.Items.Add(i);

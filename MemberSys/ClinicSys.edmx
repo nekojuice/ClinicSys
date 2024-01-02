@@ -10,7 +10,6 @@
             <PropertyRef Name="Appointment_ID" />
           </Key>
           <Property Name="Appointment_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Emp_ID" Type="int" Nullable="false" />
           <Property Name="Room_ID" Type="int" />
           <Property Name="Member_ID" Type="int" />
           <Property Name="StartDate" Type="nvarchar" MaxLength="50" />
@@ -471,15 +470,27 @@
           <Property Name="fStartDate" Type="date" Nullable="false" />
           <Property Name="fEndDate" Type="date" Nullable="false" />
         </EntityType>
-        <Association Name="FK_Appointment_Room_Schedule_Member_EmployeeList">
-          <End Role="Member_EmployeeList" Type="Self.Member_EmployeeList" Multiplicity="1" />
+        <Association Name="FK_Appointment_Room_Schedule_Member_EmployeeList1">
+          <End Role="Member_EmployeeList" Type="Self.Member_EmployeeList" Multiplicity="0..1" />
           <End Role="Appointment_Room_Schedule" Type="Self.Appointment_Room_Schedule" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Member_EmployeeList">
               <PropertyRef Name="Emp_ID" />
             </Principal>
             <Dependent Role="Appointment_Room_Schedule">
+              <PropertyRef Name="Doctor_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Appointment_Room_Schedule_Member_EmployeeList2">
+          <End Role="Member_EmployeeList" Type="Self.Member_EmployeeList" Multiplicity="0..1" />
+          <End Role="Appointment_Room_Schedule" Type="Self.Appointment_Room_Schedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member_EmployeeList">
               <PropertyRef Name="Emp_ID" />
+            </Principal>
+            <Dependent Role="Appointment_Room_Schedule">
+              <PropertyRef Name="Nurse_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1138,7 +1149,11 @@
           <EntitySet Name="tOrder" EntityType="Self.tOrder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tOrderDetail" EntityType="Self.tOrderDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tProduct" EntityType="Self.tProduct" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Appointment_Room_Schedule_Member_EmployeeList" Association="Self.FK_Appointment_Room_Schedule_Member_EmployeeList">
+          <AssociationSet Name="FK_Appointment_Room_Schedule_Member_EmployeeList1" Association="Self.FK_Appointment_Room_Schedule_Member_EmployeeList1">
+            <End Role="Member_EmployeeList" EntitySet="Member_EmployeeList" />
+            <End Role="Appointment_Room_Schedule" EntitySet="Appointment_Room_Schedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Appointment_Room_Schedule_Member_EmployeeList2" Association="Self.FK_Appointment_Room_Schedule_Member_EmployeeList2">
             <End Role="Member_EmployeeList" EntitySet="Member_EmployeeList" />
             <End Role="Appointment_Room_Schedule" EntitySet="Appointment_Room_Schedule" />
           </AssociationSet>
@@ -1357,14 +1372,14 @@
             <PropertyRef Name="Appointment_ID" />
           </Key>
           <Property Name="Appointment_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Emp_ID" Type="Int32" Nullable="false" />
           <Property Name="Room_ID" Type="Int32" />
           <Property Name="Member_ID" Type="Int32" />
           <Property Name="StartDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="EndDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Doctor_ID" Type="Int32" />
           <Property Name="Nurse_ID" Type="Int32" />
-          <NavigationProperty Name="Member_EmployeeList" Relationship="Self.FK_Appointment_Room_Schedule_Member_EmployeeList" FromRole="Appointment_Room_Schedule" ToRole="Member_EmployeeList" />
+          <NavigationProperty Name="Member_EmployeeList" Relationship="Self.FK_Appointment_Room_Schedule_Member_EmployeeList1" FromRole="Appointment_Room_Schedule" ToRole="Member_EmployeeList" />
+          <NavigationProperty Name="Member_EmployeeList1" Relationship="Self.FK_Appointment_Room_Schedule_Member_EmployeeList2" FromRole="Appointment_Room_Schedule" ToRole="Member_EmployeeList" />
           <NavigationProperty Name="Member_MemberList" Relationship="Self.FK_Appointment_Room_Schedule_Member_MemberList" FromRole="Appointment_Room_Schedule" ToRole="Member_MemberList" />
           <NavigationProperty Name="RoomList" Relationship="Self.FK_Appointment_Room_Schedule_RoomList" FromRole="Appointment_Room_Schedule" ToRole="RoomList" />
         </EntityType>
@@ -1565,7 +1580,8 @@
           <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Emp_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="EmpPhoto" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <NavigationProperty Name="Appointment_Room_Schedule" Relationship="Self.FK_Appointment_Room_Schedule_Member_EmployeeList" FromRole="Member_EmployeeList" ToRole="Appointment_Room_Schedule" />
+          <NavigationProperty Name="Appointment_Room_Schedule" Relationship="Self.FK_Appointment_Room_Schedule_Member_EmployeeList1" FromRole="Member_EmployeeList" ToRole="Appointment_Room_Schedule" />
+          <NavigationProperty Name="Appointment_Room_Schedule1" Relationship="Self.FK_Appointment_Room_Schedule_Member_EmployeeList2" FromRole="Member_EmployeeList" ToRole="Appointment_Room_Schedule" />
           <NavigationProperty Name="Attendance_tAttendance" Relationship="Self.FK_Attendance_tAttendance_Member_EmployeeList" FromRole="Member_EmployeeList" ToRole="Attendance_tAttendance" />
           <NavigationProperty Name="Attendance_tExpenseRequests" Relationship="Self.FK_Attendance_tExpenseRequests_Member_EmployeeList" FromRole="Member_EmployeeList" ToRole="Attendance_tExpenseRequests" />
           <NavigationProperty Name="Attendance_tLeave" Relationship="Self.FK_Attendance_tLeave_Member_EmployeeList" FromRole="Member_EmployeeList" ToRole="Attendance_tLeave" />
@@ -1922,15 +1938,27 @@
           <NavigationProperty Name="tCart" Relationship="Self.FK_Shop_Cart_Shop_Product" FromRole="tProduct" ToRole="tCart" />
           <NavigationProperty Name="tOrderDetail" Relationship="Self.FK_Shop_OrderDetail_Shop_Product" FromRole="tProduct" ToRole="tOrderDetail" />
         </EntityType>
-        <Association Name="FK_Appointment_Room_Schedule_Member_EmployeeList">
-          <End Role="Member_EmployeeList" Type="Self.Member_EmployeeList" Multiplicity="1" />
+        <Association Name="FK_Appointment_Room_Schedule_Member_EmployeeList1">
+          <End Role="Member_EmployeeList" Type="Self.Member_EmployeeList" Multiplicity="0..1" />
           <End Role="Appointment_Room_Schedule" Type="Self.Appointment_Room_Schedule" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Member_EmployeeList">
               <PropertyRef Name="Emp_ID" />
             </Principal>
             <Dependent Role="Appointment_Room_Schedule">
+              <PropertyRef Name="Doctor_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Appointment_Room_Schedule_Member_EmployeeList2">
+          <End Role="Member_EmployeeList" Type="Self.Member_EmployeeList" Multiplicity="0..1" />
+          <End Role="Appointment_Room_Schedule" Type="Self.Appointment_Room_Schedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member_EmployeeList">
               <PropertyRef Name="Emp_ID" />
+            </Principal>
+            <Dependent Role="Appointment_Room_Schedule">
+              <PropertyRef Name="Nurse_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2589,7 +2617,11 @@
           <EntitySet Name="tOrder" EntityType="Self.tOrder" />
           <EntitySet Name="tOrderDetail" EntityType="Self.tOrderDetail" />
           <EntitySet Name="tProduct" EntityType="Self.tProduct" />
-          <AssociationSet Name="FK_Appointment_Room_Schedule_Member_EmployeeList" Association="Self.FK_Appointment_Room_Schedule_Member_EmployeeList">
+          <AssociationSet Name="FK_Appointment_Room_Schedule_Member_EmployeeList1" Association="Self.FK_Appointment_Room_Schedule_Member_EmployeeList1">
+            <End Role="Member_EmployeeList" EntitySet="Member_EmployeeList" />
+            <End Role="Appointment_Room_Schedule" EntitySet="Appointment_Room_Schedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Appointment_Room_Schedule_Member_EmployeeList2" Association="Self.FK_Appointment_Room_Schedule_Member_EmployeeList2">
             <End Role="Member_EmployeeList" EntitySet="Member_EmployeeList" />
             <End Role="Appointment_Room_Schedule" EntitySet="Appointment_Room_Schedule" />
           </AssociationSet>
@@ -2808,7 +2840,6 @@
             <EntityTypeMapping TypeName="ClinicSysModel.Appointment_Room_Schedule">
               <MappingFragment StoreEntitySet="Appointment_Room_Schedule">
                 <ScalarProperty Name="Appointment_ID" ColumnName="Appointment_ID" />
-                <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
                 <ScalarProperty Name="Room_ID" ColumnName="Room_ID" />
                 <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
                 <ScalarProperty Name="StartDate" ColumnName="StartDate" />

@@ -52,7 +52,6 @@
             this.Text = "frmBabyCenter";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Activated += new System.EventHandler(this.frmBabyCenter_Load);
-            this.Load += new System.EventHandler(this.frmBabyCenter_Load);
             ((System.ComponentModel.ISupportInitialize)(this.RoomListdataGridView2)).EndInit();
             this.ResumeLayout(false);
 

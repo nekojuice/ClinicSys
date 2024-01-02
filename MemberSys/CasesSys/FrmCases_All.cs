@@ -1,10 +1,12 @@
 ﻿using ClinicSys;
 using ClinicSysMdiParent.Method;
 using MemberSys;
+using Sunny.UI.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Core.Mapping;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -27,9 +29,9 @@ namespace ClinicSysMdiParent
 
         private void FrmCases_All_Load(object sender, EventArgs e)
         {
-            (new CCasesSystem()).memberDataGridViewSet(dataGridView1);
-            CCstyle.DataGridViewDesign(dataGridView1);
-            CCstyle.DataGridViewDesign(dataGridViewMR);
+            //(new CCasesSystem()).memberDataGridViewSet(dataGridView1);
+            //CCstyle.DataGridViewDesign(dataGridView1);
+            //CCstyle.DataGridViewDesign(dataGridViewMR);
         }
 
         private void FrmCases_All_Activated(object sender, EventArgs e)
@@ -87,7 +89,7 @@ namespace ClinicSysMdiParent
                     {
                         PrescriptionSet rs = new PrescriptionSet();
                         rs._PR = (int)dataGridViewMR.SelectedRows[0].Cells[0].Value;
-                        rs.PrescriptionDelete();
+                        rs.PrescriptionListDelete();
                         PDGVS();
                     }
                 }
@@ -162,6 +164,7 @@ namespace ClinicSysMdiParent
                 FP._X = _mID;
                 FP._PR = NPID;
                 FP.ShowDialog();
+                PDGVS();
             }
         }
 
@@ -233,6 +236,11 @@ namespace ClinicSysMdiParent
             tNationalIDBox.Ntext = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
             tBirthDayBox.Ntext = birthday.ToString("yyyy-MM-dd");
             List<Cases_MainCase> cedt = (new CCasesSystem()).MainDataGridViewSet(dataGridView1);
+            if (cedt == null)
+            {
+                MessageBox.Show("查無資料，請確認會員是否有填寫初診紀錄表");
+                return;
+            }
             tHeightBox.Ntext = cedt[0].Height.ToString() + " cm";
             tWeightBox.Ntext = cedt[0].Weight.ToString() + " kg";
             _mID.ID = cedt[0].Member_ID;
@@ -240,12 +248,14 @@ namespace ClinicSysMdiParent
             tCaseIDBox.Ntext = _mID.CaseID.ToString();
             HistoryBox.Text = cedt[0].PastHistory.ToString();
             AllegeryBox.Text = cedt[0].AllergyRecord.ToString();
-            //try
-            //{
-            //    cedt[0].Attachment.ToString();
-            //}
-            //catch(NullReferenceException ex) { return; }
-            //finally { pictureBox1.Image = new Bitmap(cedt[0].Attachment.ToString()); }
+            if (!string.IsNullOrEmpty(cedt[0].Attachment))
+            {
+                pictureBox1.Image = new Bitmap(Application.StartupPath + cedt[0].Attachment.ToString());
+            }
+            else
+            {
+                pictureBox1.Image = pictureBox1.ErrorImage;
+            }
         }
 
         private void DataGridViewRefresh()
@@ -289,8 +299,11 @@ namespace ClinicSysMdiParent
         {
             OpenFileDialog open = new OpenFileDialog();
             open.ShowDialog();
-            pictureBox1.Image = new Bitmap(open.FileName);
-            _imagepath = open.FileName;
+            if (!string.IsNullOrEmpty(open.FileName))
+            {
+                pictureBox1.Image = new Bitmap(open.FileName);
+                _imagepath = open.FileName;
+            }
 
         }
     }

@@ -11,7 +11,7 @@ namespace ClinicSys
     public class CMbrBillViewModel
     {
         CBillModel billModel = new CBillModel();
-        public List<object> getFrmShopDataGridViewBillView(int cartsPrice, tCoupon shipCoupon, tCoupon discountCoupon, out int finalPrice)
+        public List<object> getDataGridViewBillView(int cartsPrice, tCoupon shipCoupon, tCoupon discountCoupon, out int finalPrice)
         {
             List<object> _lstBill = new List<object>();
 

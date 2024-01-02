@@ -15,7 +15,6 @@ namespace MemberSys
     public partial class Appointment_Room_Schedule
     {
         public int Appointment_ID { get; set; }
-        public int Emp_ID { get; set; }
         public Nullable<int> Room_ID { get; set; }
         public Nullable<int> Member_ID { get; set; }
         public string StartDate { get; set; }
@@ -24,6 +23,7 @@ namespace MemberSys
         public Nullable<int> Nurse_ID { get; set; }
     
         public virtual Member_EmployeeList Member_EmployeeList { get; set; }
+        public virtual Member_EmployeeList Member_EmployeeList1 { get; set; }
         public virtual Member_MemberList Member_MemberList { get; set; }
         public virtual RoomList RoomList { get; set; }
     }

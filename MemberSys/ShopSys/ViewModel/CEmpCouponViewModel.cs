@@ -11,7 +11,7 @@ namespace ClinicSys
     public class CEmpCouponViewModel : ICRUD
     {
         private tCoupon _coupon;
-        private DataGridView dataGridView;
+        private DataGridView _dataGridView;
         private CCouponModel _couponModel = new CCouponModel();
         private List<int> _couponIds = new List<int>();
         private List<CEmpCouponViewModel> _couponViewModels = new List<CEmpCouponViewModel>();
@@ -32,33 +32,50 @@ namespace ClinicSys
         public string 失效日期 { get { return _coupon.fEndDate.ToString("yyyy/MM/dd"); } }
         public string 使用描述 { get { return _coupon.fDescription; }  }
 
-        public void ShowAll()
+        public void showAll()
         {
             reloadCouponViewModels();
             resetDateGridView();
         }
 
-        public void Create()
+        public void create()
         {
-            _couponModel.create();
-            ShowAll();
+            frmEmpCoupEditor frm = new frmEmpCoupEditor();
+            if (frm.ShowDialog() == DialogResult.Cancel)
+                return;
+
+            tCoupon coupon = new tCoupon();
+            coupon.fName = frm.coupon.fName;
+            coupon.fCategory = frm.coupon.fCategory;
+            coupon.fValue = frm.coupon.fValue;
+            coupon.fCriteria = frm.coupon.fCriteria;
+            coupon.fStartDate = frm.coupon.fStartDate;
+            coupon.fEndDate = frm.coupon.fEndDate;
+            coupon.fDescription = frm.coupon.fDescription;
+            coupon.fPicture = frm.coupon.fPicture;
+            _couponModel.create(coupon);
+            showAll();
         }
 
-        public void Delete()
+        public void delete()
         {
-            int couponId = _couponIds[dataGridView.CurrentRow.Index];
-            _couponModel.deletebyCouponId(couponId);
-            ShowAll();
+            int couponId = _couponIds[_dataGridView.CurrentRow.Index];
+            _couponModel.deletebyId(couponId);
+            showAll();
         }
 
-        public void Update()
+        public void update()
         {
-            int currentCouponId = _couponIds[dataGridView.CurrentRow.Index];
-            _couponModel.updatebyCouponId(currentCouponId);
-            ShowAll();
+            int currentCouponId = _couponIds[_dataGridView.CurrentRow.Index];
+            frmEmpCoupEditor frm = new frmEmpCoupEditor();
+            frm.coupon = new CCouponModel().getCouponbyId(currentCouponId);
+            if (frm.ShowDialog() == DialogResult.Cancel)
+                return;
+            _couponModel.update(frm.coupon);
+            showAll();
         }
 
-        public void Search(string keyword)
+        public void search(string keyword)
         {
             reloadCouponViewModelsbyKeyword(keyword);
             resetDateGridView();
@@ -82,14 +99,14 @@ namespace ClinicSys
 
         public void mountDateGridView(DataGridView grd)
         {
-            dataGridView = grd;
-            ShowAll();
+            _dataGridView = grd;
+            showAll();
         }
 
         public void resetDateGridView()
         {
-            dataGridView.DataSource = null;
-            dataGridView.DataSource = _couponViewModels;
+            _dataGridView.DataSource = null;
+            _dataGridView.DataSource = _couponViewModels;
         }   
     }
 }

@@ -251,7 +251,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BTlabel);
             this.Controls.Add(this.MedicineBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmPrescription";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPrescription";
             this.Load += new System.EventHandler(this.FrmPrescription_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

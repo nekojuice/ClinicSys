@@ -36,8 +36,13 @@ namespace ClinicSysMdiParent
             var casedata = from x in H.Cases_MainCase
                            where x.Member_ID == _X.ID
                            select x;
-            var cedt = casedata.ToList();
-            return cedt;
+            if (casedata.ToList().Count != 0)
+            {
+                var cedt = casedata.ToList();
+                return cedt;
+            }
+            else 
+                return null;
         }
 
         public void searchMember(DataGridView dataGridView1, string str)
@@ -55,9 +60,12 @@ namespace ClinicSysMdiParent
             Cases_MainCase save = CSTE.Cases_MainCase.FirstOrDefault(P => P.Case_ID == _X.CaseID);
             save.PastHistory = pasthistory;
             save.AllergyRecord = allergyrecord;
-            string photo = Guid.NewGuid().ToString() + ".jpg";
-            save.Attachment = photo;
-            File.Copy(imagepath, Application.StartupPath  + photo);
+            if (!string.IsNullOrEmpty(imagepath))
+            {
+                string photo = Guid.NewGuid().ToString() + ".jpg";
+                save.Attachment = photo;
+                File.Copy(imagepath, Application.StartupPath + photo);
+            }
             CSTE.SaveChanges();
             MessageBox.Show("已儲存");
         }
@@ -211,11 +219,13 @@ namespace ClinicSysMdiParent
         public List<Cases_Prescriptionlist> ListPrescriptionListDataSet()
         {
             ClinicSysEntities CSTE = new ClinicSysEntities();
-            List<Cases_Prescriptionlist> data = CSTE.Cases_Prescriptionlist.Where(p => p.Prescription_ID == (_PR)).ToList();
-            return data;
+            var data = from x in CSTE.Cases_Prescriptionlist
+                       where x.Prescription_ID == _PR
+                       select x;//new { 處方ID = x.Prescription_ID, 藥品ID = x.Drug_ID, 品名 = x.Pharmacy_tMedicinesList.fDrugName, 一日服用次數 = x.Pharmacy_tMedicinesList.fDay, 服用天數 = x.Days, 總量 = x.Total_Amount };
+            return data.ToList();
         }
 
-        public void PrescriptionDelete()
+        public void PrescriptionListDelete()
         {
             ClinicSysEntities CSTE = new ClinicSysEntities();
             Cases_Prescription x = CSTE.Cases_Prescription.FirstOrDefault(p => p.Prescription_ID == (_PR));
@@ -256,6 +266,18 @@ namespace ClinicSysMdiParent
             List<int> LCP = PID.ToList();
             int ID = LCP.Last();
             return ID;
+        }
+
+        public void PrescriptionDelete()
+        {
+            ClinicSysEntities CSTE = new ClinicSysEntities();
+            Cases_Prescription x = CSTE.Cases_Prescription.FirstOrDefault(p => p.Prescription_ID == (_PR));
+            if (x != null)
+            {
+                CSTE.Cases_Prescription.Remove(x);
+                CSTE.SaveChanges();
+            }
+            MessageBox.Show("刪除資料成功");
         }
     }
 }

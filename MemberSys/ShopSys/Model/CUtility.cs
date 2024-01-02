@@ -8,14 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using System.Windows.Media;
 using Color = System.Drawing.Color;
 
 namespace ClinicSys
 {
     public class CUtility
     {
-
         public static byte[] getBytesbyPicture(PictureBox pictureBox)
         {
             System.IO.MemoryStream ms = new System.IO.MemoryStream();

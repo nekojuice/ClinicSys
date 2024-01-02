@@ -15,7 +15,7 @@ namespace MemberSys
     public partial class FrmLogin : Form
     {
 
-        private bool _isClosed = true;
+        public bool _isClosed = true;
         private Member_EmployeeList _employee = null;
         public int staffNumber
         {
@@ -39,8 +39,8 @@ namespace MemberSys
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-
-        }
+            _isClosed = true;
+    }
 
         private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {

@@ -318,6 +318,9 @@ namespace MemberSys.Frm
         //確認抓到哪筆小孩資料並且變數儲存並顯示在label9
         private void dataGridViewCareMem_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0)
+                return;
+
             DataGridViewRow selectedRow = dataGridViewCareMem.Rows[e.RowIndex];
             string name = selectedRow.Cells["媽媽"].Value.ToString();
             string childname = selectedRow.Cells["新生兒"].Value.ToString();
@@ -336,13 +339,13 @@ namespace MemberSys.Frm
             //透過list把資料顯示在dv object只是一個空殼 沒有值 要灌給他
             List<Member_Care> cares = new ClinicSysEntities().Cases_NewBornList.FirstOrDefault(x => x.NewBorn_ID == _babyID).Member_Care.Where(c => c.Care_Date > this.dateTimePicker1.Value && c.Care_Date < this.dateTimePicker2.Value).ToList();
             List<object> feedModle = new List<object>();
-            cares.Where(c=>c.Record_Type == "配方奶" || c.Record_Type == "母乳").ToList().ForEach(c => feedModle.Add(new { 時間 = c.Care_Date, 照顧型態 = c.Record_Type, 記錄值 = c.Record_dcp }));
+            cares.Where(c=>c.Record_Type == "配方奶" || c.Record_Type == "母乳").ToList().ForEach(c => feedModle.Add(new { 時間 = c.Care_Date, 奶水類型 = c.Record_Type, 記錄值 = c.Record_dcp }));
             dataGridViewFeed.DataSource = feedModle;
             List<object> pooModle = new List<object>();
-            cares.Where(c => c.Record_Type == "排便" ).ToList().ForEach(c => pooModle.Add(new { 時間 = c.Care_Date, 照顧型態 = c.Record_Type, 記錄值 = c.Record_dcp }));
+            cares.Where(c => c.Record_Type == "排便" ).ToList().ForEach(c => pooModle.Add(new { 時間 = c.Care_Date,  記錄值 = c.Record_dcp }));
             dataGridViewPoo.DataSource = pooModle;
             List<object> sleepModle = new List<object>();
-            cares.Where(c => c.Record_Type == "睡眠").ToList().ForEach(c => sleepModle.Add(new { 時間 = c.Care_Date, 照顧型態 = c.Record_Type, 記錄值 = c.Record_dcp }));
+            cares.Where(c => c.Record_Type == "睡眠").ToList().ForEach(c => sleepModle.Add(new { 時間 = c.Care_Date, 記錄值 = c.Record_dcp }));
             dataGridViewSleep.DataSource = sleepModle;
         }
 
@@ -421,6 +424,7 @@ namespace MemberSys.Frm
             return true;
         }
 
+        //新增餵奶紀錄
         private void btnFeedNew_Click(object sender, EventArgs e)
         {
             if (dataGridViewCareMem.SelectedRows.Count > 0)

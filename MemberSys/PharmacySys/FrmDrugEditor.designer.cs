@@ -152,7 +152,7 @@
             // 
             this.comboBoxPC.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.comboBoxPC.FormattingEnabled = true;
-            this.comboBoxPC.Location = new System.Drawing.Point(133, 462);
+            this.comboBoxPC.Location = new System.Drawing.Point(141, 452);
             this.comboBoxPC.Name = "comboBoxPC";
             this.comboBoxPC.Size = new System.Drawing.Size(724, 32);
             this.comboBoxPC.TabIndex = 123;
@@ -160,9 +160,9 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.Location = new System.Drawing.Point(14, 463);
+            this.label2.Location = new System.Drawing.Point(22, 453);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(239, 30);
+            this.label2.Size = new System.Drawing.Size(239, 32);
             this.label2.TabIndex = 122;
             this.label2.Text = "懷孕藥品分級";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -171,7 +171,7 @@
             // 
             this.comboBoxType.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.comboBoxType.FormattingEnabled = true;
-            this.comboBoxType.Location = new System.Drawing.Point(138, 254);
+            this.comboBoxType.Location = new System.Drawing.Point(146, 286);
             this.comboBoxType.Name = "comboBoxType";
             this.comboBoxType.Size = new System.Drawing.Size(719, 32);
             this.comboBoxType.TabIndex = 121;
@@ -179,9 +179,9 @@
             // lblType
             // 
             this.lblType.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblType.Location = new System.Drawing.Point(17, 254);
+            this.lblType.Location = new System.Drawing.Point(25, 286);
             this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(239, 30);
+            this.lblType.Size = new System.Drawing.Size(239, 32);
             this.lblType.TabIndex = 121;
             this.lblType.Text = "劑型";
             this.lblType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -298,9 +298,9 @@
             this.fbStorage.AutoSize = true;
             this.fbStorage.fieldName = "儲存方法";
             this.fbStorage.fieldValue = "";
-            this.fbStorage.Location = new System.Drawing.Point(14, 655);
+            this.fbStorage.Location = new System.Drawing.Point(22, 611);
             this.fbStorage.Name = "fbStorage";
-            this.fbStorage.Size = new System.Drawing.Size(843, 30);
+            this.fbStorage.Size = new System.Drawing.Size(843, 32);
             this.fbStorage.TabIndex = 11;
             // 
             // fbBrand
@@ -308,18 +308,18 @@
             this.fbBrand.AutoSize = true;
             this.fbBrand.fieldName = "廠牌";
             this.fbBrand.fieldValue = "";
-            this.fbBrand.Location = new System.Drawing.Point(14, 763);
+            this.fbBrand.Location = new System.Drawing.Point(22, 713);
             this.fbBrand.Name = "fbBrand";
-            this.fbBrand.Size = new System.Drawing.Size(843, 30);
+            this.fbBrand.Size = new System.Drawing.Size(843, 32);
             this.fbBrand.TabIndex = 13;
             // 
             // fbId_Drug
             // 
             this.fbId_Drug.fieldName = "fId";
             this.fbId_Drug.fieldValue = "";
-            this.fbId_Drug.Location = new System.Drawing.Point(14, 17);
+            this.fbId_Drug.Location = new System.Drawing.Point(22, 49);
             this.fbId_Drug.Name = "fbId_Drug";
-            this.fbId_Drug.Size = new System.Drawing.Size(843, 30);
+            this.fbId_Drug.Size = new System.Drawing.Size(843, 32);
             this.fbId_Drug.TabIndex = 1;
             // 
             // fbSupplier
@@ -327,27 +327,27 @@
             this.fbSupplier.AutoSize = true;
             this.fbSupplier.fieldName = "藥商";
             this.fbSupplier.fieldValue = "";
-            this.fbSupplier.Location = new System.Drawing.Point(14, 712);
+            this.fbSupplier.Location = new System.Drawing.Point(22, 662);
             this.fbSupplier.Name = "fbSupplier";
-            this.fbSupplier.Size = new System.Drawing.Size(843, 30);
+            this.fbSupplier.Size = new System.Drawing.Size(843, 32);
             this.fbSupplier.TabIndex = 12;
             // 
             // fbMaxDose
             // 
             this.fbMaxDose.fieldName = "最大劑量";
             this.fbMaxDose.fieldValue = "";
-            this.fbMaxDose.Location = new System.Drawing.Point(14, 408);
+            this.fbMaxDose.Location = new System.Drawing.Point(22, 396);
             this.fbMaxDose.Name = "fbMaxDose";
-            this.fbMaxDose.Size = new System.Drawing.Size(843, 30);
+            this.fbMaxDose.Size = new System.Drawing.Size(843, 32);
             this.fbMaxDose.TabIndex = 7;
             // 
             // fbPrecautions
             // 
             this.fbPrecautions.fieldName = "注意事項";
             this.fbPrecautions.fieldValue = "";
-            this.fbPrecautions.Location = new System.Drawing.Point(14, 558);
+            this.fbPrecautions.Location = new System.Drawing.Point(22, 509);
             this.fbPrecautions.Name = "fbPrecautions";
-            this.fbPrecautions.Size = new System.Drawing.Size(843, 30);
+            this.fbPrecautions.Size = new System.Drawing.Size(843, 32);
             this.fbPrecautions.TabIndex = 9;
             // 
             // fbWarnings
@@ -355,36 +355,36 @@
             this.fbWarnings.AutoSize = true;
             this.fbWarnings.fieldName = "禁忌";
             this.fbWarnings.fieldValue = "";
-            this.fbWarnings.Location = new System.Drawing.Point(14, 607);
+            this.fbWarnings.Location = new System.Drawing.Point(22, 560);
             this.fbWarnings.Name = "fbWarnings";
-            this.fbWarnings.Size = new System.Drawing.Size(843, 30);
+            this.fbWarnings.Size = new System.Drawing.Size(843, 32);
             this.fbWarnings.TabIndex = 10;
             // 
             // fbGenericName
             // 
             this.fbGenericName.fieldName = "學名";
             this.fbGenericName.fieldValue = "";
-            this.fbGenericName.Location = new System.Drawing.Point(14, 113);
+            this.fbGenericName.Location = new System.Drawing.Point(22, 145);
             this.fbGenericName.Name = "fbGenericName";
-            this.fbGenericName.Size = new System.Drawing.Size(843, 30);
+            this.fbGenericName.Size = new System.Drawing.Size(843, 32);
             this.fbGenericName.TabIndex = 3;
             // 
             // fbTradeName
             // 
             this.fbTradeName.fieldName = "商品名";
             this.fbTradeName.fieldValue = "";
-            this.fbTradeName.Location = new System.Drawing.Point(14, 161);
+            this.fbTradeName.Location = new System.Drawing.Point(22, 193);
             this.fbTradeName.Name = "fbTradeName";
-            this.fbTradeName.Size = new System.Drawing.Size(843, 30);
+            this.fbTradeName.Size = new System.Drawing.Size(843, 32);
             this.fbTradeName.TabIndex = 4;
             // 
             // fbDrugCode
             // 
             this.fbDrugCode.fieldName = "藥品代碼";
             this.fbDrugCode.fieldValue = "";
-            this.fbDrugCode.Location = new System.Drawing.Point(14, 65);
+            this.fbDrugCode.Location = new System.Drawing.Point(22, 97);
             this.fbDrugCode.Name = "fbDrugCode";
-            this.fbDrugCode.Size = new System.Drawing.Size(843, 30);
+            this.fbDrugCode.Size = new System.Drawing.Size(843, 32);
             this.fbDrugCode.TabIndex = 2;
             // 
             // fbDrugDose
@@ -392,18 +392,18 @@
             this.fbDrugDose.AutoSize = true;
             this.fbDrugDose.fieldName = "常用劑量";
             this.fbDrugDose.fieldValue = "";
-            this.fbDrugDose.Location = new System.Drawing.Point(14, 307);
+            this.fbDrugDose.Location = new System.Drawing.Point(22, 339);
             this.fbDrugDose.Name = "fbDrugDose";
-            this.fbDrugDose.Size = new System.Drawing.Size(843, 30);
+            this.fbDrugDose.Size = new System.Drawing.Size(843, 32);
             this.fbDrugDose.TabIndex = 6;
             // 
             // fbDrugName
             // 
             this.fbDrugName.fieldName = "中文名";
             this.fbDrugName.fieldValue = "";
-            this.fbDrugName.Location = new System.Drawing.Point(14, 207);
+            this.fbDrugName.Location = new System.Drawing.Point(22, 239);
             this.fbDrugName.Name = "fbDrugName";
-            this.fbDrugName.Size = new System.Drawing.Size(843, 30);
+            this.fbDrugName.Size = new System.Drawing.Size(843, 32);
             this.fbDrugName.TabIndex = 5;
             // 
             // button2

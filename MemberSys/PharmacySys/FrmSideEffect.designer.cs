@@ -114,6 +114,7 @@
             this.Controls.Add(this.fbId_SideEffect);
             this.Controls.Add(this.label1);
             this.Name = "FrmSideEffect";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmSideEffect";
             this.Activated += new System.EventHandler(this.FrmSideEffect_Activated);
             this.Load += new System.EventHandler(this.FrmSideEffect_Load);

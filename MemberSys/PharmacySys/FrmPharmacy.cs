@@ -41,10 +41,29 @@ namespace ClinicSysMdiParent
                 list.Add(new CDrugViewModel(t));
             dataGridView1.DataSource = list;*/
             ClinicSysEntities db = new ClinicSysEntities();
-            var all = from t in db.Pharmacy_tMedicinesList
-                      select t;
+            var _medicine = from t in db.Pharmacy_tTypeDetails
+                            select new
+                            {
+                                t.fId_Drug,
+                                藥品代碼 = t.Pharmacy_tMedicinesList.fDrugCode,
+                                學名 = t.Pharmacy_tMedicinesList.fGenericName,
+                                商品名 = t.Pharmacy_tMedicinesList.fTradeName,
+                                中文名 = t.Pharmacy_tMedicinesList.fDrugName,
+                                劑型 = t.Pharmacy_tTypeList.fType,
+                                常用劑量 = t.Pharmacy_tMedicinesList.fDrugDose,
+                                最大劑量 = t.Pharmacy_tMedicinesList.fMaxDose,
+                                懷孕藥品分級 = t.Pharmacy_tMedicinesList.fPregnancyCategory,
+                                注意事項 = t.Pharmacy_tMedicinesList.fPrecautions,
+                                禁忌 = t.Pharmacy_tMedicinesList.fWarnings,
+                                儲存方法 = t.Pharmacy_tMedicinesList.fStorage,
+                                藥商 = t.Pharmacy_tMedicinesList.fSupplier,
+                                廠牌 = t.Pharmacy_tMedicinesList.fBrand
 
-            dataGridViewDrug.DataSource = all.ToList();
+                            };
+            //var all = from t in db.Pharmacy_tMedicinesList
+            //          select t;
+
+            dataGridViewDrug.DataSource = _medicine.ToList();
 
 
             //可以抓一個主表+一個關聯子表
@@ -64,16 +83,14 @@ namespace ClinicSysMdiParent
             //    list.Add(t);
             //}
             //dataGridView1.DataSource = _medicine.ToList();
-            CStyle.resetGridRowColor(dataGridViewDrug);
+            CStyle_Drug.resetGridRowColor(dataGridViewDrug);
+            CStyle_Drug.resetGrdWithInDrug(dataGridViewDrug);
         }
 
         private void FrmPharmacy_Activated(object sender, EventArgs e) //版面尚未修改好
         {
-            CStyle.resetGridRowColor(dataGridViewDrug);
-            dataGridViewDrug.Columns[0].Width = 200;
-            dataGridViewDrug.Columns[1].Width = 200;
-            dataGridViewDrug.Columns[2].Width = 200;
-            dataGridViewDrug.Columns[3].Width = 400;
+            CStyle_Drug.resetGridRowColor(dataGridViewDrug);
+            CStyle_Drug.resetGrdWithInDrug(dataGridViewDrug);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -291,16 +308,37 @@ namespace ClinicSysMdiParent
         public void search(string keyword)
         {
             ClinicSysEntities db=new ClinicSysEntities();
-            var Medicine=db.Pharmacy_tMedicinesList.
-                Where(k=>k.fDrugCode.Contains(keyword)||
-                     k.fGenericName.Contains(keyword)||
+            var Medicine= db.Pharmacy_tMedicinesList.
+                Where(k=>k.fDrugCode.Contains(keyword) ||
+                     k.fGenericName.Contains(keyword) ||
                      k.fTradeName.Contains(keyword)||
                      k.fDrugName.Contains(keyword)||
                      k.fStorage.Contains(keyword)||
                      k.fSupplier.Contains(keyword)||
-                     k.fBrand.Contains(keyword));                
-            dataGridViewDrug.DataSource = Medicine.ToList();
-            CStyle.resetGridRowColor(dataGridViewDrug);                  
+                     k.fBrand.Contains(keyword));
+            var Key = from t in Medicine
+                      join t1 in db.Pharmacy_tTypeDetails on t.fId_Drug equals t1.fId_Drug
+                      select new
+                      {
+                          t.fId_Drug,
+                          藥品代碼 = t.fDrugCode,
+                          學名 = t.fGenericName,
+                          商品名 = t.fTradeName,
+                          中文名 = t.fDrugName,
+                          劑型 = t1.Pharmacy_tTypeList.fType,
+                          常用劑量 = t.fDrugDose,
+                          最大劑量 = t.fMaxDose,
+                          懷孕藥品分級 = t.fPregnancyCategory,
+                          注意事項 = t.fPrecautions,
+                          禁忌 = t.fWarnings,
+                          儲存方法 = t.fStorage,
+                          藥商 = t.fSupplier,
+                          廠牌 = t.fBrand
+                      };
+            dataGridViewDrug.DataSource = Key.ToList();
+            
+            CStyle_Drug.resetGridRowColor(dataGridViewDrug);
+            CStyle_Drug.resetGrdWithInDrug(dataGridViewDrug);
         }                
         private void button5_Click(object sender, EventArgs e)
         {
@@ -314,6 +352,34 @@ namespace ClinicSysMdiParent
             MessageBox.Show(CUdetails.Count().ToString());
             */
         }
-        
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewDrug == null)
+                return;
+            string id = dataGridViewDrug.CurrentRow.Cells[0].Value.ToString();
+            if (string.IsNullOrEmpty(id))
+                return;
+            int ID = Convert.ToInt32(id);
+            ClinicSysEntities db = new ClinicSysEntities();
+            Pharmacy_tMedicinesList m = db.Pharmacy_tMedicinesList.FirstOrDefault(p => p.fId_Drug == ID);
+            if (m == null) return;
+            var a1 = from t1 in db.Pharmacy_tClinicalUseDetails
+                     join t2 in db.Pharmacy_tClinicalUseList on t1.fId_ClicicalUse equals t2.fId_ClinicalUse
+                     where t1.fId_Drug == ID
+                     select new { 適應症明細 = t2.fClinicalUse };
+            var a2 = from s1 in db.Pharmacy_tSideEffectDetails
+                     join s2 in db.Pharmacy_tSideEffectList on s1.fId_SideEffect equals s2.fId_SideEffect
+                     where s1.fId_Drug == ID
+                     select new {副作用明細=s2.fSideEffect};
+           
+            dataGridView1.DataSource = a1.ToList();
+            dataGridView2.DataSource = a2.ToList();
+            dataGridView1.Columns[0].Width = 450;
+            dataGridView2.Columns[0].Width = 450;
+            CStyle_Drug.resetGridRowColor(dataGridView1);
+            
+            CStyle_Drug.resetGridRowColor(dataGridView2);
+        }
     }
 }

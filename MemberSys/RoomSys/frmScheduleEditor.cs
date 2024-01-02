@@ -90,7 +90,7 @@ namespace prjRoom
         private void button1_Click(object sender, EventArgs e)
         {
             string errormsg = isUiValidated();
-            if (errormsg != null)
+            if (!string.IsNullOrEmpty(errormsg))
             {
                 MessageBox.Show(errormsg);
                 return;

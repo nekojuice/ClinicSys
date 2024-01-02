@@ -435,7 +435,7 @@
     <Compile Include="PharmacySys\View\CDrugViewModel.cs" />
     <Compile Include="PharmacySys\View\CMedicine.cs" />
     <Compile Include="PharmacySys\View\CSideEffectViewModel.cs" />
-    <Compile Include="PharmacySys\View\CStyle.cs" />
+    <Compile Include="PharmacySys\View\CStyle_Drug.cs" />
     <Compile Include="PharmacySys\View\CTypeViewModel.cs" />
     <Compile Include="PharmacySys\View\FieldBox.cs">
       <SubType>UserControl</SubType>
@@ -1027,16 +1027,6 @@
     <None Include="Resources\2差勤管理.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ClinicSys.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ClinicSys.edmx</DependentUpon>
-      <LastGenOutput>ClinicSys.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="ClinicSys.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ClinicSys.edmx</DependentUpon>
-      <LastGenOutput>ClinicSys.cs</LastGenOutput>
-    </Content>
     <None Include="Resources\零.wav" />
     <None Include="Resources\號.wav" />
     <None Include="Resources\報到成功.wav" />
@@ -1052,6 +1042,17 @@
     <None Include="Resources\七.wav" />
     <None Include="Resources\一.wav" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="ClinicSys.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ClinicSys.edmx</DependentUpon>
+      <LastGenOutput>ClinicSys.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ClinicSys.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ClinicSys.edmx</DependentUpon>
+      <LastGenOutput>ClinicSys.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -66,14 +66,18 @@ namespace ClinicSysMdiParent
                 _culist.Add(q.ToString());
             }
             if (lbCUList.Items.Count <= 0) 
-            { MessageBox.Show("請選取一個以上的適應症"); }
+            { 
+                MessageBox.Show("請選取一個以上的適應症");
+                return;
+            }
+            
             this.Close(); 
         }
 
         private void button2_Click(object sender, EventArgs e) //加入
         {
             lbCUList.DataSource = null;
-            //lbCUList.Items.Clear();
+            lbCUList.Items.Clear();
             for (int i = 0; i < clbCUList.CheckedItems.Count; i++)
             {
                 lbCUList.Items.Add((string)clbCUList.CheckedItems[i]);
@@ -83,7 +87,7 @@ namespace ClinicSysMdiParent
         private void button3_Click(object sender, EventArgs e) //清空
         {
             lbCUList.DataSource = null;
-            //lbCUList.Items.Clear();
+            lbCUList.Items.Clear();
         }
 
         private void button4_Click(object sender, EventArgs e) //取消

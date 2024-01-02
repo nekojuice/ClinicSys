@@ -12,10 +12,11 @@ namespace ClinicSys
     public class COrderModel
     {
         ClinicSysEntities db = new ClinicSysEntities();
-        public void create(tOrder order, int orderPrice, int userId, tCoupon shipCoupon, tCoupon discountCoupon)
+        public void create(tOrder order, int orderPrice, int memberId, tCoupon shipCoupon, tCoupon discountCoupon)
         {
+            //create order
             tOrder o = new tOrder();
-            o.fOrderId = "TW" + Guid.NewGuid().ToString().ToUpper().Substring(0, 13).Replace("-", "") + DateTime.Now.ToShortDateString().Replace("/", "");
+            o.fOrderId = "TW-" + Guid.NewGuid().ToString().ToUpper().Substring(0, 6).Replace("-", "") + DateTime.Now.ToShortDateString().Replace("/", "");
             o.fOrderDate = DateTime.Now;
             o.fCheckPayDate = order.fCheckPayDate;
             o.fShipDate = order.fShipDate;
@@ -28,7 +29,7 @@ namespace ClinicSys
             o.fAccountFiveNumber = order.fAccountFiveNumber;
             o.fPayType = order.fPayType;
             o.fShipType = order.fShipType;
-            o.fMemberId = userId;
+            o.fMemberId = memberId;
             if (shipCoupon != null)
                 o.fCouponIdforShip = shipCoupon.Id;
             if (discountCoupon != null)
@@ -40,22 +41,52 @@ namespace ClinicSys
             }
             db.tOrder.Add(o);
             db.SaveChanges();
+
+            //create orderDetail
+            int orderId = new COrderModel().getLastOrderIdbyMemberId(memberId);
+            List<tCart> carts = new CCartModel().getCartsbyMemberId(memberId).ToList();
+            List<tOrderDetail> orderDetails = new List<tOrderDetail>();
+            foreach (tCart cart in carts)
+            {
+                tOrderDetail orderDetail = new tOrderDetail();
+                orderDetail.fAmount = cart.fAmount;
+                orderDetail.fOrderId = orderId;
+                orderDetail.fProductId = cart.fProductId;
+                orderDetails.Add(orderDetail);
+            }
+            db.tOrderDetail.AddRange(orderDetails);
+
+            //delete cart
+            db.tCart.RemoveRange(db.tCart.Where(c => c.fMemberId == memberId));
+            db.SaveChanges();
+
+            //update couponWallet's fUsed from false to true
+            if (shipCoupon != null)
+            {
+                tCouponWallet couponWallet = new CCouponWalletModel().getCouponWalletbyMemberIdandCouponId(FrmParent._MEMBER.Member_ID, shipCoupon.Id);
+                new CCouponWalletModel().useCoupon(couponWallet.Id);
+            }
+            if (discountCoupon != null)
+            {
+                tCouponWallet couponWallet = new CCouponWalletModel().getCouponWalletbyMemberIdandCouponId(FrmParent._MEMBER.Member_ID, discountCoupon.Id);
+                new CCouponWalletModel().useCoupon(couponWallet.Id);
+            }
         }
 
         public int getLastOrderIdbyMemberId(int memberId)
         {
-            tOrder lastOrder = db.tOrder.Where(o => o.fMemberId == memberId).OrderByDescending(o => o.Id).FirstOrDefault();
+            tOrder lastOrder = db.tOrder.Where(o => o.fMemberId == memberId).FirstOrDefault();
             return lastOrder.Id;
         }
 
         public List<tOrder> getOrdersbyMemberId(int memberId)
         {
-            return db.tOrder.Where(o => o.fMemberId == memberId).ToList();
+            return db.tOrder.Where(o => o.fMemberId == memberId).OrderByDescending(o => o.Id).ToList();
         }
 
         public List<tOrder> getOrders()
         {
-            return db.tOrder.ToList();
+            return db.tOrder.OrderByDescending(o=>o.Id).ToList();
         }
 
         public tOrder getOrderbyOrderId(string orderId)
@@ -81,7 +112,6 @@ namespace ClinicSys
                 db.SaveChanges();
                 return true;
             }
-
         }
 
         public bool updateShipDatebyOrderId(string orderId)
@@ -97,14 +127,37 @@ namespace ClinicSys
             }
         }
 
-        public void deletebyOrderId(int orderId)
+        public void deletebyId(int orderId)
         {
             tOrder order = db.tOrder.Where(o => o.Id == orderId).FirstOrDefault();
-            List<tOrderDetail> orderDetails = order.tOrderDetail.ToList();
-            db.tOrderDetail.RemoveRange(orderDetails);
+            int couponId_amount = (order.fCouponIdforAmount != null) ? Convert.ToInt32(order.fCouponIdforAmount) : -1;
+            int couponId_percent = (order.fCouponIdforPercent != null) ? Convert.ToInt32(order.fCouponIdforPercent) : -1;
+            int couponId_ship = (order.fCouponIdforShip != null) ? Convert.ToInt32(order.fCouponIdforShip) : -1;
+
+            //delete orderDetail ;
+            db.tOrderDetail.RemoveRange(order.tOrderDetail.ToList());
             db.SaveChanges();
+
+            //delete order
             db.tOrder.Remove(order);
             db.SaveChanges();
+
+            //update couponWallet's fUsed from ture to fasle
+            if (couponId_amount != -1)
+            {
+                tCouponWallet couponWallet = new CCouponWalletModel().getCouponWalletbyMemberIdandCouponId(FrmParent._MEMBER.Member_ID, couponId_amount);
+                new CCouponWalletModel().reliveCoupon(couponWallet.Id);
+            }
+            if (couponId_percent != -1)
+            {
+                tCouponWallet couponWallet = new CCouponWalletModel().getCouponWalletbyMemberIdandCouponId(FrmParent._MEMBER.Member_ID, couponId_percent);
+                new CCouponWalletModel().reliveCoupon(couponWallet.Id);
+            }
+            if (couponId_ship != -1)
+            {
+                tCouponWallet couponWallet = new CCouponWalletModel().getCouponWalletbyMemberIdandCouponId(FrmParent._MEMBER.Member_ID, couponId_ship);
+                new CCouponWalletModel().reliveCoupon(couponWallet.Id);
+            }
         }
 
         public List<tOrder> getOrdersbyKeyword(string keyword)
@@ -114,7 +167,7 @@ namespace ClinicSys
 
         public DateTime? getShipDatebyOrderId(string orderId)
         {
-            return db.tOrder.Where(o=>o.fOrderId==orderId).FirstOrDefault().fShipDate;
+            return db.tOrder.Where(o => o.fOrderId == orderId).FirstOrDefault().fShipDate;
         }
     }
 }

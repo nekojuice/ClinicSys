@@ -54,10 +54,10 @@ namespace prjRoom
 
             public void search(string keyword)
             {
-            ClinicSysEntities db = new ClinicSysEntities();
-            var products = db.RoomList.Where(p => p.Name.Contains(keyword));
-            RoomListdataGridView.DataSource = products.ToList();
-            CStyle_room.DataGridViewDesign(RoomListdataGridView);
+           // ClinicSysEntities db = new ClinicSysEntities();
+           // var products = db.RoomList.Where(p => p.Name.Contains(keyword));
+          //  RoomListdataGridView.DataSource = products.ToList();
+         //   CStyle_room.DataGridViewDesign(RoomListdataGridView);
         }
 
         public void update()
@@ -94,11 +94,17 @@ namespace prjRoom
             private void refresh()
             {
                 ClinicSysEntities db = new ClinicSysEntities();
-                var roomLists = from p in db.RoomList
-                                select p;
-                RoomListdataGridView.DataSource = roomLists.ToList();
-                RoomListdataGridView.Columns[3].Visible = false;
-                RoomListdataGridView.Columns[4].Visible = false;
+            var roomLists = from p in db.RoomList
+                            select new
+                            {
+
+                                房間ID = p.Room_ID,
+                                房間名稱 = p.Name,
+                                房型ID = p.Type_ID,
+                                    
+                                };
+            RoomListdataGridView.DataSource = roomLists.ToList();
+              
 
 
             //for(int i=3;i< RoomListdataGridView.ColumnCount; i++) {

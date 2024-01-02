@@ -63,8 +63,8 @@ namespace ClinicSysMdiParent.Method
             foreach (var t in all)
                 list.Add(new CSideEffectViewModel(t));
             _grd.DataSource = list;
-            CStyle.resetGridRowColor(_grd);
-            CStyle.resetGrdWith(_grd);
+            CStyle_Drug.resetGridRowColor(_grd);
+            CStyle_Drug.resetGrdWith(_grd);
 
         }
 
@@ -82,7 +82,7 @@ namespace ClinicSysMdiParent.Method
             //refresh();  要讓grd只顯示 code & type，不能用refresh會變成重新帶入資料 forecah設定
 
 
-            CStyle.resetGridRowColor(_grd);
+            CStyle_Drug.resetGridRowColor(_grd);
         }
 
         public void update()

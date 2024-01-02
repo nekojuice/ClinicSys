@@ -15,7 +15,7 @@ namespace MemberSys
     public partial class FrmLogin : Form
     {
 
-        private bool _isClosed = true;
+        public bool _isClosed = true;
         private Member_EmployeeList _employee = null;
         public int staffNumber
         {
@@ -39,8 +39,8 @@ namespace MemberSys
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-
-        }
+            _isClosed = true;
+    }
 
         private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -50,7 +50,6 @@ namespace MemberSys
 
                 e.Cancel = true;
             else
-                _isClosed = true;
                 return;
 
         }
@@ -108,14 +107,6 @@ namespace MemberSys
             }
             //不寫
             return msg;
-        }
-
-        private void fbStaffNum_keydown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                button1.PerformClick();
-            }
         }
 
         //private void FrmLogin_FormClosed(object sender, FormClosedEventArgs e)

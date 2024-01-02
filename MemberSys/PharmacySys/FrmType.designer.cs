@@ -125,6 +125,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.fbIdType);
             this.Name = "FrmType";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmType";
             this.Load += new System.EventHandler(this.FrmType_Load);
             this.panel3.ResumeLayout(false);

@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -53,10 +54,17 @@ namespace ClinicSysMdiParent
             }
         }
 
+
+        private bool isFirstEdiotr = true;
         private void button2_Click(object sender, EventArgs e)   //加入
         {
-            lbSEList.DataSource = null;
-            //lbSEList.Items.Clear();
+            if (isFirstEdiotr)
+            {
+                lbSEList.DataSource = null;
+                isFirstEdiotr = false;
+            }
+            
+            lbSEList.Items.Clear();
             for( int i = 0; i < clbSEList.CheckedItems.Count; i++)
             {
                 lbSEList.Items.Add(clbSEList.CheckedItems[i]);
@@ -66,7 +74,7 @@ namespace ClinicSysMdiParent
         private void button3_Click(object sender, EventArgs e) //清空
         {
             lbSEList.DataSource = null;
-            //lbSEList.Items.Clear() ;
+            lbSEList.Items.Clear() ;
             
         }
 
@@ -87,6 +95,7 @@ namespace ClinicSysMdiParent
             if (lbSEList.Items.Count <= 0)
             {
                 MessageBox.Show("請選取一個以上的副作用");
+                return;
             }
             this.Close();
         }

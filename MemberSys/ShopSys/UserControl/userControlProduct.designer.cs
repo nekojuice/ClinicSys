@@ -37,7 +37,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
@@ -80,7 +80,7 @@
             this.btnAddCart.Name = "btnAddCart";
             this.btnAddCart.Size = new System.Drawing.Size(148, 32);
             this.btnAddCart.TabIndex = 3;
-            this.btnAddCart.Text = "加入購物車";
+            this.btnAddCart.Text = "商品詳細";
             this.btnAddCart.UseVisualStyleBackColor = false;
             this.btnAddCart.Click += new System.EventHandler(this.btnAddCart_Click);
             // 

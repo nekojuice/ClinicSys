@@ -10,9 +10,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//using System.Windows.Controls;
 using System.Windows.Forms;
-//using System.Windows.Interop;
 
 namespace Clinicsys
 {
@@ -28,7 +26,7 @@ namespace Clinicsys
         private void setDataGridViewMemberOrder()
         {
             dataGridViewMemberOrder.Columns.Clear();
-            List<tOrder> orders = new COrderModel().getOrdersbyMemberId(FrmMain._MEMBER.Member_ID);
+            List<tOrder> orders = new COrderModel().getOrdersbyMemberId(FrmParent._MEMBER.Member_ID);
             memberOrderViewModels = new CMbrOrderViewModel().getCMemberOrderViews(orders);
             dataGridViewMemberOrder.DataSource = null;
             dataGridViewMemberOrder.DataSource = memberOrderViewModels;

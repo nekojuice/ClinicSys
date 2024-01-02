@@ -41,8 +41,8 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.userControlAddDecrease1 = new Clinicsys.userControlAddDecrease();
             this.btnRemovefromCart = new System.Windows.Forms.Button();
+            this.userControlAddDecrease1 = new Clinicsys.userControlAddDecrease();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -61,7 +61,7 @@
             // 
             // btnAddtoCart
             // 
-            this.btnAddtoCart.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnAddtoCart.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnAddtoCart.Location = new System.Drawing.Point(192, 399);
             this.btnAddtoCart.Name = "btnAddtoCart";
             this.btnAddtoCart.Size = new System.Drawing.Size(300, 50);
@@ -73,7 +73,7 @@
             // lblName
             // 
             this.lblName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblName.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblName.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblName.Location = new System.Drawing.Point(0, 0);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(250, 46);
@@ -112,7 +112,7 @@
             this.txtDescription.BackColor = System.Drawing.Color.Snow;
             this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDescription.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDescription.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtDescription.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtDescription.Location = new System.Drawing.Point(0, 0);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
@@ -135,7 +135,7 @@
             // lbl_price
             // 
             this.lbl_price.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_price.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbl_price.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lbl_price.ForeColor = System.Drawing.Color.OrangeRed;
             this.lbl_price.Location = new System.Drawing.Point(36, 0);
             this.lbl_price.Name = "lbl_price";
@@ -168,6 +168,17 @@
             this.panel3.Size = new System.Drawing.Size(200, 10);
             this.panel3.TabIndex = 0;
             // 
+            // btnRemovefromCart
+            // 
+            this.btnRemovefromCart.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnRemovefromCart.Location = new System.Drawing.Point(16, 399);
+            this.btnRemovefromCart.Name = "btnRemovefromCart";
+            this.btnRemovefromCart.Size = new System.Drawing.Size(170, 50);
+            this.btnRemovefromCart.TabIndex = 6;
+            this.btnRemovefromCart.Text = "移出購物車";
+            this.btnRemovefromCart.UseVisualStyleBackColor = true;
+            this.btnRemovefromCart.Click += new System.EventHandler(this.btnRemovefromCart_Click);
+            // 
             // userControlAddDecrease1
             // 
             this.userControlAddDecrease1.BackColor = System.Drawing.SystemColors.Control;
@@ -178,18 +189,7 @@
             this.userControlAddDecrease1.text = "數量";
             this.userControlAddDecrease1.value = 0;
             // 
-            // btnRemovefromCart
-            // 
-            this.btnRemovefromCart.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnRemovefromCart.Location = new System.Drawing.Point(16, 399);
-            this.btnRemovefromCart.Name = "btnRemovefromCart";
-            this.btnRemovefromCart.Size = new System.Drawing.Size(170, 50);
-            this.btnRemovefromCart.TabIndex = 6;
-            this.btnRemovefromCart.Text = "移出購物車";
-            this.btnRemovefromCart.UseVisualStyleBackColor = true;
-            this.btnRemovefromCart.Click += new System.EventHandler(this.btnRemovefromCart_Click);
-            // 
-            // frmCartEditor
+            // frmMbrCartEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -204,7 +204,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(520, 500);
             this.MinimumSize = new System.Drawing.Size(520, 39);
-            this.Name = "frmCartEditor";
+            this.Name = "frmMbrCartEditor";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

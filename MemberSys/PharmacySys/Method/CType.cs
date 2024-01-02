@@ -25,8 +25,8 @@ namespace ClinicSysMdiParent.Method
             foreach (var t in all)
                 list.Add(new CTypeViewModel(t));
             _grd.DataSource = list;
-            CStyle.resetGridRowColor(_grd);
-            CStyle.resetGrdWith(_grd);
+            CStyle_Drug.resetGridRowColor(_grd);
+            CStyle_Drug.resetGrdWith(_grd);
         }
         public void create()
         {
@@ -103,7 +103,7 @@ namespace ClinicSysMdiParent.Method
             //refresh();  要讓grd只顯示 code & type
        
            
-            CStyle.resetGridRowColor(_grd);
+            CStyle_Drug.resetGridRowColor(_grd);
         }
 
        

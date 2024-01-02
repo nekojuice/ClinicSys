@@ -48,7 +48,7 @@ namespace ClinicSys
         private List<tCoupon> _expiredorUsedCoupons;
         private List<CMbrCouponHistoryViewModel> loadUsedandExpiredCoupons()
         {
-            _expiredorUsedCoupons = new CCouponModel().getExpiredorUsedCouponsbyMemberId(FrmMain._MEMBER.Member_ID);
+            _expiredorUsedCoupons = new CCouponModel().getExpiredorUsedCouponsbyMemberId(FrmParent._MEMBER.Member_ID);
             List<CMbrCouponHistoryViewModel> mbrCouponHistoryViews = new List<CMbrCouponHistoryViewModel>();
             _expiredorUsedCoupons.ForEach(c => mbrCouponHistoryViews.Add(new CMbrCouponHistoryViewModel(c)));
             return mbrCouponHistoryViews;
@@ -68,7 +68,7 @@ namespace ClinicSys
         private List<tCoupon> _unTakeCoupons;
         private List<CMbrCouponGetViewModel> loadNonTakedCoupons()
         {
-            _unTakeCoupons = new CCouponModel().getNonTakedCoupons(FrmMain._MEMBER.Member_ID);
+            _unTakeCoupons = new CCouponModel().getNonTakedCoupons(FrmParent._MEMBER.Member_ID);
             List<CMbrCouponGetViewModel> mbrCouponGetViews = new List<CMbrCouponGetViewModel>();
             _unTakeCoupons.ForEach(c => mbrCouponGetViews.Add(new CMbrCouponGetViewModel(c)));
             return mbrCouponGetViews;
@@ -79,8 +79,6 @@ namespace ClinicSys
             var senderGrid = (DataGridView)sender;
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && senderGrid.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "領取" && e.RowIndex >= 0)
             {
-                //測試
-                //MessageBox.Show("點擊" + "c:" + e.ColumnIndex + "r:" + e.RowIndex);
                 int selectedCouponId = _unTakeCoupons[e.RowIndex].Id;
                 new CCouponWalletModel().createCouponWalletbyCouponId(selectedCouponId);
                 resetDataGridView_get();

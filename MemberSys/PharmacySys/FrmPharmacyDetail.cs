@@ -27,7 +27,7 @@ namespace ClinicSysMdiParent
         {
             _ActiveTabPage.refresh(); //一開始進畫面的顏色字型修改在CType.cs中
             
-            dataGridView1.Columns[1].Width = 300;
+            dataGridView1.Columns[1].Width = 800;
         }
 
        
@@ -56,7 +56,7 @@ namespace ClinicSysMdiParent
             if (tabControl1.SelectedIndex == 0)
             {
                 _ActiveTabPage = new CType(dataGridView1);
-                dataGridView1.Columns[1].Width = 300;
+                dataGridView1.Columns[1].Width = 800;
             }
             else if (tabControl1.SelectedIndex == 1)
             {
@@ -67,7 +67,7 @@ namespace ClinicSysMdiParent
             else
             {
                 _ActiveTabPage = new CSideEffect(dataGridView3);
-                dataGridView3.Columns[1].Width = 300;
+                dataGridView3.Columns[1].Width = 800;
             }
         }
     }

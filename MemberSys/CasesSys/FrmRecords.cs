@@ -49,7 +49,7 @@ namespace ClinicSysMdiParent
             if (mode == true)
             {
                 tRCaseIDBox.Ntext = _X.CaseID.ToString();
-                tDocNameBox.Ntext = 335.ToString(); 
+                tDocNameBox.Ntext = 700.ToString(); 
             }
 
         }

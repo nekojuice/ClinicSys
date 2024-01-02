@@ -12,7 +12,7 @@ namespace ClinicSys
     public class CEmpProductViewModel : ICRUD
     {
         private tProduct _product;
-        private DataGridView dataGridView;
+        private DataGridView _dataGridView;
         private CProductModel _prodcutModel = new CProductModel();
         private List<int> _productIds = new List<int>();
         private List<CEmpProductViewModel> _productViewModels = new List<CEmpProductViewModel>();
@@ -28,38 +28,54 @@ namespace ClinicSys
         public string 商品名稱 { get { return _product.fName; } }
         public string 商品分類 { get { return _product.fCategory; } }
         public string 商品價格 { get { return "$ " + _product.fPrice.ToString(); } }
-        public DateTime 上架日期 { get { return _product.fStartDate; } }
-        public DateTime 下架日期 { get { return _product.fEndDate; } }
+        public string 上架日期 { get { return _product.fStartDate.ToShortDateString(); } }
+        public string 下架日期 { get { return _product.fEndDate.ToShortDateString(); } }
         public string 商品描述 { get { return _product.fDescription; } }
 
-        public void ShowAll()
+        public void showAll()
         {
             reloadProductViewModels();
             resetDateGridView();
         }
 
-        public void Create()
+        public void create()
         {
-            _prodcutModel.create();
-            ShowAll();
+            frmEmpProdEditor frm = new frmEmpProdEditor();
+            if (frm.ShowDialog() == DialogResult.Cancel)
+                return;
+
+            tProduct product = new tProduct();
+            product.fName = frm.product.fName;
+            product.fCategory = frm.product.fCategory;
+            product.fPrice = frm.product.fPrice;
+            product.fStartDate = frm.product.fStartDate;
+            product.fEndDate = frm.product.fEndDate;
+            product.fDescription = frm.product.fDescription;
+            product.fPicture = frm.product.fPicture;
+            _prodcutModel.create(product);
+            showAll();
+            
         }
 
-        public void Delete()
+        public void delete()
         {
-            int productId = _productIds[dataGridView.CurrentRow.Index];
-            _prodcutModel.deletebyProductId(productId);
-            ShowAll();
+            int productId = _productIds[_dataGridView.CurrentRow.Index];
+            _prodcutModel.deletebyId(productId);
+            showAll();
         }
 
-
-        public void Update()
+        public void update()
         {
-            int currentProductId = _productIds[dataGridView.CurrentRow.Index];
-            _prodcutModel.updatebyProductId(currentProductId);
-            ShowAll();
+            int currentProductId = _productIds[_dataGridView.CurrentRow.Index];
+            frmEmpProdEditor frm = new frmEmpProdEditor();
+            frm.product = new CProductModel().getproductbyId(currentProductId);
+            if (frm.ShowDialog() == DialogResult.Cancel)
+                return;
+            _prodcutModel.update(frm.product);
+            showAll();
         }
 
-        public void Search(string keyword)
+        public void search(string keyword)
         {
             reloadProductViewModelsbyKeyword(keyword);
             resetDateGridView();
@@ -81,17 +97,17 @@ namespace ClinicSys
             products.ForEach(p => { _productViewModels.Add(new CEmpProductViewModel(p)); _productIds.Add(p.Id); });
         }
 
-
         public void mountDateGridView(DataGridView grd)
         {
-            dataGridView = grd;
-            ShowAll();
+            _dataGridView = grd;
+            showAll();
         }
 
         private void resetDateGridView()
         {
-            dataGridView.DataSource = null;
-            dataGridView.DataSource = _productViewModels;
+            _dataGridView.DataSource = null;
+            _dataGridView.DataSource = _productViewModels;
         }
+
     }
 }

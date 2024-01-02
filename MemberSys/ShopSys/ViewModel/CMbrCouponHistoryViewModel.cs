@@ -18,8 +18,8 @@ namespace ClinicSys
                 照片 = _coupon.fPicture;
                 分類 = _coupon.fCategory;
                 說明 = _coupon.fDescription;
-                狀態 = (new CCouponWalletModel().getCouponWalletsbymemberId(FrmMain._MEMBER.Member_ID).FirstOrDefault(w => w.fCouponId == _coupon.Id).fUsed) ? "已使用" : "已過期";
-                訂單折扣金額 = (狀態 == "已過期") ? "0" : new CBillModel().getDiscountPricebyMemberIdandCouponId(FrmMain._MEMBER.Member_ID,_coupon.Id).ToString();
+                狀態 = (new CCouponWalletModel().getCouponWalletsbymemberId(FrmParent._MEMBER.Member_ID).FirstOrDefault(w => w.fCouponId == _coupon.Id).fUsed) ? "已使用" : "已過期";
+                訂單折扣金額 = (狀態 == "已過期") ? "0" : new CBillModel().getDiscountPricebyMemberIdandCouponId(FrmParent._MEMBER.Member_ID,_coupon.Id).ToString();
             }
             get
             {
