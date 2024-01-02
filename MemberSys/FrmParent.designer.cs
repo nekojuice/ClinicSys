@@ -472,6 +472,7 @@
             this.Controls.Add(this.toolStrip1);
             this.IsMdiContainer = true;
             this.Name = "FrmParent";
+            this.Text = "診所系統";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmParent_Load);
             this.toolStrip1.ResumeLayout(false);

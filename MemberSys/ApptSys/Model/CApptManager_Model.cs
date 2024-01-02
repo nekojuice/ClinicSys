@@ -22,26 +22,26 @@ namespace MSIT155_E_MID.ApptSystem.Model
             var result = from tSchedule in db.Schedule_ClinicInfo select tSchedule.date.Substring(0, 7);
             return result.Distinct();
         }
-        public IQueryable GetDocName(string dept)   //(依科別)回傳所有醫師名
+        public IQueryable GetDocName(string dept)   //(依科別)回傳所有醫生名
         {
 
             if (dept != "全部")
             {
                 return from tEmpList in db.Member_EmployeeList
-                       where tEmpList.Emp_Type == "醫師" && tEmpList.Department == dept
+                       where tEmpList.Emp_Type == "醫生" && tEmpList.Department == dept
                        select tEmpList.Name;
             }
             return from tEmpList in db.Member_EmployeeList
-                   where tEmpList.Emp_Type == "醫師"
+                   where tEmpList.Emp_Type == "醫生"
                    select tEmpList.Name;
         }
 
-        public IQueryable GetClinicSchedule(string start, string end, string dept, string docName)   //依月份/科別/醫師名顯示門診
+        public IQueryable GetClinicSchedule(string start, string end, string dept, string docName)   //依月份/科別/醫生名顯示門診
         {
             var result = from Schedule_ClinicInfo in db.Schedule_ClinicInfo
                          join tClinicTime in db.Schedule_ClinicTime on Schedule_ClinicInfo.ClinicTime_ID equals tClinicTime.ClinicTime_ID
                          join tMember_EmployeeList in db.Member_EmployeeList on Schedule_ClinicInfo.doctor_ID equals tMember_EmployeeList.Emp_ID
-                         where tMember_EmployeeList.Emp_Type == "醫師"
+                         where tMember_EmployeeList.Emp_Type == "醫生"
                          && Schedule_ClinicInfo.date.CompareTo(start) >= 0
                          && Schedule_ClinicInfo.date.CompareTo(end) <= 0
                          orderby Schedule_ClinicInfo.date, tClinicTime.ClinicTime_ID
@@ -63,7 +63,7 @@ namespace MSIT155_E_MID.ApptSystem.Model
             {
                 return result.Where(x => x.department == dept);
             }
-            if (docName != "全部")    //醫師指定
+            if (docName != "全部")    //醫生指定
             {
                 return result.Where(x => x.docname == docName);
             }
@@ -334,7 +334,7 @@ namespace MSIT155_E_MID.ApptSystem.Model
                               date = tSchedule_ClinicSchedule.date, //門診日期
                               clinicShifts = tSchedule_ClinicTime.ClinicShifts, //門診時段
                               department = tMember_EmployeeList.Department, //科別
-                              docname = tMember_EmployeeList.Name,  //醫師
+                              docname = tMember_EmployeeList.Name,  //醫生
                               patientClinicNumber = tAppt_ClinicList.ClinicNumber,  //診號
                               patient_isCancelled = tAppt_ClinicList.IsCancelled,   //是否退掛
                               isVIP = tAppt_ClinicList.IsVIP    //是否VIP
