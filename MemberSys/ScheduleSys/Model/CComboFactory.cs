@@ -16,7 +16,7 @@ namespace ClinicSysMdiParent.Model
         //  public IQueryable FindDoctorname()
         {
             var DCnameid = from x in db.Member_EmployeeList
-                           where x.Emp_Type == "醫師"
+                           where x.Emp_Type == "醫生"
                            select new CDoctorname//匿名類別
                            {
                                Dr姓名 = x.Name,
