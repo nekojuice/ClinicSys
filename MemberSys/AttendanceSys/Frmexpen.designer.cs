@@ -46,7 +46,6 @@
             this.uiMarkLabel7 = new Sunny.UI.UIMarkLabel();
             this.uiMarkLabel5 = new Sunny.UI.UIMarkLabel();
             this.txtAmount = new Sunny.UI.UITextBox();
-            this.txtEmployeeId = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // uiMarkLabel6
@@ -317,21 +316,12 @@
             this.txtAmount.Watermark = "";
             this.txtAmount.Click += new System.EventHandler(this.txtAmount_Click);
             // 
-            // txtEmployeeId
-            // 
-            this.txtEmployeeId.Location = new System.Drawing.Point(425, 75);
-            this.txtEmployeeId.Name = "txtEmployeeId";
-            this.txtEmployeeId.Size = new System.Drawing.Size(100, 22);
-            this.txtEmployeeId.TabIndex = 57;
-            this.txtEmployeeId.Text = "28";
-            // 
             // Frmexpen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(800, 584);
-            this.Controls.Add(this.txtEmployeeId);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.uiMarkLabel5);
             this.Controls.Add(this.uiMarkLabel7);
@@ -355,7 +345,6 @@
             this.Load += new System.EventHandler(this.Frmexpen_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Frmexpen_Paint);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -379,6 +368,5 @@
         private Sunny.UI.UIMarkLabel uiMarkLabel7;
         private Sunny.UI.UIMarkLabel uiMarkLabel5;
         private Sunny.UI.UITextBox txtAmount;
-        private System.Windows.Forms.TextBox txtEmployeeId;
     }
 }

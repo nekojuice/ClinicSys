@@ -48,8 +48,11 @@ namespace ClinicSysMdiParent
                 {
                     textBoxDispensing.Text = CP.Dispensing.ToString();
                 }
-                _CP=PS.ListPrescriptionListDataSet();
-                dataGridView1.DataSource = _CP;
+                ClinicSysEntities CSTE = new ClinicSysEntities();
+                var dt = from x in CSTE.Cases_Prescriptionlist
+                           where x.Prescription_ID == _PR
+                           select new { 處方ID = x.Prescription_ID, 藥品ID = x.Drug_ID, 品名 = x.Pharmacy_tMedicinesList.fDrugName, 一日服用次數 = x.Pharmacy_tMedicinesList.fDay, 服用天數 = x.Days, 總量 = x.Total_Amount };
+                dataGridView1.DataSource = dt.ToList();
                 CCstyle.DataGridViewDesign(dataGridView1);
             }
             if (mode == true)
@@ -126,7 +129,10 @@ namespace ClinicSysMdiParent
                         //MessageBox.Show("儲存成功");
                         PrescriptionSet PS = new PrescriptionSet();
                         PS._PR = _PR;
-                        dataGridView1.DataSource = PS.ListPrescriptionListDataSet();
+                        var data = from d in CSTE.Cases_Prescriptionlist
+                               where d.Prescription_ID == _PR
+                               select new { 處方ID = d.Prescription_ID, 藥品ID = d.Drug_ID, 品名 = d.Pharmacy_tMedicinesList.fDrugName, 一日服用次數 = d.Pharmacy_tMedicinesList.fDay, 服用天數 = d.Days, 總量 = d.Total_Amount };
+                        dataGridView1.DataSource = data.ToList();
                         CCstyle.DataGridViewDesign(dataGridView1);
                     }
             }
@@ -147,7 +153,10 @@ namespace ClinicSysMdiParent
                 //MessageBox.Show("刪除成功");
                 PrescriptionSet PS = new PrescriptionSet();
                 PS._PR = _PR;
-                dataGridView1.DataSource= PS.ListPrescriptionListDataSet();
+                var data = from x in CSTE.Cases_Prescriptionlist
+                       where x.Prescription_ID == _PR
+                       select new { 處方ID = x.Prescription_ID, 藥品ID = x.Drug_ID, 品名 = x.Pharmacy_tMedicinesList.fDrugName, 一日服用次數 = x.Pharmacy_tMedicinesList.fDay, 服用天數 = x.Days, 總量 = x.Total_Amount };
+            dataGridView1.DataSource=data.ToList();
                 CCstyle.DataGridViewDesign(dataGridView1);
             
         }

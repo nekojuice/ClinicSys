@@ -75,7 +75,7 @@ namespace ClinicSys
 
         public int getLastOrderIdbyMemberId(int memberId)
         {
-            tOrder lastOrder = db.tOrder.Where(o => o.fMemberId == memberId).FirstOrDefault();
+            tOrder lastOrder = db.tOrder.Where(o => o.fMemberId == memberId).OrderByDescending(o=>o.fOrderDate).FirstOrDefault();
             return lastOrder.Id;
         }
 

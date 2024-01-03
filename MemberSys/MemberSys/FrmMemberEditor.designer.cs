@@ -223,7 +223,7 @@
             // 
             this.fbMember_Num.BackColor = System.Drawing.SystemColors.ControlLight;
             this.fbMember_Num.fieldName = "會員編號";
-            this.fbMember_Num.fieldValue = "11011";
+            this.fbMember_Num.fieldValue = "1014";
             this.fbMember_Num.Location = new System.Drawing.Point(28, 9);
             this.fbMember_Num.Margin = new System.Windows.Forms.Padding(4);
             this.fbMember_Num.Name = "fbMember_Num";
@@ -300,7 +300,7 @@
             // 
             this.fbBlood.BackColor = System.Drawing.SystemColors.ControlLight;
             this.fbBlood.fieldName = "血型";
-            this.fbBlood.fieldValue = "b";
+            this.fbBlood.fieldValue = "B";
             this.fbBlood.Location = new System.Drawing.Point(28, 179);
             this.fbBlood.Margin = new System.Windows.Forms.Padding(4);
             this.fbBlood.Name = "fbBlood";

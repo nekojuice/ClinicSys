@@ -32,16 +32,16 @@ namespace ClinicSysMdiParent.View
         public static void resetGrdWithInDrug(DataGridView grd)
         {
             grd.Columns[0].Width = 100;
-            grd.Columns[1].Width = 200;
-            grd.Columns[2].Width = 200;
+            grd.Columns[1].Width = 150;
+            grd.Columns[2].Width = 300;
             grd.Columns[3].Width = 300;
-            grd.Columns[4].Width = 300;
-            grd.Columns[5].Width = 300;
+            grd.Columns[4].Width = 250;
+            grd.Columns[5].Width = 100;
             grd.Columns[6].Width = 300;
             grd.Columns[7].Width = 300;
-            grd.Columns[8].Width = 300;
-            grd.Columns[9].Width = 300;
-            grd.Columns[10].Width = 300;
+            grd.Columns[8].Width = 150;
+            grd.Columns[9].Width = 200;
+            grd.Columns[10].Width = 200;
             grd.Columns[11].Width = 300;
             grd.Columns[12].Width = 300;
             grd.Columns[13].Width = 300;

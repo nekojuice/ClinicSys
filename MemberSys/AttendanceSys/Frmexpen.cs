@@ -18,7 +18,7 @@ namespace ClinicSys
     public partial class Frmexpen : Form
     {
         FrmRequestSearch form1 = Application.OpenForms.OfType<FrmRequestSearch>().FirstOrDefault();
-        private const string connectionString = @"Data Source=.;Initial Catalog=ClinicSys;Integrated Security=True";
+        private const string connectionString = "data source = 192.168.21.14; initial catalog = ClinicSys; persist security info=True;user id = cat; password=cat;MultipleActiveResultSets=True;App=EntityFramework&quot;";
         public Frmexpen()
         {
             InitializeComponent();

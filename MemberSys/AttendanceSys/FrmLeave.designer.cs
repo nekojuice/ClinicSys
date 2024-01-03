@@ -46,7 +46,6 @@
             this.uiMarkLabel7 = new Sunny.UI.UIMarkLabel();
             this.StarDP = new Sunny.UI.UIDatetimePicker();
             this.EndDP = new Sunny.UI.UIDatetimePicker();
-            this.txtEmployeeId = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // xButton1
@@ -323,21 +322,12 @@
             this.EndDP.Value = new System.DateTime(2023, 12, 23, 11, 29, 45, 84);
             this.EndDP.Watermark = "";
             // 
-            // txtEmployeeId
-            // 
-            this.txtEmployeeId.Location = new System.Drawing.Point(511, 61);
-            this.txtEmployeeId.Name = "txtEmployeeId";
-            this.txtEmployeeId.Size = new System.Drawing.Size(100, 22);
-            this.txtEmployeeId.TabIndex = 53;
-            this.txtEmployeeId.Text = "28";
-            // 
             // FrmLeave
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(944, 691);
-            this.Controls.Add(this.txtEmployeeId);
             this.Controls.Add(this.EndDP);
             this.Controls.Add(this.StarDP);
             this.Controls.Add(this.uiMarkLabel7);
@@ -360,7 +350,6 @@
             this.Text = "FrmLeave";
             this.Load += new System.EventHandler(this.FrmLeave_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -384,6 +373,5 @@
         private Sunny.UI.UIMarkLabel uiMarkLabel7;
         private Sunny.UI.UIDatetimePicker StarDP;
         private Sunny.UI.UIDatetimePicker EndDP;
-        private System.Windows.Forms.TextBox txtEmployeeId;
     }
 }

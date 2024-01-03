@@ -132,13 +132,13 @@ namespace ClinicSysMdiParent.View
         private bool isUiValidated()//都有選取才能新增
         {
             string msg = "";
-            if (combName.SelectedIndex == -1)
+            if (combName.SelectedIndex == 0)
                 msg += "\r\n必須選擇醫生";
             if (combweekday.SelectedIndex == -1)
                 msg += "\r\n必須選擇星期";
-            if (combShifts.SelectedIndex == -1)
+            if (combShifts.SelectedIndex == 0)
                 msg += "\r\n必須選擇時段";
-            if (combClinicroom.SelectedIndex == -1)
+            if (combClinicroom.SelectedIndex == 0)
                 msg += "\r\n必須選擇診間";
             if (!string.IsNullOrEmpty(msg))
                 MessageBox.Show(msg);

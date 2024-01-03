@@ -32,7 +32,7 @@ namespace ClinicSys
             set
             {
                 _coupon = value;
-                pictureBox1.Image = null;
+                pictureBox1.Image = CUtility.getImagebyBytes(_coupon.fPicture); ;
                 lblName.Text = _coupon.fName;
                 lblDescription.Text = _coupon.fDescription;
                 lblDate.Text = _coupon.fEndDate.ToString("yyyy/MM/dd");

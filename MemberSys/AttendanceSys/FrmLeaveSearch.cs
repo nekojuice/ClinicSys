@@ -16,7 +16,7 @@ namespace ClinicSys
 {
     public partial class FrmLeaveSearch : Form
     {
-        private const string connectionString = @"Data Source=.;Initial Catalog=ClinicSys;Integrated Security=True";
+        private const string connectionString = "data source=192.168.21.14;initial catalog=ClinicSys;persist security info=True;user id=cat;password=cat;MultipleActiveResultSets=True;App=EntityFramework&quot;";
         int _employeeId;
         public FrmLeaveSearch()
         {
@@ -71,11 +71,7 @@ namespace ClinicSys
 
         public void DisplayEmployeeLeave(string p)   //參數P  DATEPICKER取VALUE  
         {
-            if (!int.TryParse(txtEmployeeId.Text.Trim(), out _employeeId))
-            {
-                MessageBox.Show("請輸入有效員工ID.");
-                return;
-            }
+            
             string query = p;
             
             using (SqlConnection connection = new SqlConnection(connectionString))

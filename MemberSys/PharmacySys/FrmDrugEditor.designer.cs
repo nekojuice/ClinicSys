@@ -297,7 +297,7 @@
             // 
             this.fbStorage.AutoSize = true;
             this.fbStorage.fieldName = "儲存方法";
-            this.fbStorage.fieldValue = "";
+            this.fbStorage.fieldValue = "避光、避濕、避熱且溫度小於攝氏30度。";
             this.fbStorage.Location = new System.Drawing.Point(22, 611);
             this.fbStorage.Name = "fbStorage";
             this.fbStorage.Size = new System.Drawing.Size(843, 32);
@@ -307,7 +307,7 @@
             // 
             this.fbBrand.AutoSize = true;
             this.fbBrand.fieldName = "廠牌";
-            this.fbBrand.fieldValue = "";
+            this.fbBrand.fieldValue = "ASTRAZENECA AB　(Sweden)";
             this.fbBrand.Location = new System.Drawing.Point(22, 713);
             this.fbBrand.Name = "fbBrand";
             this.fbBrand.Size = new System.Drawing.Size(843, 32);
@@ -326,7 +326,7 @@
             // 
             this.fbSupplier.AutoSize = true;
             this.fbSupplier.fieldName = "藥商";
-            this.fbSupplier.fieldValue = "";
+            this.fbSupplier.fieldValue = "臺灣阿斯特捷利康股份有限公司";
             this.fbSupplier.Location = new System.Drawing.Point(22, 662);
             this.fbSupplier.Name = "fbSupplier";
             this.fbSupplier.Size = new System.Drawing.Size(843, 32);
@@ -335,7 +335,7 @@
             // fbMaxDose
             // 
             this.fbMaxDose.fieldName = "最大劑量";
-            this.fbMaxDose.fieldValue = "";
+            this.fbMaxDose.fieldValue = "240 mg/day";
             this.fbMaxDose.Location = new System.Drawing.Point(22, 396);
             this.fbMaxDose.Name = "fbMaxDose";
             this.fbMaxDose.Size = new System.Drawing.Size(843, 32);
@@ -363,7 +363,7 @@
             // fbGenericName
             // 
             this.fbGenericName.fieldName = "學名";
-            this.fbGenericName.fieldValue = "";
+            this.fbGenericName.fieldValue = "Esomeprazole Magnesium";
             this.fbGenericName.Location = new System.Drawing.Point(22, 145);
             this.fbGenericName.Name = "fbGenericName";
             this.fbGenericName.Size = new System.Drawing.Size(843, 32);
@@ -372,7 +372,7 @@
             // fbTradeName
             // 
             this.fbTradeName.fieldName = "商品名";
-            this.fbTradeName.fieldValue = "";
+            this.fbTradeName.fieldValue = "Nexium Tablet 40 mg/tab";
             this.fbTradeName.Location = new System.Drawing.Point(22, 193);
             this.fbTradeName.Name = "fbTradeName";
             this.fbTradeName.Size = new System.Drawing.Size(843, 32);
@@ -381,7 +381,7 @@
             // fbDrugCode
             // 
             this.fbDrugCode.fieldName = "藥品代碼";
-            this.fbDrugCode.fieldValue = "";
+            this.fbDrugCode.fieldValue = "NEX4HA41";
             this.fbDrugCode.Location = new System.Drawing.Point(22, 97);
             this.fbDrugCode.Name = "fbDrugCode";
             this.fbDrugCode.Size = new System.Drawing.Size(843, 32);
@@ -391,7 +391,7 @@
             // 
             this.fbDrugDose.AutoSize = true;
             this.fbDrugDose.fieldName = "常用劑量";
-            this.fbDrugDose.fieldValue = "";
+            this.fbDrugDose.fieldValue = "PO, ac 1 hr";
             this.fbDrugDose.Location = new System.Drawing.Point(22, 339);
             this.fbDrugDose.Name = "fbDrugDose";
             this.fbDrugDose.Size = new System.Drawing.Size(843, 32);
@@ -400,7 +400,7 @@
             // fbDrugName
             // 
             this.fbDrugName.fieldName = "中文名";
-            this.fbDrugName.fieldValue = "";
+            this.fbDrugName.fieldValue = "耐適恩錠";
             this.fbDrugName.Location = new System.Drawing.Point(22, 239);
             this.fbDrugName.Name = "fbDrugName";
             this.fbDrugName.Size = new System.Drawing.Size(843, 32);

@@ -72,18 +72,18 @@
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
-            this.splitContainer1.Size = new System.Drawing.Size(1225, 588);
-            this.splitContainer1.SplitterDistance = 139;
+            this.splitContainer1.Size = new System.Drawing.Size(468, 600);
+            this.splitContainer1.SplitterDistance = 153;
             this.splitContainer1.TabIndex = 1;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(294, -40);
+            this.pictureBox1.Location = new System.Drawing.Point(-76, -35);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(623, 208);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
             // panel1
@@ -93,7 +93,7 @@
             this.panel1.Controls.Add(this.fbStaffNum);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(395, 14);
+            this.panel1.Location = new System.Drawing.Point(12, 21);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(446, 412);
             this.panel1.TabIndex = 0;
@@ -102,7 +102,7 @@
             // 
             this.fbEmpPassword.fieldName = "請輸入員工密碼";
             this.fbEmpPassword.fieldRequired = false;
-            this.fbEmpPassword.fieldValue = "password123";
+            this.fbEmpPassword.fieldValue = "123";
             this.fbEmpPassword.Location = new System.Drawing.Point(28, 180);
             this.fbEmpPassword.Name = "fbEmpPassword";
             this.fbEmpPassword.passwordMask = '*';
@@ -122,9 +122,10 @@
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.RosyBrown;
+            this.label1.BackColor = System.Drawing.Color.IndianRed;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(446, 54);
@@ -136,7 +137,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1225, 588);
+            this.ClientSize = new System.Drawing.Size(468, 600);
             this.Controls.Add(this.splitContainer1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmLogin";
@@ -158,10 +159,10 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private FieldBox fbEmpPassword;
         private FieldBox fbStaffNum;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

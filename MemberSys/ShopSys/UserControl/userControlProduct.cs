@@ -26,7 +26,7 @@ namespace ClinicSys
             set
             {
                 _product = value;
-                this.pictureBox1.Image = CUtility.getImagebyBytes(product.fPicture);
+                this.pictureBox1.Image = CUtility.getImagebyBytes(_product.fPicture);
                 this.lblName.Text = _product.fName;
                 this.lblPrice.Text = "$ " + _product.fPrice.ToString();
             }

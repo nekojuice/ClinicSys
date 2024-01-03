@@ -68,7 +68,6 @@
             this.toolStripDropDownButtonMem = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStripLabel8 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripDropDownButtonLogout = new System.Windows.Forms.ToolStripDropDownButton();
-            this.toolStripMenuItem15 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem16 = new System.Windows.Forms.ToolStripMenuItem();
             this.會員登入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
@@ -299,7 +298,7 @@
             this.優惠券ToolStripMenuItem,
             this.我的訂單ToolStripMenuItem});
             this.toolStripMenuItem11.Name = "toolStripMenuItem11";
-            this.toolStripMenuItem11.Size = new System.Drawing.Size(180, 30);
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(168, 30);
             this.toolStripMenuItem11.Text = "前台";
             // 
             // 購物商城ToolStripMenuItem
@@ -326,7 +325,7 @@
             // toolStripMenuItem12
             // 
             this.toolStripMenuItem12.Name = "toolStripMenuItem12";
-            this.toolStripMenuItem12.Size = new System.Drawing.Size(180, 30);
+            this.toolStripMenuItem12.Size = new System.Drawing.Size(168, 30);
             this.toolStripMenuItem12.Text = "後台管理";
             this.toolStripMenuItem12.Click += new System.EventHandler(this.toolStripMenuItem12_Click);
             // 
@@ -418,7 +417,6 @@
             // 
             this.toolStripDropDownButtonLogout.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripDropDownButtonLogout.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem15,
             this.toolStripMenuItem16,
             this.會員登入ToolStripMenuItem});
             this.toolStripDropDownButtonLogout.Font = new System.Drawing.Font("Microsoft JhengHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -429,23 +427,17 @@
             this.toolStripDropDownButtonLogout.Text = "帳戶管理";
             this.toolStripDropDownButtonLogout.Click += new System.EventHandler(this.toolStripDropDownButtonLogout_Click);
             // 
-            // toolStripMenuItem15
-            // 
-            this.toolStripMenuItem15.Name = "toolStripMenuItem15";
-            this.toolStripMenuItem15.Size = new System.Drawing.Size(210, 30);
-            this.toolStripMenuItem15.Text = "查看個人檔案";
-            // 
             // toolStripMenuItem16
             // 
             this.toolStripMenuItem16.Name = "toolStripMenuItem16";
-            this.toolStripMenuItem16.Size = new System.Drawing.Size(210, 30);
+            this.toolStripMenuItem16.Size = new System.Drawing.Size(180, 30);
             this.toolStripMenuItem16.Text = "後台登出";
             this.toolStripMenuItem16.Click += new System.EventHandler(this.toolStripMenuItemlogout_Click);
             // 
             // 會員登入ToolStripMenuItem
             // 
             this.會員登入ToolStripMenuItem.Name = "會員登入ToolStripMenuItem";
-            this.會員登入ToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.會員登入ToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.會員登入ToolStripMenuItem.Text = "會員登入";
             this.會員登入ToolStripMenuItem.Click += new System.EventHandler(this.會員登入ToolStripMenuItem_Click);
             // 
@@ -519,7 +511,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel8;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButtonLogout;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem15;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem16;
         private System.Windows.Forms.ToolStripMenuItem 會員登入ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 藥品管理ToolStripMenuItem;

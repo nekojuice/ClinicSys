@@ -63,7 +63,7 @@ namespace ClinicSys
                 _EMPLOYEE = getEmpData(frmLoginEmp.staffNumber);    //傳回整份entity
 
                 toolStripLabelforshowwhologin.Text
-                    = "登入者" + " " + frmLoginEmp.empType + " " + frmLoginEmp.empName + " " + "員工編號" + frmLoginEmp.staffNumber;
+                    = "登入者" + " " + "員工編號" + frmLoginEmp.staffNumber + " " + frmLoginEmp.empType +  " " +  frmLoginEmp.empName  ;
             }
 
 

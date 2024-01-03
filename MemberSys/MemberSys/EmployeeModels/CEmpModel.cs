@@ -31,6 +31,7 @@ namespace MemberSys.EmployeeModels
         public List<Member_EmployeeList>  getEmps()
         {
             var emplist = from p in db.Member_EmployeeList
+                          orderby p.Staff_Number
                           select p;
             
             return emplist.ToList(); 

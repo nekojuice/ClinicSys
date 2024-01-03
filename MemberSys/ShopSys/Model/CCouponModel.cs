@@ -81,5 +81,11 @@ namespace ClinicSys
             couponWallets.ForEach(w=>coupons.Add(w.tCoupon));
             return coupons;
         }
+
+        public string getCategorybyId(int couponId)
+        {
+            return db.tCoupon.FirstOrDefault(c => c.Id == couponId).fCategory;
+        }
+
     }
 }

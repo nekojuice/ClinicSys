@@ -216,14 +216,15 @@ namespace ClinicSysMdiParent
             Cases_Prescriptionlist prescriptionslist = data;
             return prescriptionslist;
         }
-        public List<Cases_Prescriptionlist> ListPrescriptionListDataSet()
-        {
-            ClinicSysEntities CSTE = new ClinicSysEntities();
-            var data = from x in CSTE.Cases_Prescriptionlist
-                       where x.Prescription_ID == _PR
-                       select x;//new { 處方ID = x.Prescription_ID, 藥品ID = x.Drug_ID, 品名 = x.Pharmacy_tMedicinesList.fDrugName, 一日服用次數 = x.Pharmacy_tMedicinesList.fDay, 服用天數 = x.Days, 總量 = x.Total_Amount };
-            return data.ToList();
-        }
+        //public List<Cases_Prescription> ListPrescriptionListDataSet()
+        //{
+        //    ClinicSysEntities CSTE = new ClinicSysEntities();
+        //    var data = from x in CSTE.Cases_Prescriptionlist
+        //               where x.Prescription_ID == _PR
+        //               select new { 處方ID = x.Prescription_ID, 藥品ID = x.Drug_ID, 品名 = x.Pharmacy_tMedicinesList.fDrugName, 一日服用次數 = x.Pharmacy_tMedicinesList.fDay, 服用天數 = x.Days, 總量 = x.Total_Amount };
+        //    var list = data.ToList();
+        //    return list;
+        //}
 
         public void PrescriptionListDelete()
         {

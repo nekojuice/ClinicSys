@@ -45,12 +45,16 @@ namespace ClinicSys
                                                     o.fCouponIdforPercent == couponId ||
                                                     o.fCouponIdforShip == couponId));
             int cartPrice = getCartPrice(order);
-            if (order.fCouponIdforAmount != null)
+            string couponCategory = new CCouponModel().getCategorybyId(couponId);
+
+
+            if (couponCategory == "現金折價卷")
                 return new CCouponModel().getCouponbyId(order.fCouponIdforAmount.Value).fValue;
-            else if (order.fCouponIdforPercent != null)
+            else if (couponCategory == "打折卷")
                 return getCashDiscount(cartPrice, new CCouponModel().getCouponbyId(order.fCouponIdforPercent.Value));
             else
                 return 120;
         }
+
     }
 }

@@ -34,7 +34,6 @@
             this.uiMarkLabel7 = new Sunny.UI.UIMarkLabel();
             this.xButton1 = new PowerLib.Winform.Controls.XButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtEmployeeId = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.xButton2 = new PowerLib.Winform.Controls.XButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -139,15 +138,6 @@
             this.dataGridView1.TabIndex = 58;
             this.dataGridView1.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_ColumnHeaderMouseClick);
             // 
-            // txtEmployeeId
-            // 
-            this.txtEmployeeId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEmployeeId.Location = new System.Drawing.Point(219, 109);
-            this.txtEmployeeId.Name = "txtEmployeeId";
-            this.txtEmployeeId.Size = new System.Drawing.Size(100, 22);
-            this.txtEmployeeId.TabIndex = 63;
-            this.txtEmployeeId.Text = "28";
-            // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -192,7 +182,6 @@
             this.ClientSize = new System.Drawing.Size(818, 501);
             this.Controls.Add(this.xButton2);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtEmployeeId);
             this.Controls.Add(this.uiDatePicker1);
             this.Controls.Add(this.CBLeaveType);
             this.Controls.Add(this.uiMarkLabel7);
@@ -205,7 +194,6 @@
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmLeaveSearch_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -216,7 +204,6 @@
         private Sunny.UI.UIMarkLabel uiMarkLabel7;
         private PowerLib.Winform.Controls.XButton xButton1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox txtEmployeeId;
         private System.Windows.Forms.Label label3;
         private PowerLib.Winform.Controls.XButton xButton2;
     }

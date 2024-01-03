@@ -83,6 +83,7 @@ namespace MemberSys
 
             //以下要來存圖片
             System.IO.MemoryStream ms = new System.IO.MemoryStream();
+            if(this.pictureBoxEmp.Image != null )
             this.pictureBoxEmp.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
             byte[] bytes = ms.GetBuffer();
             emp.EmpPhoto = bytes;
